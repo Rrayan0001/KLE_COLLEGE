@@ -3,6 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WelcomeAnimation from "@/components/WelcomeAnimation";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -35,6 +36,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900" suppressHydrationWarning>
+        {/* Welcome Intro Animation (plays once per session) */}
+        <WelcomeAnimation />
+
         {/* Skip to Content accessibility link */}
         <a 
           href="#main" 
