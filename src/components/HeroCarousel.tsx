@@ -102,7 +102,11 @@ export default function HeroCarousel() {
   const [activeSlide, setActiveSlide] = useState(1);
   const [isAnimating, setIsAnimating] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const dragStartXRef = useRef(0);
+  const activePointerIdRef = useRef<number | null>(null);
   const carouselSlides = [slides[slides.length - 1], ...slides, slides[0]];
   const current = (activeSlide - 1 + slides.length) % slides.length;
 
@@ -144,6 +148,79 @@ export default function HeroCarousel() {
   const pause = () => setIsPlaying(false);
   const resume = () => setIsPlaying(true);
 
+  const endDrag = (target: Element | null) => {
+    if (
+      activePointerIdRef.current !== null &&
+      target instanceof HTMLElement &&
+      target.hasPointerCapture(activePointerIdRef.current)
+    ) {
+      target.releasePointerCapture(activePointerIdRef.current);
+    }
+
+    activePointerIdRef.current = null;
+    setIsDragging(false);
+    setDragOffset(0);
+  };
+
+  const handlePointerDown = (event: React.PointerEvent<HTMLElement>) => {
+    if (
+      event.button !== 0 ||
+      (event.target instanceof Element && event.target.closest("a, button"))
+    ) {
+      return;
+    }
+
+    pause();
+    setIsAnimating(false);
+    setIsDragging(true);
+    setDragOffset(0);
+    dragStartXRef.current = event.clientX;
+    activePointerIdRef.current = event.pointerId;
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLElement>) => {
+    if (!isDragging || event.pointerId !== activePointerIdRef.current) {
+      return;
+    }
+
+    const distance = event.clientX - dragStartXRef.current;
+    const width = event.currentTarget.clientWidth || 1;
+    const offset = Math.max(-38, Math.min(38, (distance / width) * 100));
+    setDragOffset(offset);
+  };
+
+  const handlePointerUp = (event: React.PointerEvent<HTMLElement>) => {
+    if (!isDragging || event.pointerId !== activePointerIdRef.current) {
+      return;
+    }
+
+    const distance = event.clientX - dragStartXRef.current;
+    const width = event.currentTarget.clientWidth || 1;
+    const finalOffset = (distance / width) * 100;
+    const shouldMove = Math.abs(finalOffset) > 12;
+    setIsAnimating(true);
+
+    if (shouldMove && finalOffset < 0) {
+      handleNext();
+    } else if (shouldMove && finalOffset > 0) {
+      handlePrev();
+    }
+
+    endDrag(event.currentTarget);
+    resume();
+  };
+
+  const handlePointerCancel = (event: React.PointerEvent<HTMLElement>) => {
+    if (event.pointerId !== activePointerIdRef.current) {
+      return;
+    }
+
+    setIsAnimating(true);
+    endDrag(event.currentTarget);
+    resume();
+  };
+
   const snapToRealSlide = (slideIndex: number) => {
     setIsAnimating(false);
     setActiveSlide(slideIndex);
@@ -172,17 +249,23 @@ export default function HeroCarousel() {
       {/* ------------------------------------------------------------------ */}
       <section
         aria-label="Campus highlights slideshow"
-        className="relative w-full overflow-visible bg-brand-black"
+        className={`relative w-full touch-pan-y overflow-visible bg-brand-black ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
         style={{ height: "clamp(380px, 55vw, 650px)" }}
         onMouseEnter={pause}
         onMouseLeave={resume}
-        onTouchStart={pause}
-        onTouchEnd={resume}
+        onPointerCancel={handlePointerCancel}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
       >
         {/* Sliding Track with Peek Slivers Layout */}
         <div 
-          className={`flex w-full h-full ${isAnimating ? "transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]" : ""}`}
-          style={{ transform: `translateX(calc(${activeSlide} * -100%))` }}
+          className={`flex h-full w-full select-none ${
+            isAnimating && !isDragging ? "transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]" : ""
+          }`}
+          style={{ transform: `translateX(calc(${activeSlide} * -100% + ${dragOffset}%))` }}
           onTransitionEnd={handleTransitionEnd}
         >
           {carouselSlides.map((slide, idx) => {
@@ -222,46 +305,75 @@ export default function HeroCarousel() {
                 />
 
                 {/* Content — only visible on active slide */}
-                <div 
-                  className={`absolute inset-0 z-20 flex flex-col items-center justify-center px-6 py-14 text-center transition-opacity duration-[400ms] ${
-                    isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-                  }`}
-                >
-                  <div className="w-full max-w-7xl space-y-5 sm:space-y-7">
-                    {/* Eyebrow */}
-                    <p className="text-white/90 uppercase tracking-[0.2em] text-sm sm:text-base md:text-lg">
-                      {slide.eyebrow}
-                    </p>
-
-                    {/* Headline */}
-                    <h2
-                      className="text-white font-black leading-none uppercase"
-                      style={{
-                        fontSize: "clamp(3rem, 8vw, 6.75rem)",
-                        lineHeight: 1,
-                      }}
-                    >
-                      {slide.headline}
-                    </h2>
-
-                    {slide.id === 1 && (
-                      // Placeholder copy is intentionally explicit so it cannot ship as a real motto by accident.
-                      // The SVG paths were generated from Google Font "Kaushan Script" and animate once on mount.
-                      <HeroTagline />
-                    )}
-
-                    {/* CTA Button */}
-                    <div className="pt-2">
-                      <Link
-                        href={slide.ctaHref}
-                        className="inline-block bg-brand-yellow hover:bg-brand-yellow-hover text-brand-black font-bold uppercase tracking-[0.2em] text-xs sm:text-sm px-10 sm:px-14 py-5 active:scale-95 transition-all duration-200 shadow-lg"
-                        style={{ borderRadius: "2px" }}
+                {slide.id === 1 ? (
+                  <div
+                    className={`absolute inset-0 z-20 overflow-hidden px-6 py-14 transition-opacity duration-[400ms] sm:px-10 md:px-16 ${
+                      isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                    }`}
+                  >
+                    <div className="absolute left-[50%] top-[40%] w-[92%] -translate-x-1/2 -translate-y-1/2 md:left-[55%] md:top-[43%] md:w-[86%]">
+                      <p className="mb-4 text-center text-white/90 uppercase tracking-[0.24em] text-xs sm:text-sm md:text-lg">
+                        {slide.eyebrow}
+                      </p>
+                      <h2
+                        className="text-center text-white font-black leading-none uppercase"
+                        style={{
+                          fontSize: "clamp(3.25rem, 8.6vw, 7.75rem)",
+                          lineHeight: 0.95,
+                        }}
                       >
-                        {slide.ctaLabel}
-                      </Link>
+                        {slide.headline}
+                      </h2>
+                    </div>
+
+                    <div className="absolute left-1/2 top-[58%] w-[82%] max-w-[820px] -translate-x-1/2 md:top-[61%] md:w-[56%]">
+                      <HeroTagline />
+                    </div>
+
+                    <Link
+                      href={slide.ctaHref}
+                      className="absolute left-1/2 top-[73%] z-10 -translate-x-1/2 bg-brand-yellow px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-black shadow-lg transition-all duration-200 hover:bg-brand-yellow-hover active:scale-95 sm:px-14 sm:text-sm"
+                      style={{ borderRadius: "2px" }}
+                    >
+                      {slide.ctaLabel}
+                    </Link>
+                  </div>
+                ) : (
+                  <div
+                    className={`absolute inset-0 z-20 flex flex-col items-center justify-center px-6 py-14 text-center transition-opacity duration-[400ms] ${
+                      isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                    }`}
+                  >
+                    <div className="w-full max-w-7xl space-y-5 sm:space-y-7">
+                      {/* Eyebrow */}
+                      <p className="text-white/90 uppercase tracking-[0.2em] text-sm sm:text-base md:text-lg">
+                        {slide.eyebrow}
+                      </p>
+
+                      {/* Headline */}
+                      <h2
+                        className="text-white font-black leading-none uppercase"
+                        style={{
+                          fontSize: "clamp(3rem, 8vw, 6.75rem)",
+                          lineHeight: 1,
+                        }}
+                      >
+                        {slide.headline}
+                      </h2>
+
+                      {/* CTA Button */}
+                      <div className="pt-2">
+                        <Link
+                          href={slide.ctaHref}
+                          className="inline-block bg-brand-yellow hover:bg-brand-yellow-hover text-brand-black font-bold uppercase tracking-[0.2em] text-xs sm:text-sm px-10 sm:px-14 py-5 active:scale-95 transition-all duration-200 shadow-lg"
+                          style={{ borderRadius: "2px" }}
+                        >
+                          {slide.ctaLabel}
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           )})}

@@ -77,22 +77,22 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3">
             <li>
-              <Link href="/about" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+              <Link href="/about/achievements" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
                 Achievements
               </Link>
             </li>
             <li>
-              <Link href="/gallery" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+              <Link href="/gallery/photo-gallery" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
                 Events
               </Link>
             </li>
             <li>
-              <Link href="/about" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+              <Link href="/about/staff" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
                 Faculty
               </Link>
             </li>
             <li>
-              <Link href="/student-corner" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+              <Link href="/student-corner/admissions" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
                 Admissions
               </Link>
             </li>
