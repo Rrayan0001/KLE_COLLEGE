@@ -52,7 +52,12 @@ export default function Home() {
   return (
     <div>
       {/* Announcements Marquee */}
-      <section className="bg-brand-maroon py-2.5 text-sm md:text-base font-bold text-white overflow-hidden shadow-inner" aria-label="Announcements">
+
+      {/* Hero Slide Area — includes the 4 quick-link card strip */}
+      <HeroCarousel />
+
+      {/* Announcements Marquee */}
+      <section className="bg-brand-maroon py-2.5 text-sm md:text-base font-bold text-white overflow-hidden shadow-inner mt-8 md:mt-12" aria-label="Announcements">
         <div className="max-w-7xl mx-auto flex items-center">
           <div className="bg-brand-yellow text-brand-black px-4 py-1 z-10 hidden md:block whitespace-nowrap rounded shadow-sm mr-4 shrink-0">
             LATEST UPDATES
@@ -73,9 +78,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Hero Slide Area — includes the 4 quick-link card strip */}
-      <HeroCarousel />
 
       {/* Overview Section - Off White */}
       <section className="py-24 md:py-32 bg-brand-gray border-t-4 border-brand-yellow mt-0">

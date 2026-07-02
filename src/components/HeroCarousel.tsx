@@ -33,8 +33,8 @@ const slides: HeroSlide[] = [
   {
     id: 1,
     eyebrow: "KLE Society's SCP College",
-    headline: "SHAPING FUTURES",
-    ctaLabel: "ABOUT US",
+    headline: "EXPLORE OUR GROUNDS",
+    ctaLabel: "DISCOVER MORE",
     ctaHref: "/about",
     imageSrc: "/images/hero_section/slide.png",
   },
@@ -112,12 +112,12 @@ export default function HeroCarousel() {
 
   const handleNext = useCallback(() => {
     setIsAnimating(true);
-    setActiveSlide((prev) => prev + 1);
+    setActiveSlide((prev) => (prev >= slides.length + 1 ? 2 : prev + 1));
   }, []);
 
   const handlePrev = useCallback(() => {
     setIsAnimating(true);
-    setActiveSlide((prev) => prev - 1);
+    setActiveSlide((prev) => (prev <= 0 ? slides.length - 1 : prev - 1));
   }, []);
 
   // Auto-advance every 6 seconds, pause on interaction
@@ -143,17 +143,23 @@ export default function HeroCarousel() {
   const pause = () => setIsPlaying(false);
   const resume = () => setIsPlaying(true);
 
-  const handleTransitionEnd = () => {
+  const snapToRealSlide = (slideIndex: number) => {
+    setIsAnimating(false);
+    setActiveSlide(slideIndex);
+    requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
+  };
+
+  const handleTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>) => {
+    if (event.target !== event.currentTarget || event.propertyName !== "transform") {
+      return;
+    }
+
     if (activeSlide === 0) {
-      setIsAnimating(false);
-      setActiveSlide(slides.length);
-      requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
+      snapToRealSlide(slides.length);
     }
 
     if (activeSlide === slides.length + 1) {
-      setIsAnimating(false);
-      setActiveSlide(1);
-      requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
+      snapToRealSlide(1);
     }
   };
 
@@ -164,7 +170,7 @@ export default function HeroCarousel() {
       {/* ------------------------------------------------------------------ */}
       <section
         aria-label="Campus highlights slideshow"
-        className="relative w-full overflow-visible bg-transparent"
+        className="relative w-full overflow-visible bg-brand-black"
         style={{ height: "clamp(380px, 55vw, 650px)" }}
         onMouseEnter={pause}
         onMouseLeave={resume}
@@ -187,7 +193,7 @@ export default function HeroCarousel() {
               className="w-[84%] flex-shrink-0 px-1.5 sm:px-2 h-full relative"
               aria-hidden={!isActive}
             >
-              <div className="w-full h-full relative overflow-hidden bg-brand-maroon rounded-2xl shadow-xl">
+              <div className="w-full h-full relative overflow-hidden bg-brand-maroon shadow-xl">
                 {/* Background — real image or solid brand-color fallback */}
                 {slide.imageSrc ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
@@ -215,21 +221,21 @@ export default function HeroCarousel() {
 
                 {/* Content — only visible on active slide */}
                 <div 
-                  className={`absolute inset-0 z-20 flex flex-col justify-end p-6 sm:p-12 md:p-16 transition-opacity duration-[400ms] ${
+                  className={`absolute inset-0 z-20 flex flex-col items-center justify-center px-6 py-14 text-center transition-opacity duration-[400ms] ${
                     isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                   }`}
                 >
-                  <div className="space-y-4 max-w-3xl pb-16 sm:pb-20">
+                  <div className="w-full max-w-7xl space-y-5 sm:space-y-7">
                     {/* Eyebrow */}
-                    <p className="text-white/85 uppercase tracking-[0.15em] text-xs sm:text-sm">
+                    <p className="text-white/90 uppercase tracking-[0.2em] text-sm sm:text-base md:text-lg">
                       {slide.eyebrow}
                     </p>
 
                     {/* Headline */}
                     <h2
-                      className="text-white font-extrabold leading-none uppercase"
+                      className="text-white font-black leading-none uppercase"
                       style={{
-                        fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+                        fontSize: "clamp(3rem, 8vw, 6.75rem)",
                         lineHeight: 1,
                       }}
                     >
@@ -240,7 +246,7 @@ export default function HeroCarousel() {
                     <div className="pt-2">
                       <Link
                         href={slide.ctaHref}
-                        className="inline-block bg-brand-yellow hover:bg-brand-yellow-hover text-brand-black font-bold uppercase tracking-widest text-[11px] px-8 py-4 active:scale-95 transition-all duration-200 shadow-lg"
+                        className="inline-block bg-brand-yellow hover:bg-brand-yellow-hover text-brand-black font-bold uppercase tracking-[0.2em] text-xs sm:text-sm px-10 sm:px-14 py-5 active:scale-95 transition-all duration-200 shadow-lg"
                         style={{ borderRadius: "2px" }}
                       >
                         {slide.ctaLabel}
@@ -257,7 +263,7 @@ export default function HeroCarousel() {
         {/* Number indicators — bottom-left, above the CTA area              */}
         {/* ---------------------------------------------------------------- */}
         <div
-          className="absolute bottom-8 left-6 sm:left-12 md:left-16 z-30 flex items-center gap-3"
+          className="absolute bottom-16 left-[calc(8%+1.5rem)] z-30 flex items-center gap-3 sm:bottom-16 sm:left-[calc(8%+3rem)] md:bottom-20 md:left-[calc(8%+4rem)]"
           role="group"
           aria-label="Slide indicators"
         >
@@ -296,7 +302,7 @@ export default function HeroCarousel() {
             <Link
               key={card.href}
               href={card.href}
-              className="quick-link-card block p-8 md:p-10 shadow-xl rounded-xl border border-brand-maroon/30 focus-visible:outline-brand-yellow group"
+              className="quick-link-card block p-8 md:p-10 shadow-xl border border-brand-maroon/30 focus-visible:outline-brand-yellow group"
             >
               {/* Small category label */}
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-4 opacity-70">
