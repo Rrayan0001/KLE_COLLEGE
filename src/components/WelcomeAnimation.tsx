@@ -74,7 +74,7 @@ export default function WelcomeAnimation() {
 
       {/* Main content container */}
       <div
-        className={`relative z-10 flex flex-col items-center gap-6 px-8 transition-all duration-[600ms] ${
+        className={`relative z-[70] flex flex-col items-center gap-6 px-8 transition-all duration-[600ms] ${
           phase >= 3 ? "opacity-0 scale-110" : "opacity-100 scale-100"
         }`}
       >
@@ -206,7 +206,7 @@ export default function WelcomeAnimation() {
       {/* Skip Intro Button */}
       <button
         onClick={handleSkip}
-        className={`absolute top-6 right-6 md:top-8 md:right-8 z-20 text-[#fce300]/70 hover:text-[#fce300] text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-300 ${
+        className={`absolute top-6 right-6 md:top-8 md:right-8 z-[80] text-[#fce300]/70 hover:text-[#fce300] text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-300 ${
           phase >= 3 ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >

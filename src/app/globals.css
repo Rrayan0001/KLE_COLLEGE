@@ -12,6 +12,7 @@
   --font-display: var(--font-display), system-ui, sans-serif;
   
   --animate-marquee: marquee 45s linear infinite;
+  --animate-shimmer: shimmer 1.5s ease-in-out;
   
   @keyframes marquee {
     0% { transform: translateX(0%); }
