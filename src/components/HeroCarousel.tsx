@@ -36,7 +36,7 @@ const slides: HeroSlide[] = [
     headline: "SHAPING FUTURES",
     ctaLabel: "ABOUT US",
     ctaHref: "/about",
-    imageSrc: undefined, // TODO: add real photographic image for slide 1 (no text/logos)
+    imageSrc: "/images/hero_section/slide.png",
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const slides: HeroSlide[] = [
     headline: "EXPLORE LEARNING",
     ctaLabel: "DISCOVER MORE",
     ctaHref: "/programs",
-    imageSrc: undefined, // TODO: add real photographic image for slide 2 (no text/logos)
+    imageSrc: "/images/hero_section/slide1.png",
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ const slides: HeroSlide[] = [
     headline: "MEET OUR STUDENTS",
     ctaLabel: "VIEW GALLERY",
     ctaHref: "/gallery",
-    imageSrc: undefined, // TODO: add real photographic image for slide 3 (no text/logos)
+    imageSrc: "/images/hero_section/slide2.png",
   },
   {
     id: 4,
@@ -60,7 +60,7 @@ const slides: HeroSlide[] = [
     headline: "COMMITTED TO QUALITY",
     ctaLabel: "LEARN MORE",
     ctaHref: "/iqac",
-    imageSrc: undefined, // TODO: add real photographic image for slide 4 (no text/logos)
+    imageSrc: "/images/hero_section/slide3.png",
   },
 ];
 
@@ -164,7 +164,7 @@ export default function HeroCarousel() {
       {/* ------------------------------------------------------------------ */}
       <section
         aria-label="Campus highlights slideshow"
-        className="relative w-full overflow-hidden rounded-2xl shadow-xl bg-slate-950"
+        className="relative w-full overflow-visible bg-transparent"
         style={{ height: "clamp(380px, 55vw, 650px)" }}
         onMouseEnter={pause}
         onMouseLeave={resume}
@@ -187,7 +187,7 @@ export default function HeroCarousel() {
               className="w-[84%] flex-shrink-0 px-1.5 sm:px-2 h-full relative"
               aria-hidden={!isActive}
             >
-              <div className="w-full h-full relative overflow-hidden bg-brand-maroon rounded-2xl shadow-inner">
+              <div className="w-full h-full relative overflow-hidden bg-brand-maroon rounded-2xl shadow-xl">
                 {/* Background — real image or solid brand-color fallback */}
                 {slide.imageSrc ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
