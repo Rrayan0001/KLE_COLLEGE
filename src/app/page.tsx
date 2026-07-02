@@ -1,65 +1,313 @@
-import Image from "next/image";
+import React from "react";
+import Link from "next/link";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export default function Home() {
+  const highlights = [
+    {
+      title: "Academic Excellence",
+      description: "Structured curricula in Arts, Science, and Commerce designed to foster analytical and critical thinking skills.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-college-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.168.477-4.5 1.253" />
+        </svg>
+      ),
+    },
+    {
+      title: "Library & Digital Resources",
+      description: "Access to thousands of physical books, leading academic journals, and digital research databases.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-college-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+        </svg>
+      ),
+    },
+    {
+      title: "Extension Activities",
+      description: "Vibrant NSS, NCC, and Red Cross units providing regular community engagement and social impact programs.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-college-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: "Student Life",
+      description: "A rich mix of cultural associations, sports competitions, guest lectures, and campus festivals.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-college-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+    },
+  ];
+
+  const stats = [
+    { value: "35+", label: "Years of Educational Legacy" },
+    { value: "1,200+", label: "Active Students on Campus" },
+    { value: "50+", label: "Expert Teaching Faculty" },
+    { value: "A Grade", label: "Accredited with 3.10 CGPA" },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      {/* Announcements Marquee */}
+      <section className="bg-brand-maroon py-2.5 text-sm md:text-base font-bold text-white overflow-hidden shadow-inner" aria-label="Announcements">
+        <div className="max-w-7xl mx-auto flex items-center">
+          <div className="bg-brand-yellow text-brand-black px-4 py-1 z-10 hidden md:block whitespace-nowrap rounded shadow-sm mr-4 shrink-0">
+            LATEST UPDATES
+          </div>
+          <div className="w-full overflow-hidden flex whitespace-nowrap group">
+            <div className="animate-marquee flex min-w-full shrink-0">
+              <span className="px-4">College Accredited at &apos;A&apos; Grade with 3.10 CGPA</span> <span className="text-white/50 px-2">|</span> 
+              <span className="px-4">Integrated Teacher Education Program (ITEP)</span> <span className="text-white/50 px-2">|</span> 
+              <span className="px-4">Employee Provident Fund Scheme 1952</span> <span className="text-white/50 px-2">|</span> 
+              <span className="px-4">Admissions Open for Academic Year 2024-25</span> <span className="text-white/50 px-2">|</span>
+            </div>
+            <div className="animate-marquee flex min-w-full shrink-0" aria-hidden="true">
+              <span className="px-4">College Accredited at &apos;A&apos; Grade with 3.10 CGPA</span> <span className="text-white/50 px-2">|</span> 
+              <span className="px-4">Integrated Teacher Education Program (ITEP)</span> <span className="text-white/50 px-2">|</span> 
+              <span className="px-4">Employee Provident Fund Scheme 1952</span> <span className="text-white/50 px-2">|</span> 
+              <span className="px-4">Admissions Open for Academic Year 2024-25</span> <span className="text-white/50 px-2">|</span>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      {/* Hero Slide Area — includes the 4 quick-link card strip */}
+      <HeroCarousel />
+
+      {/* Overview Section - Off White */}
+      <section className="py-24 md:py-32 bg-brand-gray border-t-4 border-brand-yellow mt-0">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8 pr-0 md:pr-12">
+            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">
+              About Us
+            </span>
+            <h2 className="text-4xl md:text-5xl font-light text-brand-text leading-tight font-display">
+              A Community of <br/>
+              <span className="text-brand-maroon font-normal">Faith, Learning</span><br/>
+              and <span className="text-brand-maroon font-normal">Life</span>
+            </h2>
+            <p className="text-gray-600 leading-relaxed text-sm md:text-base text-justify">
+              KLE Society’s SCP College was established in June 1987. Over the decades, it has stood as a beacon of learning, blending traditional academic rigour with modern industrial requirements and a student-centric system to foster growth, excellence, and holistic development.
+            </p>
+            <div className="pt-4">
+              <Link
+                href="/about"
+                className="inline-block bg-brand-yellow text-brand-black font-bold uppercase tracking-widest text-xs px-10 py-4 hover:bg-brand-yellow-hover transition-colors"
+              >
+                LEARN MORE
+              </Link>
+            </div>
+          </div>
+          
+          <div className="relative shadow-2xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop"
+              alt="KLE SCP College Students"
+              className="w-full h-auto object-cover border-l-8 border-brand-maroon"
+              loading="lazy"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Video / Stats Section - White */}
+      <section className="py-24 bg-white relative border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="relative aspect-video w-full overflow-hidden bg-brand-black shadow-2xl flex items-center justify-center group cursor-pointer border-t-8 border-brand-maroon">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop" 
+              alt="College Campus Video Cover" 
+              className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+            />
+            <div className="relative z-10 w-20 h-20 bg-brand-yellow rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-black translate-x-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enrolment Section - White */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="space-y-4">
+            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em] block mb-6">
+              Join Our Community
+            </span>
+            <h2 className="text-4xl md:text-5xl font-light text-brand-text leading-tight border-l-2 border-brand-maroon pl-6">
+              Enrolment <br/>
+              <span className="text-brand-maroon font-normal">Process</span>
+            </h2>
+          </div>
+          <div className="space-y-8 flex flex-col justify-center items-start">
+            <p className="text-gray-600 leading-relaxed text-sm">
+              We guide our students into becoming responsible, skilled, and patriotic citizens ready to make meaningful global impacts. Join the thousands of alumni who have shaped their futures here.
+            </p>
+            <Link
+              href="/student-corner"
+              className="inline-flex items-center gap-4 text-brand-black font-bold text-xs uppercase tracking-widest hover:text-brand-maroon transition-colors"
+            >
+              <span>LEARN MORE</span>
+              <div className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured News & Events - Off White */}
+      <section className="py-24 bg-brand-gray border-l-4 border-brand-yellow">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <div className="lg:col-span-4 flex flex-col justify-center space-y-6">
+            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">
+              Latest Updates
+            </span>
+            <h2 className="text-4xl font-light text-brand-text leading-tight">
+              Featured news <br/>and <span className="text-brand-maroon font-normal">events</span>
+            </h2>
+            <p className="text-gray-600 text-sm leading-relaxed max-w-sm">
+              Stay connected with the latest happenings, academic achievements, and upcoming cultural events on campus.
+            </p>
+            <div className="pt-4">
+              <Link
+                href="/gallery"
+                className="inline-block bg-white text-brand-black font-bold uppercase tracking-widest text-xs px-10 py-4 hover:bg-gray-50 transition-colors border border-gray-200 shadow-sm"
+              >
+                VIEW ALL
+              </Link>
+            </div>
+          </div>
+
+          <div className="lg:col-span-8 flex gap-6 overflow-x-auto pb-8 snap-x">
+            {/* News Card 1 */}
+            <div className="min-w-[320px] max-w-[350px] bg-white shadow-lg snap-center group">
+              <div className="h-48 overflow-hidden relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=400&auto=format&fit=crop" alt="Event" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 text-[10px] uppercase font-bold text-gray-500">
+                  News
+                </div>
+              </div>
+              <div className="p-8 relative">
+                <div className="absolute -top-6 left-8 bg-white border border-gray-100 shadow-sm w-12 h-12 flex flex-col items-center justify-center z-10">
+                  <span className="text-xs font-bold text-brand-black">12</span>
+                  <span className="text-[8px] uppercase text-gray-500">Nov</span>
+                </div>
+                <h3 className="text-sm font-bold text-brand-text mb-3 uppercase tracking-wide mt-2">NAAC Peer Team Visit</h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-4">
+                  The college was proudly accredited with an 'A' grade (3.10 CGPA) during the recent cycle.
+                </p>
+                <Link href="/gallery" className="text-[10px] font-bold text-brand-maroon uppercase tracking-widest hover:text-brand-black transition-colors">
+                  READ MORE
+                </Link>
+              </div>
+            </div>
+
+            {/* News Card 2 */}
+            <div className="min-w-[320px] max-w-[350px] bg-white shadow-lg snap-center group">
+              <div className="h-48 overflow-hidden relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=400&auto=format&fit=crop" alt="Event" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 text-[10px] uppercase font-bold text-gray-500">
+                  Event
+                </div>
+              </div>
+              <div className="p-8 relative">
+                <div className="absolute -top-6 left-8 bg-white border border-gray-100 shadow-sm w-12 h-12 flex flex-col items-center justify-center z-10">
+                  <span className="text-xs font-bold text-brand-black">28</span>
+                  <span className="text-[8px] uppercase text-gray-500">Oct</span>
+                </div>
+                <h3 className="text-sm font-bold text-brand-text mb-3 uppercase tracking-wide mt-2">Annual Cultural Fest</h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-4">
+                  Join us for a celebration of arts, science exhibitions, and vibrant student performances.
+                </p>
+                <Link href="/gallery" className="text-[10px] font-bold text-brand-maroon uppercase tracking-widest hover:text-brand-black transition-colors">
+                  READ MORE
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pre-Footer Banner - White */}
+      <section className="py-24 bg-white border-t border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+          <div className="lg:w-1/2 w-full">
+            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-4 block">
+              Join Us
+            </span>
+            <h2 className="text-3xl md:text-4xl font-light text-brand-text leading-tight mb-8">
+              Take the next step in your <br/>
+              <span className="text-brand-maroon font-normal">academic journey</span>
+            </h2>
+            <ul className="space-y-4 mb-10">
+              <li className="flex items-center gap-3 text-sm text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Explore BA, BSc, and BCom programs
+              </li>
+              <li className="flex items-center gap-3 text-sm text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Experience state-of-the-art facilities
+              </li>
+              <li className="flex items-center gap-3 text-sm text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Be part of a 35+ year legacy
+              </li>
+            </ul>
+            <Link
+              href="/student-corner"
+              className="inline-block bg-brand-yellow text-brand-black font-bold uppercase tracking-widest text-xs px-10 py-4 hover:bg-brand-yellow-hover transition-colors shadow-lg"
+            >
+              APPLY NOW
+            </Link>
+          </div>
+          
+          <div className="lg:w-1/2 w-full relative">
+            <div className="absolute inset-0 bg-brand-gray -z-10 translate-x-4 translate-y-4 shadow-sm" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" 
+              alt="Students collaborating" 
+              className="w-full object-cover shadow-2xl border-b-8 border-brand-maroon"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Subscribe Banner just above footer */}
+      <section className="bg-white py-12 px-6 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 border-t border-gray-100">
+        <div className="flex items-center gap-6">
+          <img src="/images/logo/kle transpe.png" alt="Logo" className="w-16 h-16 object-contain hidden md:block opacity-20 grayscale" />
+          <div>
+            <span className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em] block mb-1">
+              Subscribe
+            </span>
+            <h3 className="text-brand-maroon text-xl md:text-2xl font-light">
+              Stay up to date with what's happening around the College
+            </h3>
+          </div>
+        </div>
+        <button className="bg-brand-maroon text-white font-bold uppercase tracking-widest text-[10px] px-8 py-3 hover:bg-[#5e1c2b] transition-colors whitespace-nowrap">
+          SUBSCRIBE TO E-NEWS
+        </button>
+      </section>
     </div>
   );
 }
