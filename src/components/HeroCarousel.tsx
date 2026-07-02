@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import HeroTagline from "@/components/HeroTagline";
 
 // ---------------------------------------------------------------------------
 // Data types — populated from real existing pages/routes in this codebase.
@@ -164,7 +165,8 @@ export default function HeroCarousel() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 relative">
+    <div className="w-full overflow-x-clip bg-white pt-8 sm:pt-10 md:pt-12">
+      <div className="relative mx-auto w-[calc(100%_-_2rem)] max-w-[1740px] sm:w-[85vw]">
       {/* ------------------------------------------------------------------ */}
       {/* HERO CAROUSEL CONTAINER (INSET)                                     */}
       {/* ------------------------------------------------------------------ */}
@@ -180,7 +182,7 @@ export default function HeroCarousel() {
         {/* Sliding Track with Peek Slivers Layout */}
         <div 
           className={`flex w-full h-full ${isAnimating ? "transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]" : ""}`}
-          style={{ transform: `translateX(calc(8% - (${activeSlide} * 84%)))` }}
+          style={{ transform: `translateX(calc(${activeSlide} * -100%))` }}
           onTransitionEnd={handleTransitionEnd}
         >
           {carouselSlides.map((slide, idx) => {
@@ -190,7 +192,7 @@ export default function HeroCarousel() {
             return (
             <div
               key={`${slide.id}-${idx}`}
-              className="w-[84%] flex-shrink-0 px-1.5 sm:px-2 h-full relative"
+              className="w-full flex-shrink-0 px-1.5 sm:px-2 h-full relative"
               aria-hidden={!isActive}
             >
               <div className="w-full h-full relative overflow-hidden bg-brand-maroon shadow-xl">
@@ -242,6 +244,12 @@ export default function HeroCarousel() {
                       {slide.headline}
                     </h2>
 
+                    {slide.id === 1 && (
+                      // Placeholder copy is intentionally explicit so it cannot ship as a real motto by accident.
+                      // The SVG paths were generated from Google Font "Kaushan Script" and animate once on mount.
+                      <HeroTagline />
+                    )}
+
                     {/* CTA Button */}
                     <div className="pt-2">
                       <Link
@@ -263,7 +271,7 @@ export default function HeroCarousel() {
         {/* Number indicators — bottom-left, above the CTA area              */}
         {/* ---------------------------------------------------------------- */}
         <div
-          className="absolute bottom-16 left-[calc(8%+1.5rem)] z-30 flex items-center gap-3 sm:bottom-16 sm:left-[calc(8%+3rem)] md:bottom-20 md:left-[calc(8%+4rem)]"
+          className="absolute bottom-16 left-8 z-30 flex items-center gap-3 sm:bottom-16 sm:left-14 md:bottom-20 md:left-24"
           role="group"
           aria-label="Slide indicators"
         >
@@ -332,6 +340,7 @@ export default function HeroCarousel() {
               </div>
             </Link>
           ))}
+        </div>
         </div>
       </div>
     </div>

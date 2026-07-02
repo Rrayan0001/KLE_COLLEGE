@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
+import TabsSection from "@/components/TabsSection";
 
 export default function Home() {
   const highlights = [
@@ -114,6 +115,87 @@ export default function Home() {
               style={{ clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
               loading="lazy"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Tabs Section ── */}
+      <TabsSection />
+
+      {/* ── Our Donor Section ── */}
+      <section className="py-16 bg-brand-gray border-t border-gray-200" aria-label="Our Donor">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="hidden lg:block h-64 bg-slate-200 rounded-xl" aria-hidden="true" />
+          <div className="space-y-4">
+            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">Our Donor</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-brand-maroon font-display">Our Donor</h2>
+            <p className="text-brand-text leading-relaxed text-sm md:text-base text-justify font-medium">
+              Earlier the college was named as SCVV Trust Fund&apos;s SCP ARTS AND COMMERCE COLLEGE run by a local governing body. It was due to a donation by Dr. D. D. Shirol, the COMMERCE wing was renamed after his father Shri. Dundappa Danappa Shirol. So the college was renamed as SCVV Trust Fund&apos;s SCP ARTS AND DUNDAPPA DANAPPA SHIROL COMMERCE COLLEGE.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Latest News Marquee ── */}
+      <div className="bg-brand-maroon py-3 overflow-hidden" aria-label="Latest News">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-college-gold font-extrabold text-xs uppercase tracking-widest mb-1">Latest News</h3>
+          <div className="w-full overflow-hidden flex whitespace-nowrap">
+            <div className="animate-marquee flex min-w-full shrink-0 text-white text-sm font-medium">
+              <span className="px-4">
+                <Link href="/itep" className="underline underline-offset-2 hover:text-college-gold transition">1. ITEP — Integrated Teacher Education Program</Link>
+              </span>
+              <span className="text-white/40 px-2">|</span>
+              <span className="px-4">2. Employee Provident Fund scheme 1952</span>
+              <span className="text-white/40 px-2">|</span>
+              <span className="px-4">3. Happy to Share that our college is Accredited at &apos;A&apos; Grade with 3.10 CGPA</span>
+              <span className="text-white/40 px-2">|</span>
+              <span className="px-4">4. Our College is participating in International Science Development Competition held at Delhi</span>
+            </div>
+            <div className="animate-marquee flex min-w-full shrink-0 text-white text-sm font-medium" aria-hidden="true">
+              <span className="px-4">
+                <Link href="/itep" className="underline underline-offset-2 hover:text-college-gold transition">1. ITEP — Integrated Teacher Education Program</Link>
+              </span>
+              <span className="text-white/40 px-2">|</span>
+              <span className="px-4">2. Employee Provident Fund scheme 1952</span>
+              <span className="text-white/40 px-2">|</span>
+              <span className="px-4">3. Happy to Share that our college is Accredited at &apos;A&apos; Grade with 3.10 CGPA</span>
+              <span className="text-white/40 px-2">|</span>
+              <span className="px-4">4. Our College is participating in International Science Development Competition held at Delhi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Team Section ── */}
+      <section className="py-20 bg-white border-t border-gray-100" aria-labelledby="team-heading">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 id="team-heading" className="text-2xl md:text-3xl font-extrabold text-slate-900 font-display text-center mb-12">Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            {/* Chairman */}
+            <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+              <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/logo/Prabhakar Kore.jpg" alt="Dr. Prabhakar Kore" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div>
+                <h3 className="font-extrabold text-xl text-slate-900">Dr. Prabhakar Kore</h3>
+                <p className="text-brand-maroon font-bold text-sm">Chairman</p>
+                <p className="text-slate-500 text-xs mt-1">Honorable Chairman, KLE Society Belagavi</p>
+              </div>
+            </div>
+            {/* Principal */}
+            <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+              <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/logo/principal.jpg" alt="Dr. K.M. Awaradi" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div>
+                <h3 className="font-extrabold text-xl text-slate-900">Dr. K.M. Awaradi</h3>
+                <p className="text-brand-maroon font-bold text-sm">Principal</p>
+                <p className="text-slate-500 text-xs mt-1">Principal, Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

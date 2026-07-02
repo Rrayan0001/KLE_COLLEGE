@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Quick Links Column */}
+        {/* Quick Links Column 1 */}
         <div>
           <h4 className="font-bold text-sm uppercase tracking-wider text-college-gold mb-5 pb-1 border-b border-white/10 inline-block">
             Quick Links
@@ -44,56 +44,61 @@ export default function Footer() {
           <ul className="space-y-3">
             <li>
               <Link href="/itep" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
-                ITEP (Teacher Education)
-              </Link>
-            </li>
-            <li>
-              <Link href="/aqar" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
-                AQAR (Accreditation)
+                ITEP
               </Link>
             </li>
             <li>
               <Link href="/iqac" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
-                IQAC Cell
+                IQAC Reports
               </Link>
             </li>
             <li>
-              <Link href="/gallery" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
-                Campus Gallery
+              <Link href="/aqar" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+                AQAR
               </Link>
+            </li>
+            <li>
+              <a href="#" target="_blank" rel="noreferrer" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+                EPFO
+              </a>
+            </li>
+            <li>
+              <a href="https://web.ncte.gov.in" target="_blank" rel="noreferrer" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+                NCTE
+              </a>
             </li>
           </ul>
         </div>
 
-        {/* Programs Column */}
+        {/* Quick Links Column 2 */}
         <div>
           <h4 className="font-bold text-sm uppercase tracking-wider text-college-gold mb-5 pb-1 border-b border-white/10 inline-block">
-            Academic Programs
+            Quick Links
           </h4>
           <ul className="space-y-3">
             <li>
-              <Link href="/programs" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
-                Bachelor of Arts (B.A.)
+              <Link href="/about" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+                Achievements
               </Link>
             </li>
             <li>
-              <Link href="/programs" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
-                Bachelor of Science (B.Sc.)
+              <Link href="/gallery" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+                Events
               </Link>
             </li>
             <li>
-              <Link href="/programs" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
-                Bachelor of Commerce (B.Com.)
+              <Link href="/about" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+                Faculty
               </Link>
             </li>
             <li>
-              <Link href="/programs" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
-                Bachelor of Computer Applications (BCA)
+              <Link href="/student-corner" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+                Admissions
               </Link>
             </li>
             <li>
-              <Link href="/programs" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
-                Master of Commerce (M.Com.)
+              <Link href="/about" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+                College Association
               </Link>
             </li>
           </ul>
