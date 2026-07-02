@@ -160,6 +160,62 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Institutional Leadership */}
+      <section className="py-20 bg-slate-100 border-t border-b border-slate-200 animate-[fadeIn_0.5s_ease-out]" aria-labelledby="leadership-heading">
+        <div className="max-w-7xl mx-auto px-6 space-y-16">
+          <div className="text-center max-w-2xl mx-auto space-y-4">
+            <h2 id="leadership-heading" className="text-3xl font-extrabold text-slate-900 font-display">
+              Institutional Leadership
+            </h2>
+            <p className="text-slate-500 text-sm">
+              Guided by visionaries and dedicated educators committed to cultivating future-ready talent.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            {/* Chairman */}
+            <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+              <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/logo/Prabhakar Kore.jpg"
+                  alt="Dr. Prabhakar Kore"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <h3 className="font-extrabold text-xl text-slate-900">Dr. Prabhakar Kore</h3>
+                <p className="text-brand-maroon font-bold text-sm">Chairman, KLE Society, Belagavi</p>
+              </div>
+              <p className="text-slate-500 text-xs leading-relaxed italic max-w-xs">
+                &ldquo;Creating pathways of access to world-class learning spaces across regional India.&rdquo;
+              </p>
+            </div>
+
+            {/* Principal */}
+            <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+              <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/logo/principal.jpg"
+                  alt="Dr. K. M. Awaradi"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <h3 className="font-extrabold text-xl text-slate-900">Dr. K. M. Awaradi</h3>
+                <p className="text-brand-maroon font-bold text-sm">Principal, SCP Degree College</p>
+              </div>
+              <p className="text-slate-500 text-xs leading-relaxed italic max-w-xs">
+                &ldquo;Directing and mentoring students to merge values with professional competence.&rdquo;
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Campus Infrastructure Grid */}
       <section className="bg-slate-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-6 space-y-16">
