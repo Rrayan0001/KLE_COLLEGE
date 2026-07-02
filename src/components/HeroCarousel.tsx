@@ -304,7 +304,7 @@ export default function HeroCarousel() {
                   aria-hidden="true"
                 />
 
-                {/* Content — only visible on active slide */}
+                 {/* Content — only visible on active slide */}
                 {slide.id === 1 ? (
                   <div
                     className={`absolute inset-0 z-20 overflow-hidden px-6 py-14 transition-opacity duration-[400ms] sm:px-10 md:px-16 ${
@@ -312,13 +312,13 @@ export default function HeroCarousel() {
                     }`}
                   >
                     <div className="absolute left-[50%] top-[40%] w-[92%] -translate-x-1/2 -translate-y-1/2 md:left-[55%] md:top-[43%] md:w-[86%]">
-                      <p className="mb-4 text-center text-white/90 uppercase tracking-[0.24em] text-xs sm:text-sm md:text-lg">
+                      <p className="mb-4 text-center text-white/90 uppercase tracking-[0.24em] text-[10px] sm:text-sm md:text-lg">
                         {slide.eyebrow}
                       </p>
                       <h2
                         className="text-center text-white font-black leading-none uppercase"
                         style={{
-                          fontSize: "clamp(3.25rem, 8.6vw, 7.75rem)",
+                          fontSize: "clamp(2.25rem, 8.6vw, 7.75rem)",
                           lineHeight: 0.95,
                         }}
                       >
@@ -332,7 +332,7 @@ export default function HeroCarousel() {
 
                     <Link
                       href={slide.ctaHref}
-                      className="absolute left-1/2 top-[73%] z-10 -translate-x-1/2 bg-brand-yellow px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-black shadow-lg transition-all duration-200 hover:bg-brand-yellow-hover active:scale-95 sm:px-14 sm:text-sm"
+                      className="hidden md:inline-block absolute left-1/2 top-[73%] z-10 -translate-x-1/2 bg-brand-yellow px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-black shadow-lg transition-all duration-200 hover:bg-brand-yellow-hover active:scale-95 sm:px-14 sm:text-sm"
                       style={{ borderRadius: "2px" }}
                     >
                       {slide.ctaLabel}
@@ -346,7 +346,7 @@ export default function HeroCarousel() {
                   >
                     <div className="w-full max-w-7xl space-y-5 sm:space-y-7">
                       {/* Eyebrow */}
-                      <p className="text-white/90 uppercase tracking-[0.2em] text-sm sm:text-base md:text-lg">
+                      <p className="text-white/90 uppercase tracking-[0.2em] text-xs sm:text-base md:text-lg">
                         {slide.eyebrow}
                       </p>
 
@@ -354,7 +354,7 @@ export default function HeroCarousel() {
                       <h2
                         className="text-white font-black leading-none uppercase"
                         style={{
-                          fontSize: "clamp(3rem, 8vw, 6.75rem)",
+                          fontSize: "clamp(2rem, 8vw, 6.75rem)",
                           lineHeight: 1,
                         }}
                       >
@@ -362,7 +362,7 @@ export default function HeroCarousel() {
                       </h2>
 
                       {/* CTA Button */}
-                      <div className="pt-2">
+                      <div className="pt-2 hidden md:block">
                         <Link
                           href={slide.ctaHref}
                           className="inline-block bg-brand-yellow hover:bg-brand-yellow-hover text-brand-black font-bold uppercase tracking-[0.2em] text-xs sm:text-sm px-10 sm:px-14 py-5 active:scale-95 transition-all duration-200 shadow-lg"
@@ -380,10 +380,10 @@ export default function HeroCarousel() {
         </div>
 
         {/* ---------------------------------------------------------------- */}
-        {/* Number indicators — bottom-left, above the CTA area              */}
+        {/* Dot indicators — bottom-left, above the CTA area                 */}
         {/* ---------------------------------------------------------------- */}
         <div
-          className="absolute bottom-16 left-8 z-30 flex items-center gap-3 sm:bottom-16 sm:left-14 md:bottom-20 md:left-24"
+          className="absolute bottom-16 left-6 md:bottom-20 md:left-24 z-30 flex items-center gap-2"
           role="group"
           aria-label="Slide indicators"
         >
@@ -396,14 +396,12 @@ export default function HeroCarousel() {
               }}
               aria-label={`Go to slide ${idx + 1}`}
               aria-current={idx === current ? "true" : undefined}
-              className={`flex items-center justify-center rounded-full text-xs font-bold transition-all duration-300 focus-visible:outline-offset-4 ${
+              className={`rounded-full transition-all duration-300 focus-visible:outline-offset-4 cursor-pointer ${
                 idx === current
-                  ? "w-10 h-10 border-2 border-white text-white bg-transparent shadow-md"
-                  : "w-10 h-10 border-2 border-white/50 text-white/50 bg-transparent hover:border-white/80 hover:text-white/80"
+                  ? "w-3 h-3 bg-white border border-white ring-2 ring-white/30 shadow-md"
+                  : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"
               }`}
-            >
-              {idx + 1}
-            </button>
+            />
           ))}
         </div>
       </section>
@@ -422,38 +420,42 @@ export default function HeroCarousel() {
             <Link
               key={card.href}
               href={card.href}
-              className="quick-link-card block p-8 md:p-10 shadow-xl border border-brand-maroon/30 focus-visible:outline-brand-yellow group"
+              className="quick-link-card block p-5 md:p-10 shadow-xl border border-brand-maroon/30 focus-visible:outline-brand-yellow group"
             >
-              {/* Small category label */}
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-4 opacity-70">
+              {/* Desktop layout: category label at top */}
+              <p className="hidden md:block text-[10px] font-bold uppercase tracking-[0.2em] mb-4 opacity-70">
                 {card.label}
               </p>
 
-              {/* Two-line text block */}
-              <p className="text-base font-normal leading-snug">
-                {card.lineOne}
-              </p>
-              <p className="text-xl font-extrabold uppercase tracking-wide leading-tight mt-0.5">
-                {card.lineTwo}
-              </p>
-
-              {/* Arrow indicator */}
-              <div className="mt-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+              {/* Flex container for text & arrow */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-sm md:text-base font-normal leading-snug">
+                    {card.lineOne}{" "}
+                  </span>
+                  <span className="text-sm md:text-xl font-extrabold uppercase tracking-wide leading-tight md:block md:mt-0.5">
+                    {card.lineTwo}
+                  </span>
+                </div>
+                
+                {/* Arrow indicator */}
+                <div className="shrink-0 ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
               </div>
             </Link>
           ))}
         </div>
-        </div>
+      </div>
       </div>
     </div>
   );
