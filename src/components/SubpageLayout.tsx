@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 
 interface BreadcrumbItem {
@@ -25,6 +27,8 @@ export default function SubpageLayout({
   sidebarLinks,
   children,
 }: SubpageLayoutProps) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* Mini-Banner Section */}
@@ -60,42 +64,101 @@ export default function SubpageLayout({
       <div className="max-w-7xl w-full mx-auto px-6 py-12 md:py-16 flex-grow flex flex-col lg:flex-row gap-12">
         {/* Sidebar Navigation */}
         {sidebarLinks && sidebarLinks.length > 0 && (
-          <aside className="lg:w-1/4 shrink-0 space-y-6 print:hidden">
-            <div className="bg-white border border-slate-200/80 rounded-xl p-6 shadow-sm sticky top-28">
-              <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 pb-2 border-b border-slate-100">
-                Related Pages
-              </h2>
-              <nav className="flex flex-col gap-1.5" aria-label="Section navigation">
-                {sidebarLinks.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    href={link.href}
-                    className={`px-4 py-2.5 rounded-lg text-sm font-bold tracking-wide transition-all duration-150 flex items-center justify-between group
-                      ${
-                        link.active
-                          ? "bg-brand-maroon text-white shadow-md shadow-brand-maroon/10"
-                          : "text-slate-600 hover:bg-slate-50 hover:text-brand-maroon"
-                      }`}
-                  >
-                    <span>{link.name}</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`h-4 w-4 transition-transform duration-150 ${
-                        link.active
-                          ? "text-brand-yellow translate-x-0.5"
-                          : "text-slate-400 group-hover:text-brand-maroon group-hover:translate-x-0.5"
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+          <>
+            {/* Desktop Sidebar (hidden on mobile/tablet) */}
+            <aside className="hidden lg:block lg:w-1/4 shrink-0 space-y-6 print:hidden">
+              <div className="bg-white border border-slate-200/80 rounded-xl p-6 shadow-sm sticky top-28">
+                <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 pb-2 border-b border-slate-100">
+                  Related Pages
+                </h2>
+                <nav className="flex flex-col gap-1.5" aria-label="Section navigation">
+                  {sidebarLinks.map((link, idx) => (
+                    <Link
+                      key={idx}
+                      href={link.href}
+                      className={`px-4 py-2.5 rounded-lg text-sm font-bold tracking-wide transition-all duration-150 flex items-center justify-between group
+                        ${
+                          link.active
+                            ? "bg-brand-maroon text-white shadow-md shadow-brand-maroon/10"
+                            : "text-slate-600 hover:bg-slate-50 hover:text-brand-maroon"
+                        }`}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                ))}
-              </nav>
+                      <span>{link.name}</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 transition-transform duration-150 ${
+                          link.active
+                            ? "text-brand-yellow translate-x-0.5"
+                            : "text-slate-400 group-hover:text-brand-maroon group-hover:translate-x-0.5"
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            </aside>
+
+            {/* Mobile / Tablet Collapsible Menu Dropdown (hidden on desktop) */}
+            <div className="lg:hidden w-full print:hidden">
+              <div className="bg-white border border-slate-200/80 rounded-xl shadow-sm overflow-hidden">
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="w-full flex items-center justify-between px-6 py-4 font-extrabold uppercase text-sm tracking-widest text-brand-maroon focus:outline-none"
+                >
+                  <span>Related Pages ({sidebarLinks.length})</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`h-5 w-5 text-brand-maroon transition-transform duration-200 ${
+                      isMobileMenuOpen ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                <div
+                  className={`transition-all duration-200 overflow-hidden ${
+                    isMobileMenuOpen ? "max-h-[600px] border-t border-slate-100 bg-slate-50/50 p-4" : "max-h-0 pointer-events-none"
+                  }`}
+                >
+                  <nav className="grid grid-cols-1 sm:grid-cols-2 gap-2" aria-label="Section navigation mobile">
+                    {sidebarLinks.map((link, idx) => (
+                      <Link
+                        key={idx}
+                        href={link.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`px-4 py-3 rounded-lg text-sm font-bold tracking-wide transition-all duration-150 flex items-center justify-between min-h-[44px]
+                          ${
+                            link.active
+                              ? "bg-brand-maroon text-white shadow-sm"
+                              : "bg-white border border-slate-200/50 text-slate-600 hover:text-brand-maroon"
+                          }`}
+                      >
+                        <span>{link.name}</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
+              </div>
             </div>
-          </aside>
+          </>
         )}
 
         {/* Dynamic Page Content */}

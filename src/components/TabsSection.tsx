@@ -48,17 +48,17 @@ export default function TabsSection() {
   return (
     <section className="bg-slate-900 text-white py-0" aria-label="Highlights">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row min-h-[360px]">
-        {/* Left: Tab List */}
-        <div className="lg:w-1/3 flex flex-col border-r border-white/10">
+        {/* Left: Tab List (Horizontal Scroll on Mobile, Vertical Column on Desktop) */}
+        <div className="w-full lg:w-1/3 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible border-b lg:border-b-0 lg:border-r border-white/10 scrollbar-none whitespace-nowrap">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`text-left px-8 py-7 font-extrabold uppercase tracking-widest text-sm transition-all duration-200 border-b border-white/10 focus-visible:outline-none
+              className={`px-6 py-5 lg:px-8 lg:py-7 font-extrabold uppercase tracking-widest text-xs lg:text-sm transition-all duration-200 border-b-2 lg:border-b-0 lg:border-b border-white/10 focus-visible:outline-none shrink-0 text-center lg:text-left
                 ${
                   activeTab === tab.id
-                    ? "bg-brand-maroon text-white border-l-4 border-l-brand-yellow"
-                    : "text-white/70 hover:bg-white/5 hover:text-white"
+                    ? "bg-brand-maroon text-white border-b-brand-yellow lg:border-b-transparent lg:border-l-4 lg:border-l-brand-yellow"
+                    : "text-white/70 hover:bg-white/5 hover:text-white border-b-transparent"
                 }`}
             >
               {tab.label}

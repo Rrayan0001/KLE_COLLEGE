@@ -158,3 +158,28 @@ body {
     stroke-width: 0;
   }
 }
+
+/* Custom horizontal scrollbar for scrollable tables */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #7a2538 transparent;
+}
+.overflow-x-auto::-webkit-scrollbar {
+  height: 5px;
+}
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #7a2538;
+  border-radius: 9999px;
+}
+
+/* Hide scrollbar utility for horizontal tabs */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

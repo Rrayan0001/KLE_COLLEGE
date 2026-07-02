@@ -245,8 +245,8 @@ export default function Navbar() {
             <div className="w-1/3 flex justify-end"></div>
           </div>
 
-          {/* Menu Content: 2 Columns */}
-          <div className="max-w-[1400px] mx-auto px-6 py-12 flex flex-col md:flex-row gap-12 lg:gap-24 min-h-[60vh]">
+          {/* Menu Content: 2 Columns (Desktop) */}
+          <div className="hidden md:flex max-w-[1400px] mx-auto px-6 py-12 flex-row gap-12 lg:gap-24 min-h-[60vh]">
             
             {/* Left Column: Root Sections */}
             <div className="w-full md:w-1/3 xl:w-1/4 flex-shrink-0">
@@ -326,6 +326,78 @@ export default function Navbar() {
                   </Link>
                 </div>
               )}
+            </div>
+          </div>
+
+          {/* Menu Content: Vertical Accordion (Mobile) */}
+          <div className="md:hidden px-6 py-8 space-y-4">
+            <h3 className="text-[10px] font-bold text-gray-500 tracking-[0.2em] uppercase mb-4 ml-2">
+              Menu Navigation
+            </h3>
+            <div className="flex flex-col gap-2">
+              {navLinks.map((link) => {
+                const isSelected = activeSection === link.name;
+                return (
+                  <div key={link.name} className="border-b border-gray-200/60 pb-2">
+                    {link.sublinks ? (
+                      <div>
+                        <button
+                          onClick={() => {
+                            setActiveSection(isSelected ? "" : link.name);
+                          }}
+                          className="w-full flex items-center justify-between py-3.5 px-2 text-lg font-extrabold text-gray-800 focus:outline-none"
+                        >
+                          <span>{link.name}</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={`h-5 w-5 text-gray-500 transition-transform duration-200 ${
+                              isSelected ? "rotate-180 text-brand-maroon" : ""
+                            }`}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        
+                        {/* Sublinks panel (toggled) */}
+                        <div
+                          className={`pl-4 pr-2 flex flex-col gap-3.5 transition-all duration-200 overflow-hidden ${
+                            isSelected ? "max-h-[500px] py-3 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+                          }`}
+                        >
+                          {link.sublinks.map((sub) => (
+                            <Link
+                              key={sub.name}
+                              href={sub.href}
+                              onClick={() => setIsOpen(false)}
+                              className="text-base text-gray-600 hover:text-brand-maroon font-bold py-1.5 flex items-center min-h-[44px]"
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                          <Link
+                            href={link.href}
+                            onClick={() => setIsOpen(false)}
+                            className="text-base text-brand-maroon hover:underline font-extrabold py-1.5 flex items-center gap-1 min-h-[44px]"
+                          >
+                            View All {link.name} →
+                          </Link>
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="w-full block py-3.5 px-2 text-lg font-extrabold text-gray-800 hover:text-brand-maroon min-h-[44px]"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
