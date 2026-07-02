@@ -79,37 +79,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Overview Section - Off White */}
-      <section className="py-24 md:py-32 bg-brand-gray border-t-4 border-brand-yellow mt-0">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8 pr-0 md:pr-12">
+      {/* About Us Section */}
+      <section className="py-24 bg-white border-t-4 border-brand-yellow mt-0 overflow-hidden" aria-label="About Us">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          {/* Left Column: Welcome Text */}
+          <div className="lg:col-span-7 space-y-6 pr-0 lg:pr-12">
             <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">
               About Us
             </span>
-            <h2 className="text-4xl md:text-5xl font-light text-brand-text leading-tight font-display">
-              A Community of <br/>
-              <span className="text-brand-maroon font-normal">Faith, Learning</span><br/>
-              and <span className="text-brand-maroon font-normal">Life</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-maroon leading-tight font-display uppercase tracking-wide">
+              Welcome To Our College
             </h2>
-            <p className="text-gray-600 leading-relaxed text-sm md:text-base text-justify">
-              KLE Society’s SCP College was established in June 1987. Over the decades, it has stood as a beacon of learning, blending traditional academic rigour with modern industrial requirements and a student-centric system to foster growth, excellence, and holistic development.
+            <p className="text-brand-text leading-relaxed text-sm md:text-base text-justify font-medium">
+              KLE Society’s Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur was established in June 1987. The college grew from strength to strength and various subjects are introduced to cater to the educational requirements of the people in and around Mahalingpur. The campus is an amalgamation of modern infrastructure with stylish and classic architecture which makes the setting perfect for a free mind to absorb knowledge. The campus can be considered as the world of technology and its infrastructure matches the requirement of education programmes and creates a conducive atmosphere for the all-round development of students’ personality. The college has been rendering its yeoman service in the field of Arts and Commerce education in the north Karnatak for the last 31 years. College has introduced Science Degree Program and Post Graduation in Commerce to cater the needs of community.
             </p>
             <div className="pt-4">
               <Link
                 href="/about"
-                className="inline-block bg-brand-yellow text-brand-black font-bold uppercase tracking-widest text-xs px-10 py-4 hover:bg-brand-yellow-hover transition-colors"
+                className="inline-block bg-brand-yellow hover:bg-brand-yellow-hover text-brand-black font-extrabold uppercase tracking-widest text-xs px-10 py-4 active:scale-95 transition-all duration-200 shadow-md"
+                style={{ borderRadius: "2px" }}
               >
                 LEARN MORE
               </Link>
             </div>
           </div>
           
-          <div className="relative shadow-2xl">
+          {/* Right Column: Slanted Image */}
+          <div className="lg:col-span-5 relative h-[300px] lg:h-[400px] w-full rounded-2xl overflow-hidden bg-white shadow-xl">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop"
-              alt="KLE SCP College Students"
-              className="w-full h-auto object-cover border-l-8 border-brand-maroon"
+              src="/images/about_us/image.png"
+              alt="KLE SCP College Mahalingpur main building campus architecture"
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-102"
+              style={{ clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
               loading="lazy"
             />
           </div>
