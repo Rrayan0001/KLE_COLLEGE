@@ -142,8 +142,8 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-3 group focus-visible:outline-none shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/logo/kle transpe.png"
-                alt="KLE SCP College Logo"
+                src="/images/logo/society.jpg"
+                alt="KLE Society Logo"
                 className="h-10 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-250 shrink-0"
               />
               <div className="hidden sm:block text-center text-brand-black">
@@ -200,8 +200,8 @@ export default function Navbar() {
             <div className="w-1/3 flex justify-center">
               <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
                 <img
-                  src="/images/logo/kle transpe.png"
-                  alt="KLE SCP College Logo"
+                  src="/images/logo/society.jpg"
+                  alt="KLE Society Logo"
                   className="h-10 md:h-14 w-auto object-contain"
                 />
               </Link>

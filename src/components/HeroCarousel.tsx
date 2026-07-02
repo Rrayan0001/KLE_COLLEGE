@@ -98,20 +98,26 @@ const quickLinks: QuickLinkCard[] = [
 // Component
 // ---------------------------------------------------------------------------
 export default function HeroCarousel() {
-  const [current, setCurrent] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(1);
+  const [isAnimating, setIsAnimating] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const carouselSlides = [slides[slides.length - 1], ...slides, slides[0]];
+  const current = (activeSlide - 1 + slides.length) % slides.length;
 
   const goTo = useCallback((idx: number) => {
-    setCurrent(idx);
+    setIsAnimating(true);
+    setActiveSlide(idx + 1);
   }, []);
 
   const handleNext = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % slides.length);
+    setIsAnimating(true);
+    setActiveSlide((prev) => prev + 1);
   }, []);
 
   const handlePrev = useCallback(() => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+    setIsAnimating(true);
+    setActiveSlide((prev) => prev - 1);
   }, []);
 
   // Auto-advance every 6 seconds, pause on interaction
@@ -137,8 +143,22 @@ export default function HeroCarousel() {
   const pause = () => setIsPlaying(false);
   const resume = () => setIsPlaying(true);
 
+  const handleTransitionEnd = () => {
+    if (activeSlide === 0) {
+      setIsAnimating(false);
+      setActiveSlide(slides.length);
+      requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
+    }
+
+    if (activeSlide === slides.length + 1) {
+      setIsAnimating(false);
+      setActiveSlide(1);
+      requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
+    }
+  };
+
   return (
-    <div className="max-w-7xl mx-auto px-6 pt-6 relative">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 relative">
       {/* ------------------------------------------------------------------ */}
       {/* HERO CAROUSEL CONTAINER (INSET)                                     */}
       {/* ------------------------------------------------------------------ */}
@@ -153,13 +173,19 @@ export default function HeroCarousel() {
       >
         {/* Sliding Track with Peek Slivers Layout */}
         <div 
-          className="flex w-full h-full transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]"
-          style={{ transform: `translateX(calc(8% - (${current} * 84%)))` }}
+          className={`flex w-full h-full ${isAnimating ? "transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)]" : ""}`}
+          style={{ transform: `translateX(calc(8% - (${activeSlide} * 84%)))` }}
+          onTransitionEnd={handleTransitionEnd}
         >
-          {slides.map((slide, idx) => (
+          {carouselSlides.map((slide, idx) => {
+            const realIndex = (idx - 1 + slides.length) % slides.length;
+            const isActive = realIndex === current && idx === activeSlide;
+
+            return (
             <div
-              key={slide.id}
-              className="w-[84%] flex-shrink-0 px-2 h-full relative"
+              key={`${slide.id}-${idx}`}
+              className="w-[84%] flex-shrink-0 px-1.5 sm:px-2 h-full relative"
+              aria-hidden={!isActive}
             >
               <div className="w-full h-full relative overflow-hidden bg-brand-maroon rounded-2xl shadow-inner">
                 {/* Background — real image or solid brand-color fallback */}
@@ -170,7 +196,7 @@ export default function HeroCarousel() {
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-cover object-center"
-                    loading={idx === 0 ? "eager" : "lazy"}
+                    loading={realIndex === 0 ? "eager" : "lazy"}
                   />
                 ) : (
                   // No image asset — blank brand-color background, no stock photo
@@ -190,10 +216,10 @@ export default function HeroCarousel() {
                 {/* Content — only visible on active slide */}
                 <div 
                   className={`absolute inset-0 z-20 flex flex-col justify-end p-6 sm:p-12 md:p-16 transition-opacity duration-[400ms] ${
-                    idx === current ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                    isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                   }`}
                 >
-                  <div className="space-y-4 max-w-3xl">
+                  <div className="space-y-4 max-w-3xl pb-16 sm:pb-20">
                     {/* Eyebrow */}
                     <p className="text-white/85 uppercase tracking-[0.15em] text-xs sm:text-sm">
                       {slide.eyebrow}
@@ -224,14 +250,14 @@ export default function HeroCarousel() {
                 </div>
               </div>
             </div>
-          ))}
+          )})}
         </div>
 
         {/* ---------------------------------------------------------------- */}
         {/* Number indicators — bottom-left, above the CTA area              */}
         {/* ---------------------------------------------------------------- */}
         <div
-          className="absolute bottom-8 left-6 sm:left-12 md:left-24 z-30 flex items-center gap-3"
+          className="absolute bottom-8 left-6 sm:left-12 md:left-16 z-30 flex items-center gap-3"
           role="group"
           aria-label="Slide indicators"
         >
