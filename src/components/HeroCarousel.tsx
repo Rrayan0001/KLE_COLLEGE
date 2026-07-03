@@ -275,10 +275,10 @@ export default function HeroCarousel() {
             const peekScaleClass = isActive
               ? "scale-100 opacity-100"
               : isLeftPeek
-                ? "origin-right scale-[0.88] opacity-50"
+                ? "origin-right scale-[0.88] opacity-100"
                 : isRightPeek
-                  ? "origin-left scale-[0.88] opacity-50"
-                  : "scale-[0.88] opacity-30";
+                  ? "origin-left scale-[0.88] opacity-100"
+                  : "scale-[0.88] opacity-100";
 
             return (
             <div
