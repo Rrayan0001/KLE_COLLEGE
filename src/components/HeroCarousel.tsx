@@ -273,12 +273,12 @@ export default function HeroCarousel() {
             const isLeftPeek = idx === activeSlide - 1;
             const isRightPeek = idx === activeSlide + 1;
             const peekScaleClass = isActive
-              ? "scale-100"
+              ? "scale-100 opacity-100"
               : isLeftPeek
-                ? "origin-right scale-x-[0.68] md:scale-x-[0.74]"
+                ? "origin-right scale-[0.88] opacity-50"
                 : isRightPeek
-                  ? "origin-left scale-x-[0.84] md:scale-x-[0.9]"
-                  : "scale-100";
+                  ? "origin-left scale-[0.88] opacity-50"
+                  : "scale-[0.88] opacity-30";
 
             return (
             <div
@@ -287,7 +287,7 @@ export default function HeroCarousel() {
               aria-hidden={!isActive}
             >
               <div
-                className={`w-full h-full relative overflow-hidden bg-brand-maroon shadow-xl transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${peekScaleClass}`}
+                className={`w-full h-full relative overflow-hidden bg-brand-maroon shadow-xl transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${peekScaleClass}`}
               >
                 {/* Background — real image or solid brand-color fallback */}
                 {slide.imageSrc ? (
