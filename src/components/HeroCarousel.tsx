@@ -317,36 +317,43 @@ export default function HeroCarousel() {
                  {/* Content — only visible on active slide */}
                 {slide.id === 1 ? (
                   <div
-                    className={`absolute inset-0 z-20 overflow-hidden px-6 py-14 transition-opacity duration-[400ms] sm:px-10 md:px-16 ${
+                    className={`absolute inset-0 z-20 flex flex-col items-center justify-center px-6 transition-opacity duration-[400ms] sm:px-10 md:px-16 ${
                       isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                     }`}
                   >
-                    <div className="absolute left-1/2 top-[45%] w-[88%] -translate-x-1/2 -translate-y-1/2 md:left-[55%] md:top-[43%] md:w-[86%]">
-                      <p className="mb-4 text-center text-[10px] uppercase leading-relaxed tracking-[0.24em] text-white/90 sm:text-sm md:text-lg">
+                    <div className="w-full max-w-6xl flex flex-col items-center text-center space-y-4 sm:space-y-6 md:space-y-7">
+                      {/* Eyebrow */}
+                      <p className="text-[10px] uppercase leading-relaxed tracking-[0.24em] text-white/95 sm:text-sm md:text-lg font-semibold">
                         {slide.eyebrow}
                       </p>
+
+                      {/* Headline */}
                       <h2
-                        className="text-center text-white font-black leading-none uppercase"
+                        className="text-white font-black uppercase tracking-normal"
                         style={{
-                          fontSize: "clamp(2.35rem, 9.8vw, 7.75rem)",
-                          lineHeight: 0.98,
+                          fontSize: "clamp(2rem, 8.2vw, 6.75rem)",
+                          lineHeight: 1.02,
                         }}
                       >
                         {slide.headline}
                       </h2>
-                    </div>
 
-                    <div className="absolute left-1/2 top-[62%] w-[82%] max-w-[560px] -translate-x-1/2 md:top-[61%] md:w-[56%] md:max-w-[820px]">
-                      <HeroTagline />
-                    </div>
+                      {/* Tagline */}
+                      <div className="w-[82%] max-w-[560px] md:max-w-[720px] transition-transform duration-300">
+                        <HeroTagline />
+                      </div>
 
-                    <Link
-                      href={slide.ctaHref}
-                      className="hidden md:inline-block absolute left-1/2 top-[73%] z-10 -translate-x-1/2 bg-brand-yellow px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-black shadow-lg transition-all duration-200 hover:bg-brand-yellow-hover active:scale-95 sm:px-14 sm:text-sm"
-                      style={{ borderRadius: "2px" }}
-                    >
-                      {slide.ctaLabel}
-                    </Link>
+                      {/* CTA Button */}
+                      <div className="pt-2 hidden md:block">
+                        <Link
+                          href={slide.ctaHref}
+                          className="inline-block bg-brand-yellow px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-black shadow-lg transition-all duration-200 hover:bg-brand-yellow-hover active:scale-95 sm:px-14 sm:text-sm"
+                          style={{ borderRadius: "2px" }}
+                        >
+                          {slide.ctaLabel}
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   <div

@@ -115,6 +115,10 @@ body {
   z-index: 1;
 }
 
+.hero-quick-link-card {
+  min-height: 132px;
+}
+
 .hero-carousel-stage {
   height: min(150vw, 760px);
   min-height: 620px;
@@ -153,6 +157,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  .hero-quick-link-card {
+    min-height: 0;
+  }
+
   .hero-carousel-stage {
     height: clamp(380px, 55vw, 650px);
     min-height: 0;
