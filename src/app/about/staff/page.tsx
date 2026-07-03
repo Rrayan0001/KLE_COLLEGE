@@ -17,7 +17,7 @@ const breadcrumbs = [
 
 const staffList = [
   // UG Teaching
-  { sl: 1, name: "Dr. K. M. Awaradi", dept: "Economics/Agri. Marketing", role: "Principal", cat: "UG Teaching Staff" },
+  { sl: 1, name: "Shri. N. B. Patil", dept: "Commerce", role: "Principal", cat: "UG Teaching Staff" },
   { sl: 2, name: "Dr. A. M. Narode", dept: "Kannada", role: "Associate Professor", cat: "UG Teaching Staff" },
   { sl: 3, name: "Dr. S. D. Soraganvi", dept: "Economics/Agri. Marketing", role: "Associate Professor", cat: "UG Teaching Staff" },
   { sl: 4, name: "Shri. A. M. Ugare", dept: "Political Science", role: "Lecturer", cat: "UG Teaching Staff" },

@@ -26,9 +26,9 @@ export default function KLESocietyPage() {
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo/society.jpg"
-              alt="KLE Society Logo"
-              className="w-full h-auto object-cover max-h-72"
+              src="/images/logo/Founders_image.png"
+              alt="KLE Society Founders - The Saptarshis"
+              className="w-full h-auto object-cover"
             />
           </div>
           <div className="space-y-4">

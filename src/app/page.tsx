@@ -197,10 +197,10 @@ export default function Home() {
               <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
                 <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/logo/principal.jpg" alt="Dr. K.M. Awaradi" className="w-full h-full object-cover" loading="lazy" />
+                  <img src="/images/logo/Shri_N_B_Patil.png" alt="Shri. N. B. Patil" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-xl text-slate-900">Dr. K.M. Awaradi</h3>
+                  <h3 className="font-extrabold text-xl text-slate-900">Shri. N. B. Patil</h3>
                   <p className="text-brand-maroon font-bold text-sm">Principal</p>
                   <p className="text-slate-500 text-xs mt-1">Principal, Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur</p>
                 </div>
