@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 import TabsSection from "@/components/TabsSection";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   const highlights = [
@@ -84,7 +85,7 @@ export default function Home() {
       <section className="py-24 bg-white border-t-4 border-brand-yellow mt-0 overflow-hidden" aria-label="About Us">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           {/* Left Column: Welcome Text */}
-          <div className="lg:col-span-7 space-y-6 pr-0 lg:pr-12">
+          <ScrollReveal className="lg:col-span-7 space-y-6 pr-0 lg:pr-12" animation="fade-in-up">
             <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">
               About Us
             </span>
@@ -103,10 +104,10 @@ export default function Home() {
                 LEARN MORE
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
           
           {/* Right Column: Slanted Image */}
-          <div className="lg:col-span-5 relative h-[300px] lg:h-[400px] w-full rounded-2xl overflow-hidden bg-white shadow-xl">
+          <ScrollReveal className="lg:col-span-5 relative h-[300px] lg:h-[400px] w-full rounded-2xl overflow-hidden bg-white shadow-xl" animation="fade-in-right" delay={150}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/about_us/image.png"
@@ -115,24 +116,26 @@ export default function Home() {
               style={{ clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
               loading="lazy"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* ── Tabs Section ── */}
-      <TabsSection />
+      <ScrollReveal animation="fade-in-up" delay={50}>
+        <TabsSection />
+      </ScrollReveal>
 
       {/* ── Our Donor Section ── */}
       <section className="py-16 bg-brand-gray border-t border-gray-200" aria-label="Our Donor">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="hidden lg:block h-64 bg-slate-200 rounded-xl" aria-hidden="true" />
-          <div className="space-y-4">
+          <ScrollReveal className="hidden lg:block h-64 bg-slate-200 rounded-xl" animation="fade-in-left" />
+          <ScrollReveal className="space-y-4" animation="fade-in-right" delay={150}>
             <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">Our Donor</span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-brand-maroon font-display">Our Donor</h2>
             <p className="text-brand-text leading-relaxed text-sm md:text-base text-justify font-medium">
               Earlier the college was named as SCVV Trust Fund&apos;s SCP ARTS AND COMMERCE COLLEGE run by a local governing body. It was due to a donation by Dr. D. D. Shirol, the COMMERCE wing was renamed after his father Shri. Dundappa Danappa Shirol. So the college was renamed as SCVV Trust Fund&apos;s SCP ARTS AND DUNDAPPA DANAPPA SHIROL COMMERCE COLLEGE.
             </p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -170,32 +173,39 @@ export default function Home() {
       {/* ── Team Section ── */}
       <section className="py-20 bg-white border-t border-gray-100" aria-labelledby="team-heading">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 id="team-heading" className="text-2xl md:text-3xl font-extrabold text-slate-900 font-display text-center mb-12">Team</h2>
+          <ScrollReveal animation="fade-in-up">
+            <h2 id="team-heading" className="text-2xl md:text-3xl font-extrabold text-slate-900 font-display text-center mb-12">Team</h2>
+          </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Chairman */}
-            <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
-              <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/logo/Prabhakar Kore.jpg" alt="Dr. Prabhakar Kore" className="w-full h-full object-cover" loading="lazy" />
+            <ScrollReveal className="w-full" animation="fade-in-up" delay={0}>
+              <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/logo/Prabhakar Kore.jpg" alt="Dr. Prabhakar Kore" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-xl text-slate-900">Dr. Prabhakar Kore</h3>
+                  <p className="text-brand-maroon font-bold text-sm">Chairman</p>
+                  <p className="text-slate-500 text-xs mt-1">Honorable Chairman, KLE Society Belagavi</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-extrabold text-xl text-slate-900">Dr. Prabhakar Kore</h3>
-                <p className="text-brand-maroon font-bold text-sm">Chairman</p>
-                <p className="text-slate-500 text-xs mt-1">Honorable Chairman, KLE Society Belagavi</p>
-              </div>
-            </div>
+            </ScrollReveal>
+            
             {/* Principal */}
-            <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
-              <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/logo/principal.jpg" alt="Dr. K.M. Awaradi" className="w-full h-full object-cover" loading="lazy" />
+            <ScrollReveal className="w-full" animation="fade-in-up" delay={150}>
+              <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/logo/principal.jpg" alt="Dr. K.M. Awaradi" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-xl text-slate-900">Dr. K.M. Awaradi</h3>
+                  <p className="text-brand-maroon font-bold text-sm">Principal</p>
+                  <p className="text-slate-500 text-xs mt-1">Principal, Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-extrabold text-xl text-slate-900">Dr. K.M. Awaradi</h3>
-                <p className="text-brand-maroon font-bold text-sm">Principal</p>
-                <p className="text-slate-500 text-xs mt-1">Principal, Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur</p>
-              </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -203,26 +213,28 @@ export default function Home() {
       {/* Video / Stats Section - White */}
       <section className="py-24 bg-white relative border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="relative aspect-video w-full overflow-hidden bg-brand-black shadow-2xl flex items-center justify-center group cursor-pointer border-t-8 border-brand-maroon">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop" 
-              alt="College Campus Video Cover" 
-              className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
-            />
-            <div className="relative z-10 w-20 h-20 bg-brand-yellow rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-black translate-x-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
+          <ScrollReveal animation="zoom-in" duration={900}>
+            <div className="relative aspect-video w-full overflow-hidden bg-brand-black shadow-2xl flex items-center justify-center group cursor-pointer border-t-8 border-brand-maroon">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop" 
+                alt="College Campus Video Cover" 
+                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+              />
+              <div className="relative z-10 w-20 h-20 bg-brand-yellow rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-black translate-x-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Enrolment Section - White */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-4">
+          <ScrollReveal className="space-y-4" animation="fade-in-left">
             <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em] block mb-6">
               Join Our Community
             </span>
@@ -230,8 +242,9 @@ export default function Home() {
               Enrolment <br/>
               <span className="text-brand-maroon font-normal">Process</span>
             </h2>
-          </div>
-          <div className="space-y-8 flex flex-col justify-center items-start">
+          </ScrollReveal>
+          
+          <ScrollReveal className="space-y-8 flex flex-col justify-center items-start" animation="fade-in-right" delay={150}>
             <p className="text-gray-600 leading-relaxed text-sm">
               We guide our students into becoming responsible, skilled, and patriotic citizens ready to make meaningful global impacts. Join the thousands of alumni who have shaped their futures here.
             </p>
@@ -246,7 +259,7 @@ export default function Home() {
                 </svg>
               </div>
             </Link>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -254,7 +267,7 @@ export default function Home() {
       <section className="py-24 bg-brand-gray border-l-4 border-brand-yellow">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
           
-          <div className="lg:col-span-4 flex flex-col justify-center space-y-6">
+          <ScrollReveal className="lg:col-span-4 flex flex-col justify-center space-y-6" animation="fade-in-left">
             <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">
               Latest Updates
             </span>
@@ -272,11 +285,11 @@ export default function Home() {
                 VIEW ALL
               </Link>
             </div>
-          </div>
-
+          </ScrollReveal>
+ 
           <div className="lg:col-span-8 flex gap-6 overflow-x-auto pb-8 snap-x">
             {/* News Card 1 */}
-            <div className="min-w-[320px] max-w-[350px] bg-white shadow-lg snap-center group">
+            <ScrollReveal className="min-w-[320px] max-w-[350px] bg-white shadow-lg snap-center group" animation="fade-in-up" delay={0}>
               <div className="h-48 overflow-hidden relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=400&auto=format&fit=crop" alt="Event" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -297,10 +310,10 @@ export default function Home() {
                   READ MORE
                 </Link>
               </div>
-            </div>
-
+            </ScrollReveal>
+ 
             {/* News Card 2 */}
-            <div className="min-w-[320px] max-w-[350px] bg-white shadow-lg snap-center group">
+            <ScrollReveal className="min-w-[320px] max-w-[350px] bg-white shadow-lg snap-center group" animation="fade-in-up" delay={150}>
               <div className="h-48 overflow-hidden relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=400&auto=format&fit=crop" alt="Event" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -321,7 +334,7 @@ export default function Home() {
                   READ MORE
                 </Link>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -329,7 +342,7 @@ export default function Home() {
       {/* Pre-Footer Banner - White */}
       <section className="py-24 bg-white border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-          <div className="lg:w-1/2 w-full">
+          <ScrollReveal className="lg:w-1/2 w-full" animation="fade-in-left">
             <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-4 block">
               Join Us
             </span>
@@ -363,9 +376,9 @@ export default function Home() {
             >
               APPLY NOW
             </Link>
-          </div>
+          </ScrollReveal>
           
-          <div className="lg:w-1/2 w-full relative">
+          <ScrollReveal className="lg:w-1/2 w-full relative" animation="fade-in-right" delay={150}>
             <div className="absolute inset-0 bg-brand-gray -z-10 translate-x-4 translate-y-4 shadow-sm" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
@@ -373,7 +386,7 @@ export default function Home() {
               alt="Students collaborating" 
               className="w-full object-cover shadow-2xl border-b-8 border-brand-maroon"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
