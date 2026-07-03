@@ -283,7 +283,7 @@ export default function HeroCarousel() {
             return (
             <div
               key={`${slide.id}-${idx}`}
-              className="w-full flex-shrink-0 px-0 h-full relative"
+              className="w-full flex-shrink-0 px-1.5 sm:px-3 h-full relative"
               aria-hidden={!isActive}
             >
               <div
