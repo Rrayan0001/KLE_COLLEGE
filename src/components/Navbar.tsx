@@ -183,10 +183,49 @@ export default function Navbar() {
     <>
       {/* Main Header Bar */}
       <header className="bg-white sticky top-0 z-40 text-brand-black shadow-md h-20 md:h-24">
-        <div className="w-full h-full px-6 flex items-center justify-between">
+        <div className="w-full h-full px-6 flex items-center justify-between gap-4">
           
-          {/* Left: Hamburger Menu Button */}
-          <div className="w-1/3 flex justify-start">
+          {/* Left: Brand/Logo & Name Area (Visible on all sizes) */}
+          <div className="flex items-center flex-grow min-w-0">
+            <Link
+              href="/"
+              onClick={handleLogoClick}
+              className="flex items-center gap-2 md:gap-3 group focus-visible:outline-none min-w-0"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo/society.jpg"
+                alt="KLE Society Logo"
+                className="h-10 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-250 shrink-0"
+              />
+              <div className="flex flex-col text-left min-w-0">
+                <h1 className="text-sm sm:text-base md:text-xl font-black leading-none uppercase tracking-wide text-brand-black truncate">
+                  KLE SCP College
+                </h1>
+                <p className="text-[9px] sm:text-[10px] md:text-xs text-brand-maroon font-bold leading-none mt-1 truncate">
+                  Arts, Science & Commerce
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          {/* Right: Actions (Search + Hamburger Menu) */}
+          <div className="flex items-center gap-2 md:gap-4 shrink-0">
+            {/* Search trigger button */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              aria-label="Open search dialog"
+              className="flex items-center gap-2 p-2 hover:bg-slate-100 rounded-md transition-all text-brand-maroon focus-visible:outline-none"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7 hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <kbd className="hidden lg:inline-flex items-center gap-0.5 text-[9px] font-bold text-slate-400 border border-slate-200 bg-slate-50 px-1.5 py-0.5 rounded shadow-sm select-none">
+                <span>⌘</span><span>K</span>
+              </kbd>
+            </button>
+
+            {/* Hamburger Menu Button */}
             <button
               onClick={() => setIsOpen(true)}
               aria-label="Open menu"
@@ -195,46 +234,6 @@ export default function Navbar() {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-10 md:w-10 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-            </button>
-          </div>
-
-          {/* Center: Brand/Logo Area */}
-          <div className="w-1/3 flex justify-center">
-            <Link
-              href="/"
-              onClick={handleLogoClick}
-              className="flex items-center gap-3 group focus-visible:outline-none shrink-0"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/logo/society.jpg"
-                alt="KLE Society Logo"
-                className="h-10 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-250 shrink-0"
-              />
-              <div className="hidden sm:block text-center text-brand-black">
-                <h1 className="text-sm md:text-lg font-bold leading-tight uppercase tracking-wide">
-                  KLE SCP College
-                </h1>
-                <p className="text-[10px] md:text-xs text-brand-maroon font-semibold">
-                  Arts, Science & Commerce
-                </p>
-              </div>
-            </Link>
-          </div>
-
-          {/* Right: Search trigger button */}
-          <div className="w-1/3 flex justify-end items-center gap-3">
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              aria-label="Open search dialog"
-              className="flex items-center gap-2 p-2 hover:bg-slate-100 rounded-md transition-all text-brand-maroon focus-visible:outline-none shrink-0"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7 hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <kbd className="hidden lg:inline-flex items-center gap-0.5 text-[9px] font-bold text-slate-400 border border-slate-200 bg-slate-50 px-1.5 py-0.5 rounded shadow-sm shrink-0 select-none">
-                <span>⌘</span><span>K</span>
-              </kbd>
             </button>
           </div>
 
