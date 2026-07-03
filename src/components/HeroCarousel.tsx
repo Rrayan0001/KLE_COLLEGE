@@ -249,7 +249,7 @@ export default function HeroCarousel() {
       {/* ------------------------------------------------------------------ */}
       <section
         aria-label="Campus highlights slideshow"
-        className={`hero-carousel-stage relative w-full touch-pan-y overflow-visible bg-brand-black ${
+        className={`hero-carousel-stage relative w-full touch-pan-y overflow-visible bg-white ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
         onMouseEnter={pause}
@@ -283,7 +283,7 @@ export default function HeroCarousel() {
             return (
             <div
               key={`${slide.id}-${idx}`}
-              className="w-full flex-shrink-0 px-1.5 sm:px-2 h-full relative"
+              className="w-full flex-shrink-0 px-0 h-full relative"
               aria-hidden={!isActive}
             >
               <div
