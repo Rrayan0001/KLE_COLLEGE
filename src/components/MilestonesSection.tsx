@@ -68,25 +68,60 @@ function MilestoneCard({
 
   return (
     <div
-      className={`rounded-2xl border border-white/50 bg-white/8 backdrop-blur-sm p-5 md:p-6 text-center transition-all duration-700 ${
+      className={`rounded-2xl border border-slate-100 bg-white shadow-[0_4px_25px_rgba(0,0,0,0.03)] p-6 md:p-8 text-center transition-all duration-700 ${
         reveal ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div className="text-3xl mb-2" aria-hidden="true">
-        {index === 0 && "🏛"}
-        {index === 1 && "👥"}
-        {index === 2 && "🎓"}
-        {index === 3 && "🏥"}
-        {index === 4 && "⏳"}
+      {/* Circular icon container with soft maroon tint */}
+      <div className="w-16 h-16 rounded-full bg-[#7a1c30]/5 flex items-center justify-center mx-auto mb-5">
+        {index === 0 && (
+          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 7h20L12 2z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 11v9h3v-8H4zm5 0v8h3v-8H9zm5 0v8h3v-8h-3zm5 0v8h3v-8h-3z" fill="currentColor" fillOpacity={0.1} />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M2 21h20v2H2v-2z" />
+          </svg>
+        )}
+        {index === 1 && (
+          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2m16-10a4 4 0 11-8 0 4 4 0 018 0zm3 10v-2a4 4 0 00-3-3.87m0-4.87a4 4 0 010 7.75" />
+          </svg>
+        )}
+        {index === 2 && (
+          <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5}>
+            <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#7a1c30" stroke="#7a1c30" />
+            <path d="M6 12v4.5C6 18.5 8.7 20 12 20s6-1.5 6-3.5V12" fill="#7a1c30" stroke="#7a1c30" />
+            <path d="M20 7v6.5" stroke="#d97706" strokeWidth={2} strokeLinecap="round" />
+            <circle cx="20" cy="13.5" r="1.5" fill="#d97706" stroke="#d97706" />
+          </svg>
+        )}
+        {index === 3 && (
+          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v6m-3-3h6" stroke="currentColor" strokeWidth={1.75} />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 21v-4a1 1 0 011-1h4a1 1 0 011 1v4" />
+          </svg>
+        )}
+        {index === 4 && (
+          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 2h14M5 22h14M19 2l-7 10 7 10M5 2l7 10-7 10" />
+          </svg>
+        )}
       </div>
-      <div className="text-2xl md:text-4xl font-black text-white leading-none font-display">
+
+      {/* Value */}
+      <div className="text-3xl md:text-4xl font-extrabold text-brand-maroon leading-none font-serif">
         {formatNumber(current)}
         {milestone.suffix ?? ""}
       </div>
-      <div className="mt-2 text-xs md:text-sm uppercase tracking-wider font-bold text-white/90">
+
+      {/* Label */}
+      <div className="mt-3 text-[11px] md:text-[12px] uppercase tracking-widest font-black text-slate-700">
         {milestone.label}
       </div>
+
+      {/* Separator Line */}
+      <div className="w-6 h-[1.5px] bg-brand-maroon mx-auto mt-4 opacity-80" />
     </div>
   );
 }
@@ -106,7 +141,7 @@ export default function MilestonesSection() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     observer.observe(node);
@@ -119,23 +154,16 @@ export default function MilestonesSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden py-20 md:py-24"
+      className="relative overflow-hidden py-16 md:py-20 bg-[#fbfbfc]"
       aria-label="KLE Society milestones"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/general/col2.jpg')" }}
-      />
-      <div className="absolute inset-0 bg-slate-950/60" />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-maroon/55 via-slate-900/45 to-brand-maroon/55" />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="text-center mb-10 md:mb-14">
-          <p className="text-xs md:text-sm uppercase tracking-[0.35em] font-extrabold text-white/80">KLE Society</p>
-          <h2 className="mt-2 text-3xl md:text-5xl font-black text-white font-display tracking-tight">Our Milestones</h2>
+          <p className="text-xs md:text-sm uppercase tracking-[0.35em] font-extrabold text-brand-maroon">KLE Society</p>
+          <h2 className="mt-2 text-3xl md:text-5xl font-black text-brand-text font-serif tracking-tight">Our Milestones</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {cards.map((milestone, index) => (
             <MilestoneCard key={milestone.id} milestone={milestone} index={index} reveal={reveal} />
           ))}
