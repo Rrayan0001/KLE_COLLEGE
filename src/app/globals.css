@@ -115,6 +115,11 @@ body {
   z-index: 1;
 }
 
+.hero-carousel-stage {
+  height: min(150vw, 760px);
+  min-height: 620px;
+}
+
 .hero-tagline {
   display: block;
   overflow: visible;
@@ -144,6 +149,13 @@ body {
   to {
     fill-opacity: 1;
     stroke-width: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-carousel-stage {
+    height: clamp(380px, 55vw, 650px);
+    min-height: 0;
   }
 }
 

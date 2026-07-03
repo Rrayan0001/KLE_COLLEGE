@@ -153,6 +153,14 @@ export default function Navbar() {
     router.push(href);
   };
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    setIsOpen(false);
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* Main Header Bar */}
@@ -174,7 +182,11 @@ export default function Navbar() {
 
           {/* Center: Brand/Logo Area */}
           <div className="w-1/3 flex justify-center">
-            <Link href="/" className="flex items-center gap-3 group focus-visible:outline-none shrink-0">
+            <Link
+              href="/"
+              onClick={handleLogoClick}
+              className="flex items-center gap-3 group focus-visible:outline-none shrink-0"
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/logo/society.jpg"
@@ -233,7 +245,11 @@ export default function Navbar() {
             </div>
             
             <div className="w-1/3 flex justify-center">
-              <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
+              <Link
+                href="/"
+                onClick={handleLogoClick}
+                className="flex items-center gap-3"
+              >
                 <img
                   src="/images/logo/society.jpg"
                   alt="KLE Society Logo"

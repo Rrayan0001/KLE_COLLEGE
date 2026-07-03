@@ -243,16 +243,15 @@ export default function HeroCarousel() {
 
   return (
     <div className="w-full overflow-x-clip bg-white pt-8 sm:pt-10 md:pt-12">
-      <div className="relative mx-auto w-[calc(100%_-_2rem)] max-w-[1740px] sm:w-[85vw]">
+      <div className="relative mx-auto w-[calc(100%_-_3rem)] max-w-[1740px] sm:w-[85vw]">
       {/* ------------------------------------------------------------------ */}
       {/* HERO CAROUSEL CONTAINER (INSET)                                     */}
       {/* ------------------------------------------------------------------ */}
       <section
         aria-label="Campus highlights slideshow"
-        className={`relative w-full touch-pan-y overflow-visible bg-brand-black ${
+        className={`hero-carousel-stage relative w-full touch-pan-y overflow-visible bg-brand-black ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
-        style={{ height: "clamp(380px, 55vw, 650px)" }}
         onMouseEnter={pause}
         onMouseLeave={resume}
         onPointerCancel={handlePointerCancel}
@@ -271,6 +270,15 @@ export default function HeroCarousel() {
           {carouselSlides.map((slide, idx) => {
             const realIndex = (idx - 1 + slides.length) % slides.length;
             const isActive = realIndex === current && idx === activeSlide;
+            const isLeftPeek = idx === activeSlide - 1;
+            const isRightPeek = idx === activeSlide + 1;
+            const peekScaleClass = isActive
+              ? "scale-100"
+              : isLeftPeek
+                ? "origin-right scale-x-[0.68] md:scale-x-[0.74]"
+                : isRightPeek
+                  ? "origin-left scale-x-[0.84] md:scale-x-[0.9]"
+                  : "scale-100";
 
             return (
             <div
@@ -278,7 +286,9 @@ export default function HeroCarousel() {
               className="w-full flex-shrink-0 px-1.5 sm:px-2 h-full relative"
               aria-hidden={!isActive}
             >
-              <div className="w-full h-full relative overflow-hidden bg-brand-maroon shadow-xl">
+              <div
+                className={`w-full h-full relative overflow-hidden bg-brand-maroon shadow-xl transition-transform duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${peekScaleClass}`}
+              >
                 {/* Background — real image or solid brand-color fallback */}
                 {slide.imageSrc ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
@@ -311,22 +321,22 @@ export default function HeroCarousel() {
                       isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                     }`}
                   >
-                    <div className="absolute left-[50%] top-[40%] w-[92%] -translate-x-1/2 -translate-y-1/2 md:left-[55%] md:top-[43%] md:w-[86%]">
-                      <p className="mb-4 text-center text-white/90 uppercase tracking-[0.24em] text-[10px] sm:text-sm md:text-lg">
+                    <div className="absolute left-1/2 top-[45%] w-[88%] -translate-x-1/2 -translate-y-1/2 md:left-[55%] md:top-[43%] md:w-[86%]">
+                      <p className="mb-4 text-center text-[10px] uppercase leading-relaxed tracking-[0.24em] text-white/90 sm:text-sm md:text-lg">
                         {slide.eyebrow}
                       </p>
                       <h2
                         className="text-center text-white font-black leading-none uppercase"
                         style={{
-                          fontSize: "clamp(2.25rem, 8.6vw, 7.75rem)",
-                          lineHeight: 0.95,
+                          fontSize: "clamp(2.35rem, 9.8vw, 7.75rem)",
+                          lineHeight: 0.98,
                         }}
                       >
                         {slide.headline}
                       </h2>
                     </div>
 
-                    <div className="absolute left-1/2 top-[58%] w-[82%] max-w-[820px] -translate-x-1/2 md:top-[61%] md:w-[56%]">
+                    <div className="absolute left-1/2 top-[62%] w-[82%] max-w-[560px] -translate-x-1/2 md:top-[61%] md:w-[56%] md:max-w-[820px]">
                       <HeroTagline />
                     </div>
 
@@ -383,7 +393,7 @@ export default function HeroCarousel() {
         {/* Dot indicators — bottom-left, above the CTA area                 */}
         {/* ---------------------------------------------------------------- */}
         <div
-          className="absolute bottom-16 left-6 md:bottom-20 md:left-24 z-30 flex items-center gap-2"
+          className="absolute bottom-36 left-8 z-30 flex items-center gap-2 md:bottom-20 md:left-24"
           role="group"
           aria-label="Slide indicators"
         >
@@ -411,8 +421,7 @@ export default function HeroCarousel() {
       {/* Overlaps bottom of hero by ~48px via negative margin-top            */}
       {/* ------------------------------------------------------------------ */}
       <div
-        className="relative z-30 w-full"
-        style={{ marginTop: "-48px" }}
+        className="relative z-30 -mt-16 w-full md:-mt-12"
         aria-label="Quick navigation"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
@@ -420,7 +429,7 @@ export default function HeroCarousel() {
             <Link
               key={card.href}
               href={card.href}
-              className="quick-link-card block p-5 md:p-10 shadow-xl border border-brand-maroon/30 focus-visible:outline-brand-yellow group"
+              className="quick-link-card block min-h-[132px] p-8 pr-16 shadow-xl border border-brand-maroon/30 focus-visible:outline-brand-yellow group md:min-h-0 md:p-10"
             >
               {/* Desktop layout: category label at top */}
               <p className="hidden md:block text-[10px] font-bold uppercase tracking-[0.2em] mb-4 opacity-70">
@@ -430,19 +439,19 @@ export default function HeroCarousel() {
               {/* Flex container for text & arrow */}
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="text-sm md:text-base font-normal leading-snug">
+                  <span className="text-lg md:text-base font-normal leading-snug">
                     {card.lineOne}{" "}
                   </span>
-                  <span className="text-sm md:text-xl font-extrabold uppercase tracking-wide leading-tight md:block md:mt-0.5">
+                  <span className="mt-1 block text-3xl font-extrabold uppercase leading-tight tracking-[0.16em] md:mt-0.5 md:text-xl md:tracking-wide">
                     {card.lineTwo}
                   </span>
                 </div>
                 
                 {/* Arrow indicator */}
-                <div className="shrink-0 ml-4">
+                <div className="absolute right-8 top-1/2 shrink-0 -translate-y-1/2 md:static md:ml-4 md:translate-y-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                    className="h-8 w-8 transition-transform duration-300 group-hover:translate-x-1 md:h-5 md:w-5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
