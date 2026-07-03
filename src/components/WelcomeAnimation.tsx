@@ -16,15 +16,15 @@ export default function WelcomeAnimation() {
       }
     }
 
-    // Phase sequence timings
+    // Phase sequence timings (total 4.0s)
     const timers = [
-      setTimeout(() => setPhase(1), 800),   // Logo drawn → show name
-      setTimeout(() => setPhase(2), 2000),   // Name revealed → show tagline + accreditation
-      setTimeout(() => setPhase(3), 3400),   // Tagline shown → begin unmask
+      setTimeout(() => setPhase(1), 500),   // Logo drawn → show name (at 500ms)
+      setTimeout(() => setPhase(2), 1300),  // Name revealed → show tagline + accreditation (at 1.3s)
+      setTimeout(() => setPhase(3), 2500),  // Tagline shown → begin unmask (at 2.5s)
       setTimeout(() => {
         setPhase(4);
         sessionStorage.setItem("kle-welcome-played", "true");
-      }, 4400),                               // Unmask done → remove overlay
+      }, 4000),                              // Unmask done → remove overlay (at 4.0s)
     ];
 
     return () => timers.forEach(clearTimeout);
@@ -35,7 +35,7 @@ export default function WelcomeAnimation() {
     setTimeout(() => {
       setPhase(4);
       sessionStorage.setItem("kle-welcome-played", "true");
-    }, 600);
+    }, 1000); // Skip transition duration
   }, []);
 
   if (!visible || phase === 4) return null;
@@ -47,11 +47,11 @@ export default function WelcomeAnimation() {
     >
       {/* Dark background with unmask animation */}
       <div
-        className={`absolute inset-0 transition-all duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
+        className={`absolute inset-0 transition-all duration-[1500ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
           phase >= 3 ? "scale-y-0" : "scale-y-100"
         }`}
         style={{
-          background: "linear-gradient(135deg, #0a0f1d 0%, #1a0a10 40%, #7a2538 100%)",
+          background: "linear-gradient(135deg, #4A0E17 0%, #1A0508 50%, #0D0204 100%)",
           transformOrigin: "top center",
         }}
       />
@@ -215,13 +215,13 @@ export default function WelcomeAnimation() {
 
       {/* Unmask reveal curtains */}
       <div
-        className={`absolute top-0 left-0 w-full h-1/2 bg-[#0a0f1d] z-[60] transition-transform duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
+        className={`absolute top-0 left-0 w-full h-1/2 bg-[#0D0204] z-[60] transition-transform duration-[1500ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
           phase >= 3 ? "-translate-y-full" : "translate-y-0"
         }`}
         style={{ pointerEvents: "none" }}
       />
       <div
-        className={`absolute bottom-0 left-0 w-full h-1/2 bg-[#0a0f1d] z-[60] transition-transform duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
+        className={`absolute bottom-0 left-0 w-full h-1/2 bg-[#0D0204] z-[60] transition-transform duration-[1500ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
           phase >= 3 ? "translate-y-full" : "translate-y-0"
         }`}
         style={{ pointerEvents: "none" }}
