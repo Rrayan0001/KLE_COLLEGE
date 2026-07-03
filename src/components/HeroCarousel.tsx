@@ -15,6 +15,8 @@ type HeroSlide = {
   ctaLabel: string;     // 2 words max, all caps
   ctaHref: string;      // existing route
   imageSrc?: string;    // undefined = blank brand-color bg — no fake stock photo
+  tagline: string;      // handwritten text tagline
+  taglineColorClass: string; // color styling class (e.g. text-brand-yellow)
 };
 
 type QuickLinkCard = {
@@ -38,6 +40,8 @@ const slides: HeroSlide[] = [
     ctaLabel: "DISCOVER MORE",
     ctaHref: "/about",
     imageSrc: "/images/hero_section/slide.png",
+    tagline: "Learning Today, Leading Tomorrow",
+    taglineColorClass: "text-brand-yellow",
   },
   {
     id: 2,
@@ -46,6 +50,8 @@ const slides: HeroSlide[] = [
     ctaLabel: "DISCOVER MORE",
     ctaHref: "/programs",
     imageSrc: "/images/hero_section/slide1.png",
+    tagline: "Education is the Kindling of a Flame",
+    taglineColorClass: "text-cyan-300",
   },
   {
     id: 3,
@@ -54,6 +60,8 @@ const slides: HeroSlide[] = [
     ctaLabel: "VIEW GALLERY",
     ctaHref: "/gallery",
     imageSrc: "/images/hero_section/slide2.png",
+    tagline: "Vibrant Campus, Endless Memories",
+    taglineColorClass: "text-amber-400",
   },
   {
     id: 4,
@@ -62,6 +70,8 @@ const slides: HeroSlide[] = [
     ctaLabel: "LEARN MORE",
     ctaHref: "/iqac",
     imageSrc: "/images/hero_section/slide3.png",
+    tagline: "Pursuit of Continuous Academic Excellence",
+    taglineColorClass: "text-rose-300",
   },
 ];
 
@@ -94,6 +104,28 @@ const quickLinks: QuickLinkCard[] = [
     href: "/gallery",
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Cursive taglines drawing animation component
+// ---------------------------------------------------------------------------
+function CursiveTagline({ text, colorClass, isActive }: { text: string; colorClass: string; isActive: boolean }) {
+  if (!isActive) return null;
+  return (
+    <span className={`font-script ${colorClass} block text-center leading-normal`} style={{ fontSize: "clamp(1.2rem, 4.8vw, 3rem)" }}>
+      {text.split("").map((char, index) => (
+        <span
+          key={index}
+          className="inline-block opacity-0 animate-cursive-write"
+          style={{
+            animationDelay: `${150 + index * 24}ms`,
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </span>
+  );
+}
 
 // ---------------------------------------------------------------------------
 // Component
@@ -315,75 +347,38 @@ export default function HeroCarousel() {
                 />
 
                  {/* Content — only visible on active slide */}
-                {slide.id === 1 ? (
-                  <div
-                    className={`absolute inset-0 z-20 overflow-hidden px-6 py-14 transition-opacity duration-[400ms] sm:px-10 md:px-16 ${
-                      isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-                    }`}
-                  >
-                    <div className="absolute left-1/2 top-[45%] w-[88%] -translate-x-1/2 -translate-y-1/2 md:left-[55%] md:top-[43%] md:w-[86%]">
-                      <p className="mb-4 text-center text-[10px] uppercase leading-relaxed tracking-[0.24em] text-white/90 sm:text-sm md:text-lg">
-                        {slide.eyebrow}
-                      </p>
-                      <h2
-                        className="text-center text-white font-black leading-none uppercase"
-                        style={{
-                          fontSize: "clamp(2.35rem, 9.8vw, 7.75rem)",
-                          lineHeight: 0.98,
-                        }}
-                      >
-                        {slide.headline}
-                      </h2>
-                    </div>
+                 <div
+                   className={`absolute inset-0 z-20 overflow-hidden px-6 py-14 transition-opacity duration-[400ms] sm:px-10 md:px-16 ${
+                     isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                   }`}
+                 >
+                   <div className="absolute left-1/2 top-[45%] w-[88%] -translate-x-1/2 -translate-y-1/2 md:left-[55%] md:top-[43%] md:w-[86%]">
+                     <p className="mb-4 text-center text-[10px] uppercase leading-relaxed tracking-[0.24em] text-white/90 sm:text-sm md:text-lg">
+                       {slide.eyebrow}
+                     </p>
+                     <h2
+                       className="text-center text-white font-black leading-none uppercase"
+                       style={{
+                         fontSize: "clamp(2.35rem, 9.8vw, 7.75rem)",
+                         lineHeight: 0.98,
+                       }}
+                     >
+                       {slide.headline}
+                     </h2>
+                   </div>
 
-                    <div className="absolute left-1/2 top-[62%] w-[82%] max-w-[560px] -translate-x-1/2 md:top-[61%] md:w-[56%] md:max-w-[820px]">
-                      <HeroTagline />
-                    </div>
+                   <div className="absolute left-1/2 top-[62%] w-[82%] max-w-[560px] -translate-x-1/2 md:top-[61%] md:w-[56%] md:max-w-[820px]">
+                     <CursiveTagline text={slide.tagline} colorClass={slide.taglineColorClass} isActive={isActive} />
+                   </div>
 
-                    <Link
-                      href={slide.ctaHref}
-                      className="hidden md:inline-block absolute left-1/2 top-[73%] z-10 -translate-x-1/2 bg-brand-yellow px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-black shadow-lg transition-all duration-200 hover:bg-brand-yellow-hover active:scale-95 sm:px-14 sm:text-sm"
-                      style={{ borderRadius: "2px" }}
-                    >
-                      {slide.ctaLabel}
-                    </Link>
-                  </div>
-                ) : (
-                  <div
-                    className={`absolute inset-0 z-20 flex flex-col items-center justify-center px-6 py-14 text-center transition-opacity duration-[400ms] ${
-                      isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-                    }`}
-                  >
-                    <div className="w-full max-w-7xl space-y-5 sm:space-y-7">
-                      {/* Eyebrow */}
-                      <p className="text-white/90 uppercase tracking-[0.2em] text-xs sm:text-base md:text-lg">
-                        {slide.eyebrow}
-                      </p>
-
-                      {/* Headline */}
-                      <h2
-                        className="text-white font-black leading-none uppercase"
-                        style={{
-                          fontSize: "clamp(2rem, 8vw, 6.75rem)",
-                          lineHeight: 1,
-                        }}
-                      >
-                        {slide.headline}
-                      </h2>
-
-                      {/* CTA Button */}
-                      <div className="pt-2 hidden md:block">
-                        <Link
-                          href={slide.ctaHref}
-                          className="inline-block bg-brand-yellow hover:bg-brand-yellow-hover text-brand-black font-bold uppercase tracking-[0.2em] text-xs sm:text-sm px-10 sm:px-14 py-5 active:scale-95 transition-all duration-200 shadow-lg"
-                          style={{ borderRadius: "2px" }}
-                        >
-                          {slide.ctaLabel}
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                   <Link
+                     href={slide.ctaHref}
+                     className="hidden md:inline-block absolute left-1/2 top-[73%] z-10 -translate-x-1/2 bg-brand-yellow px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-black shadow-lg transition-all duration-200 hover:bg-brand-yellow-hover active:scale-95 sm:px-14 sm:text-sm"
+                     style={{ borderRadius: "2px" }}
+                   >
+                     {slide.ctaLabel}
+                   </Link>
+                 </div>
               </div>
             </div>
           )})}

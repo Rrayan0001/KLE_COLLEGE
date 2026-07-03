@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Outfit, Kaushan_Script } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,6 +13,13 @@ const inter = Inter({
 
 const outfit = Outfit({
   variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const kaushan = Kaushan_Script({
+  variable: "--font-script",
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
@@ -32,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${outfit.variable} h-full antialiased`}
+      className={`${inter.variable} ${outfit.variable} ${kaushan.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans bg-slate-50 text-slate-900" suppressHydrationWarning>

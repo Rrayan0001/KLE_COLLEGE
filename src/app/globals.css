@@ -10,9 +10,11 @@
   
   --font-sans: var(--font-sans), system-ui, sans-serif;
   --font-display: var(--font-display), system-ui, sans-serif;
+  --font-script: var(--font-script), cursive;
   
   --animate-marquee: marquee 45s linear infinite;
   --animate-shimmer: shimmer 1.5s ease-in-out;
+  --animate-cursive-write: cursive-write 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   
   @keyframes marquee {
     0% { transform: translateX(0%); }
@@ -22,6 +24,19 @@
   @keyframes shimmer {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
+  }
+
+  @keyframes cursive-write {
+    0% {
+      opacity: 0;
+      transform: translateY(4px) scale(0.92);
+      filter: blur(0.5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
   }
 }
 
