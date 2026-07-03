@@ -4,7 +4,7 @@ import SubpageLayout from "@/components/SubpageLayout";
 const sidebarLinks = [
   { name: "Certificates", href: "/naac/certificates" },
   { name: "SSR", href: "/naac/ssr" },
-  { name: "AQAR", href: "/aqar" },
+  { name: "AQAR", href: "/naac/aqar" },
   { name: "AISHE", href: "/naac/aishe" },
   { name: "Criterion Wise Details", href: "/naac/criterion-details" },
   { name: "RTI Act", href: "/naac/rti-act" },

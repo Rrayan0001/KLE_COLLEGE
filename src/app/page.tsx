@@ -128,9 +128,16 @@ export default function Home() {
       {/* ── Our Donor Section ── */}
       <section className="py-16 bg-brand-gray border-t border-gray-200" aria-label="Our Donor">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <ScrollReveal className="hidden lg:block h-64 bg-slate-200 rounded-xl" animation="fade-in-left" />
+          <ScrollReveal className="hidden lg:block h-64 relative rounded-xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100" animation="fade-in-left">
+            <img
+              src="/images/general/col2.jpg"
+              alt="Our Donor - Dr. D. D. Shirol"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </ScrollReveal>
           <ScrollReveal className="space-y-4" animation="fade-in-right" delay={150}>
-            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">Our Donor</span>
+            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">Dr. D. D. Shirol</span>
             <h2 className="text-2xl md:text-3xl font-extrabold text-brand-maroon font-display">Our Donor</h2>
             <p className="text-brand-text leading-relaxed text-sm md:text-base text-justify font-medium">
               Earlier the college was named as SCVV Trust Fund&apos;s SCP ARTS AND COMMERCE COLLEGE run by a local governing body. It was due to a donation by Dr. D. D. Shirol, the COMMERCE wing was renamed after his father Shri. Dundappa Danappa Shirol. So the college was renamed as SCVV Trust Fund&apos;s SCP ARTS AND DUNDAPPA DANAPPA SHIROL COMMERCE COLLEGE.
@@ -171,39 +178,102 @@ export default function Home() {
       </div>
 
       {/* ── Team Section ── */}
-      <section className="py-20 bg-white border-t border-gray-100" aria-labelledby="team-heading">
-        <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal animation="fade-in-up">
-            <h2 id="team-heading" className="text-2xl md:text-3xl font-extrabold text-slate-900 font-display text-center mb-12">Team</h2>
+      <section className="py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden" aria-labelledby="team-heading">
+        {/* Background decorative elements */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-brand-maroon/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-80 h-80 bg-college-gold/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <ScrollReveal animation="fade-in-up" className="text-center mb-16 space-y-3">
+            <span className="text-brand-maroon font-extrabold text-xs uppercase tracking-[0.3em] bg-brand-maroon/5 px-4 py-1.5 rounded-full">
+              Governing Leadership
+            </span>
+            <h2 id="team-heading" className="text-3xl md:text-5xl font-black text-slate-900 font-display uppercase tracking-tight">
+              Our Leadership Team
+            </h2>
+            <p className="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+              Steered by visionary institution builders and academic directors committed to elevating educational paradigms.
+            </p>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Chairman */}
             <ScrollReveal className="w-full" animation="fade-in-up" delay={0}>
-              <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/logo/Prabhakar Kore.jpg" alt="Dr. Prabhakar Kore" className="w-full h-full object-cover" loading="lazy" />
+              <div className="group bg-white rounded-3xl border border-slate-100 p-8 md:p-10 text-center flex flex-col items-center space-y-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(122,37,56,0.08)] hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                {/* Visual gold/maroon subtle accent bar */}
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-maroon via-college-gold to-brand-maroon" />
+                
+                {/* Profile Image container — rounded rectangle to prevent clipping */}
+                <div className="relative w-64 h-48 rounded-2xl p-1 bg-gradient-to-tr from-brand-maroon to-college-gold group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-full h-full rounded-xl overflow-hidden border-4 border-white bg-slate-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src="/images/logo/Prabhakar Kore.jpg" 
+                      alt="Dr. Prabhakar Kore" 
+                      className="w-full h-full object-cover object-top" 
+                      loading="lazy" 
+                    />
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-extrabold text-xl text-slate-900">Dr. Prabhakar Kore</h3>
-                  <p className="text-brand-maroon font-bold text-sm">Chairman</p>
-                  <p className="text-slate-500 text-xs mt-1">Honorable Chairman, KLE Society Belagavi</p>
+
+                <div className="space-y-3">
+                  <span className="inline-block text-[10px] font-black uppercase tracking-wider text-brand-maroon bg-brand-maroon/5 px-3 py-1 rounded-md">
+                    Honorary Chairman
+                  </span>
+                  <h3 className="font-black text-2xl text-slate-900 font-display tracking-tight">
+                    Dr. Prabhakar Kore
+                  </h3>
+                  <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed max-w-sm">
+                    Honorary Chairman, KLE Society, Belagavi. Centenary builder guiding over 300 institutions across India.
+                  </p>
                 </div>
+                
+                <Link 
+                  href="/management/chairman" 
+                  className="text-xs font-black uppercase tracking-wider text-brand-maroon hover:text-college-gold transition flex items-center gap-1 group/btn"
+                >
+                  Read Message <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                </Link>
               </div>
             </ScrollReveal>
             
             {/* Principal */}
             <ScrollReveal className="w-full" animation="fade-in-up" delay={150}>
-              <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 text-center flex flex-col items-center space-y-4 hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-brand-maroon/20 bg-slate-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/logo/Shri_N_B_Patil.png" alt="Shri. N. B. Patil" className="w-full h-full object-cover" loading="lazy" />
+              <div className="group bg-white rounded-3xl border border-slate-100 p-8 md:p-10 text-center flex flex-col items-center space-y-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(122,37,56,0.08)] hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                {/* Visual gold/maroon subtle accent bar */}
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-maroon via-college-gold to-brand-maroon" />
+                
+                {/* Profile Image container — rounded rectangle to prevent clipping */}
+                <div className="relative w-64 h-48 rounded-2xl p-1 bg-gradient-to-tr from-brand-maroon to-college-gold group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-full h-full rounded-xl overflow-hidden border-4 border-white bg-slate-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src="/images/profiles/principal.jpg" 
+                      alt="Dr. K. M. Awaradi" 
+                      className="w-full h-full object-cover object-center" 
+                      loading="lazy" 
+                    />
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-extrabold text-xl text-slate-900">Shri. N. B. Patil</h3>
-                  <p className="text-brand-maroon font-bold text-sm">Principal</p>
-                  <p className="text-slate-500 text-xs mt-1">Principal, Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur</p>
+
+                <div className="space-y-3">
+                  <span className="inline-block text-[10px] font-black uppercase tracking-wider text-brand-maroon bg-brand-maroon/5 px-3 py-1 rounded-md">
+                    College Principal
+                  </span>
+                  <h3 className="font-black text-2xl text-slate-900 font-display tracking-tight">
+                    Dr. K. M. Awaradi
+                  </h3>
+                  <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed max-w-sm">
+                    Principal, Arts, Science & Commerce College, Mahalingpur. Leading academic enhancement and audit quality checks.
+                  </p>
                 </div>
+                
+                <Link 
+                  href="/about/principal" 
+                  className="text-xs font-black uppercase tracking-wider text-brand-maroon hover:text-college-gold transition flex items-center gap-1 group/btn"
+                >
+                  Read Message <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                </Link>
               </div>
             </ScrollReveal>
           </div>

@@ -4,7 +4,7 @@ import SubpageLayout from "@/components/SubpageLayout";
 const sidebarLinks = [
   { name: "Certificates", href: "/naac/certificates" },
   { name: "SSR", href: "/naac/ssr", active: true },
-  { name: "AQAR", href: "/aqar" },
+  { name: "AQAR", href: "/naac/aqar" },
   { name: "AISHE", href: "/naac/aishe" },
   { name: "Criterion Wise Details", href: "/naac/criterion-details" },
   { name: "RTI Act", href: "/naac/rti-act" },
@@ -14,6 +14,15 @@ const sidebarLinks = [
 const breadcrumbs = [
   { label: "NAAC", href: "/naac/ssr" },
   { label: "Self Study Report" },
+];
+
+const ssrList = [
+  {
+    sl: 1,
+    label: "SSR 4th Cycle Report",
+    href: "/SCPDDSFiles/IVth Cycle SSR.pdf",
+    available: true,
+  },
 ];
 
 export default function SSRPage() {
@@ -33,35 +42,36 @@ export default function SSRPage() {
           </h2>
         </div>
 
-        <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm bg-white">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-brand-maroon text-white text-xs md:text-sm font-bold tracking-wide uppercase">
-                <th className="py-4 px-6 w-20">Sl.No</th>
-                <th className="py-4 px-6">SSR Report</th>
-                <th className="py-4 px-6">Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors text-sm font-medium text-slate-700">
-                <td className="py-4 px-6 text-slate-400 font-bold">1</td>
-                <td className="py-4 px-6 text-slate-900 font-semibold">SSR 4th Cycle Report</td>
-                <td className="py-4 px-6">
-                  <a
-                    href="/SCPDDSFiles/IVth Cycle SSR.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-brand-maroon font-bold text-xs uppercase hover:underline transition"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    <span>Download PDF</span>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        {/* Mobile-first card list — replaces the wide table */}
+        <div className="space-y-3">
+          {ssrList.map((item) => (
+            <div
+              key={item.sl}
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-white border border-slate-100 rounded-xl p-4 shadow-sm hover:shadow-md transition"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-slate-400 font-bold text-xs w-6 shrink-0">{item.sl}</span>
+                <span className="text-slate-900 font-semibold text-sm">{item.label}</span>
+              </div>
+              {item.available ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 bg-brand-maroon hover:bg-[#5e1c2b] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg transition shrink-0"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Download PDF
+                </a>
+              ) : (
+                <span className="text-slate-400 text-xs font-semibold px-4 py-2.5 border border-slate-200 rounded-lg">
+                  Unavailable
+                </span>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </SubpageLayout>

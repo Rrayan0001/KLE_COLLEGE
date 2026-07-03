@@ -222,9 +222,18 @@ export default function HeroCarousel() {
   };
 
   const snapToRealSlide = (slideIndex: number) => {
+    // 1. Immediately disable the CSS transition so the jump is invisible
     setIsAnimating(false);
+    // 2. Move to the real position
     setActiveSlide(slideIndex);
-    requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
+    // 3. Re-enable the transition after two paint frames (ensures the DOM has committed the jump)
+    const raf = requestAnimationFrame(() => {
+      const inner = requestAnimationFrame(() => {
+        setIsAnimating(true);
+      });
+      return inner;
+    });
+    return () => cancelAnimationFrame(raf);
   };
 
   const handleTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>) => {

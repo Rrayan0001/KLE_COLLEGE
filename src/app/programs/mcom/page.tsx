@@ -20,6 +20,53 @@ const breadcrumbs = [
 ];
 
 export default function MasterOfCommercePage() {
+  const semestersData = [
+    {
+      title: "Semester I",
+      subjects: [
+        "Financial Management",
+        "Advanced Marketing Management",
+        "Management Accounting",
+        "Applied Economics for Business",
+        "Stock Market Operations (Specialization)"
+      ]
+    },
+    {
+      title: "Semester II",
+      subjects: [
+        "Corporate Strategic Management",
+        "Corporate Restructuring",
+        "Quantitative Techniques",
+        "Dynamics of Entrepreneurship Development",
+        "Advanced Corporate Accounting",
+        "Accounting for Specialization Institutions (Specialization)",
+        "OEC - Entrepreneurship Development and Project Management"
+      ]
+    },
+    {
+      title: "Semester III",
+      subjects: [
+        "Business Research Methodology",
+        "International Financial Management",
+        "Organizational Behavior",
+        "Innovations in Accounting",
+        "Financial Reporting Standards (Specialization)",
+        "OEC - Soft Skills for Employability"
+      ]
+    },
+    {
+      title: "Semester IV",
+      subjects: [
+        "GST and Customs",
+        "Corporate Ethics and Governance",
+        "Techniques of Costing",
+        "Investment Analysis and Portfolio Management",
+        "Advanced Financial Accounting (Specialization)",
+        "Project Work"
+      ]
+    }
+  ];
+
   return (
     <SubpageLayout
       title="Master of Commerce (M.Com.)"
@@ -32,94 +79,36 @@ export default function MasterOfCommercePage() {
             Postgraduate Program
           </span>
           <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
-            M.Com. Course Details & CBCS Curriculum
+            M.Com. Course Curriculum (I to IV Semester)
           </h2>
         </div>
 
-        <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
+        <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-655 leading-relaxed text-sm md:text-base">
           <p>
-            Our Master of Commerce (M.Com) program is a specialized postgraduate program aimed at developing research aptitude and advanced business management expertise under Rani Channamma University&apos;s CBCS scheme.
+            Our Master of Commerce (M.Com) program is a specialized postgraduate program aimed at developing research aptitude, advanced business analysis skillsets, and management expertise under Rani Channamma University&apos;s CBCS / NEP scheme.
           </p>
         </div>
 
-        <div className="space-y-6">
-          <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wide border-b border-slate-100 pb-2">
-            Semester I Curriculum
-          </h3>
-          <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm bg-white">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-brand-maroon text-white text-xs md:text-sm font-bold tracking-wide uppercase">
-                  <th className="py-4 px-6 w-32">Course Code</th>
-                  <th className="py-4 px-6">Course Title</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">HC - 1.1</td>
-                  <td className="py-4 px-6 text-slate-900">Corporate Strategic Management</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">HC - 1.2</td>
-                  <td className="py-4 px-6 text-slate-900">Advanced Marketing Management</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">HC - 1.3</td>
-                  <td className="py-4 px-6 text-slate-900">Financial Management</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">HC - 1.4</td>
-                  <td className="py-4 px-6 text-slate-900">Applied Economics for Business</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">HC - 1.5</td>
-                  <td className="py-4 px-6 text-slate-900">Management Accounting</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">SC - 1.6 (AF)</td>
-                  <td className="py-4 px-6 text-slate-900">Stock Market Operations (Elective)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div className="space-y-6">
-          <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wide border-b border-slate-100 pb-2">
-            Semester II Curriculum
-          </h3>
-          <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm bg-white">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-brand-maroon text-white text-xs md:text-sm font-bold tracking-wide uppercase">
-                  <th className="py-4 px-6 w-32">Course Code</th>
-                  <th className="py-4 px-6">Course Title</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">HC - 2.1</td>
-                  <td className="py-4 px-6 text-slate-900">Corporate Restructuring</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">HC - 2.2</td>
-                  <td className="py-4 px-6 text-slate-900">Quantitative Techniques</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">HC - 2.3</td>
-                  <td className="py-4 px-6 text-slate-900">Dynamics of Entrepreneurship Development</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">HC - 2.4</td>
-                  <td className="py-4 px-6 text-slate-900">Advanced Corporate Accounting</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">SC - 2.6 (AF)</td>
-                  <td className="py-4 px-6 text-slate-900">Accounting for Specialized Institutions (Elective)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {semestersData.map((sem, idx) => (
+            <div key={idx} className="bg-white border border-slate-150 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-brand-maroon text-white px-6 py-4 flex items-center justify-between">
+                <h3 className="font-extrabold tracking-wide uppercase text-xs md:text-sm">{sem.title}</h3>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-yellow">Postgraduate</span>
+              </div>
+              <div className="p-6 text-xs md:text-sm">
+                <h4 className="font-extrabold text-slate-850 uppercase text-[10px] tracking-wider mb-2.5">Courses Offered</h4>
+                <div className="flex flex-col gap-1.5">
+                  {sem.subjects.map((sub, sIdx) => (
+                    <div key={sIdx} className="bg-slate-50 border border-slate-100 px-3 py-2 rounded-lg flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-brand-maroon" />
+                      <span className="text-slate-850 font-bold text-xs">{sub}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </SubpageLayout>

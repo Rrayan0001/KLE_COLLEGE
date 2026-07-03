@@ -53,7 +53,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/aqar" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
+              <Link href="/naac/aqar" className="text-white/70 hover:text-college-gold transition hover:translate-x-1 inline-block duration-200">
                 AQAR
               </Link>
             </li>

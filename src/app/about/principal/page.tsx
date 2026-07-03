@@ -27,14 +27,14 @@ export default function PrincipalPage() {
           <div className="w-full md:w-1/3 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo/Shri_N_B_Patil.png"
-              alt="Shri. N. B. Patil"
-              className="w-full h-auto object-cover"
+              src="/images/profiles/principal.jpg"
+              alt="Dr. K. M. Awaradi"
+              className="w-full h-auto object-cover object-top"
             />
           </div>
           <div className="space-y-6">
-            <h2 className="text-xl md:text-2xl font-extrabold text-slate-800">
-              Shri. N. B. Patil
+            <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 font-display">
+              Dr. K. M. Awaradi
             </h2>
             <p className="text-brand-maroon font-bold text-sm tracking-wide">
               Principal, Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur
@@ -70,7 +70,7 @@ export default function PrincipalPage() {
           </p>
           <p className="pt-4 font-bold text-slate-800">
             With best wishes,<br />
-            Shri. N. B. Patil<br />
+            Dr. K. M. Awaradi<br />
             <span className="text-xs text-slate-500 font-semibold">Principal, KLE Society&apos;s SCP Arts, Science and D. D. Shirol Commerce College, Mahalingpur</span>
           </p>
         </div>

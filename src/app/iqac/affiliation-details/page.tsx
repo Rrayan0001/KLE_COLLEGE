@@ -18,6 +18,14 @@ const breadcrumbs = [
   { label: "Affiliation Details" },
 ];
 
+const programsList = [
+  { name: "Bachelor of Arts (B.A.)", type: "Undergraduate", affiliation: "Permanent Affiliation", body: "Rani Channamma University, Belagavi" },
+  { name: "Bachelor of Science (B.Sc.)", type: "Undergraduate", affiliation: "Permanent Affiliation", body: "Rani Channamma University, Belagavi" },
+  { name: "Bachelor of Commerce (B.Com.)", type: "Undergraduate", affiliation: "Permanent Affiliation", body: "Rani Channamma University, Belagavi" },
+  { name: "Bachelor of Computer Applications (B.C.A.)", type: "Undergraduate", affiliation: "Permanent Affiliation", body: "Rani Channamma University, Belagavi / AICTE Approved" },
+  { name: "Master of Commerce (M.Com.)", type: "Postgraduate", affiliation: "Permanent Affiliation", body: "Rani Channamma University, Belagavi" }
+];
+
 export default function AffiliationDetailsPage() {
   return (
     <SubpageLayout
@@ -25,20 +33,71 @@ export default function AffiliationDetailsPage() {
       breadcrumbs={breadcrumbs}
       sidebarLinks={sidebarLinks}
     >
-      <div className="flex flex-col items-center justify-center py-16 space-y-6 text-center">
-        <div className="w-24 h-24 bg-brand-maroon/5 rounded-full flex items-center justify-center text-brand-maroon border border-brand-maroon/10">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 animate-pulse text-brand-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-        </div>
-        <div className="space-y-2">
-          <h2 className="text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
-            Page Under Construction
+      <div className="space-y-8">
+        <div>
+          <span className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em] block mb-2">
+            Institutional Recognition
+          </span>
+          <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
+            University Affiliation & UGC Recognition
           </h2>
-          <p className="text-slate-500 text-sm max-w-md leading-relaxed">
-            The affiliation details of the college under Rani Channamma University, Belagavi, are currently being updated.
+        </div>
+
+        <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-655 leading-relaxed text-sm md:text-base">
+          <p>
+            Our college is permanently affiliated with <strong>Rani Channamma University, Belagavi</strong>. All degrees in Arts, Science, Commerce, and Computer Applications are conferred by Rani Channamma University upon successful completion of the academic program.
           </p>
+          <p>
+            Additionally, the college is recognized by the University Grants Commission (UGC) under <strong>Section 2(f) and 12(B)</strong> of the UGC Act, 1956. This recognition makes the college eligible to receive central financial assistance and research grants under various UGC schemes.
+          </p>
+        </div>
+
+        {/* Programs Affiliation Table */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wide">
+            Program Affiliation Status
+          </h3>
+          
+          <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm bg-white">
+            <table className="w-full text-left border-collapse text-xs md:text-sm">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-100 text-slate-700 font-bold uppercase tracking-wider text-[10px]">
+                  <th className="p-4">Sl No.</th>
+                  <th className="p-4">Program Name</th>
+                  <th className="p-4">Program Level</th>
+                  <th className="p-4">Affiliation Status</th>
+                  <th className="p-4">Conferring / Approving Body</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-slate-600">
+                {programsList.map((prog, idx) => (
+                  <tr key={idx} className="hover:bg-slate-50/50 transition">
+                    <td className="p-4 font-semibold text-slate-400">{idx + 1}</td>
+                    <td className="p-4 font-bold text-slate-800">{prog.name}</td>
+                    <td className="p-4 font-semibold">{prog.type}</td>
+                    <td className="p-4 text-emerald-600 font-bold">{prog.affiliation}</td>
+                    <td className="p-4">{prog.body}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Certificates reference card */}
+        <div className="bg-white border border-slate-100 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="space-y-1">
+            <h4 className="font-bold text-slate-900 text-base">UGC Recognition & Affiliation Orders</h4>
+            <p className="text-slate-500 text-xs md:text-sm">
+              Scan copies of the permanent affiliation orders from Rani Channamma University and UGC 2(f) & 12(B) certificates can be viewed in our NAAC documentation bank.
+            </p>
+          </div>
+          <a
+            href="/naac/certificates"
+            className="px-5 py-2.5 bg-brand-maroon hover:bg-[#5e1c2b] text-white rounded-lg text-xs font-bold transition shadow-sm shrink-0"
+          >
+            Go to NAAC Bank
+          </a>
         </div>
       </div>
     </SubpageLayout>

@@ -3,12 +3,28 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import SearchModal from "./SearchModal";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("MANAGEMENT");
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+
+  // Handle Cmd+K / Ctrl+K keyboard shortcut to open search modal
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   // Close mega menu on route change
   useEffect(() => {
@@ -30,14 +46,16 @@ export default function Navbar() {
   const navLinks = [
     { name: "HOME", href: "/" },
     {
-      name: "MANAGEMENT",
-      href: "/management/history",
+      name: "ABOUT KLE",
+      href: "/about-kle/history",
       sublinks: [
-        { name: "KLE History", href: "/management/history" },
-        { name: "KLE Society", href: "/management/society" },
-        { name: "Chairman's Message", href: "/management/chairman" },
-        { name: "Board Members", href: "/management/boardmembers" },
-        { name: "Local Governing Body", href: "/management/lgb" },
+        { name: "History", href: "/about-kle/history" },
+        { name: "Emblem", href: "/about-kle/emblem" },
+        { name: "Vision & Mission", href: "/about-kle/vision-mission" },
+        { name: "Founders", href: "/about-kle/founders" },
+        { name: "Board of Management", href: "/about-kle/board-management" },
+        { name: "Chairman's Message", href: "/about-kle/chairman-message" },
+        { name: "Local Governing Body", href: "/about-kle/lgb" },
       ],
     },
     {
@@ -72,11 +90,11 @@ export default function Navbar() {
       sublinks: [
         { name: "Certificates", href: "/naac/certificates" },
         { name: "SSR", href: "/naac/ssr" },
-        { name: "AQAR", href: "/aqar" },
-        { name: "AQAR 2020-21", href: "/aqar" },
-        { name: "AQAR 2021-22", href: "/aqar" },
-        { name: "AQAR 2022-23", href: "/aqar" },
-        { name: "AQAR 2023-24", href: "/aqar" },
+        { name: "AQAR", href: "/naac/aqar" },
+        { name: "AQAR 2020-21", href: "/naac/aqar/2020-21" },
+        { name: "AQAR 2021-22", href: "/naac/aqar/2021-22" },
+        { name: "AQAR 2022-23", href: "/naac/aqar/2022-23" },
+        { name: "AQAR 2023-24", href: "/naac/aqar/2023-24" },
         { name: "AISHE", href: "/naac/aishe" },
         { name: "Criterion Wise Details", href: "/naac/criterion-details" },
         { name: "RTI Act", href: "/naac/rti-act" },
@@ -204,8 +222,21 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Right: Empty (Balance Flex) */}
-          <div className="w-1/3 flex justify-end"></div>
+          {/* Right: Search trigger button */}
+          <div className="w-1/3 flex justify-end items-center gap-3">
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              aria-label="Open search dialog"
+              className="flex items-center gap-2 p-2 hover:bg-slate-100 rounded-md transition-all text-brand-maroon focus-visible:outline-none shrink-0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-7 md:w-7 hover:scale-105 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <kbd className="hidden lg:inline-flex items-center gap-0.5 text-[9px] font-bold text-slate-400 border border-slate-200 bg-slate-50 px-1.5 py-0.5 rounded shadow-sm shrink-0 select-none">
+                <span>⌘</span><span>K</span>
+              </kbd>
+            </button>
+          </div>
 
         </div>
       </header>
@@ -450,6 +481,8 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      {/* Search Modal Overlay */}
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );
 }

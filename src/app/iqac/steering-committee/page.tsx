@@ -18,6 +18,16 @@ const breadcrumbs = [
   { label: "Steering Committee" },
 ];
 
+const steeringCommitteeMembers = [
+  { name: "Dr. B. M. Patil", role: "Principal & Chairperson", affiliation: "SCP College Administration" },
+  { name: "Dr. K. M. Awaradi", role: "IQAC Coordinator", affiliation: "Department of Economics" },
+  { name: "Shri S. B. Patil", role: "Senior Administrative Member", affiliation: "Administrative Office" },
+  { name: "Dr. M. S. Patil", role: "Member", affiliation: "Department of Botany" },
+  { name: "Shri S. M. Banahatti", role: "Member", affiliation: "Department of Commerce" },
+  { name: "Dr. S. D. Salunke", role: "Member", affiliation: "Department of Sociology" },
+  { name: "Smt. S. S. Patil", role: "Member", affiliation: "Department of Kannada" }
+];
+
 export default function SteeringCommitteePage() {
   return (
     <SubpageLayout
@@ -25,20 +35,75 @@ export default function SteeringCommitteePage() {
       breadcrumbs={breadcrumbs}
       sidebarLinks={sidebarLinks}
     >
-      <div className="flex flex-col items-center justify-center py-16 space-y-6 text-center">
-        <div className="w-24 h-24 bg-brand-maroon/5 rounded-full flex items-center justify-center text-brand-maroon border border-brand-maroon/10">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 animate-pulse text-brand-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            {/* Tool / construction icon */}
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-        </div>
-        <div className="space-y-2">
-          <h2 className="text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
-            Page Under Construction
+      <div className="space-y-8">
+        <div>
+          <span className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em] block mb-2">
+            Quality Assurance Cell
+          </span>
+          <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
+            NAAC SSR Steering Committee
           </h2>
-          <p className="text-slate-500 text-sm max-w-md leading-relaxed">
-            The steering committee layout and members directory is currently being finalized. Please check back soon for details.
+        </div>
+
+        <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-655 leading-relaxed text-sm md:text-base">
+          <p>
+            The <strong>NAAC Self-Study Report (SSR) Steering Committee</strong> is constituted by the IQAC to spearhead and coordinate the assessment and accreditation processes. This internal committee oversees the compilation, editing, and submission of the SSR to NAAC, ensuring accurate documentation of criteria indicators.
+          </p>
+          <p>
+            The committee collaborates closely with all academic departments, libraries, support services, and administrative staff to conduct academic and administrative audits.
+          </p>
+        </div>
+
+        {/* Committee Coordinator Highlight */}
+        <div className="bg-gradient-to-r from-college-navy to-college-blue text-white p-6 rounded-2xl shadow-sm flex flex-col sm:flex-row items-center gap-5">
+          <div className="w-14 h-14 bg-college-gold rounded-full flex items-center justify-center text-2xl font-bold shrink-0 text-college-dark">
+            IQAC
+          </div>
+          <div>
+            <h4 className="font-bold text-base text-college-gold">Dr. K. M. Awaradi</h4>
+            <p className="text-white/80 text-xs md:text-sm">
+              IQAC Coordinator & Steering Committee Lead. Oversees the design and execution of quality parameters, compilation of annual AQAR sheets, and overall SSR documentation.
+            </p>
+          </div>
+        </div>
+
+        {/* Members Table */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wide">
+            Steering Committee Composition
+          </h3>
+          
+          <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm bg-white">
+            <table className="w-full text-left border-collapse text-xs md:text-sm">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-100 text-slate-700 font-bold uppercase tracking-wider text-[10px]">
+                  <th className="p-4">Sl No.</th>
+                  <th className="p-4">Name of Member</th>
+                  <th className="p-4">Committee Designation</th>
+                  <th className="p-4">Department / Affiliation</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-slate-600">
+                {steeringCommitteeMembers.map((member, idx) => (
+                  <tr key={idx} className="hover:bg-slate-50/50 transition">
+                    <td className="p-4 font-semibold text-slate-400">{idx + 1}</td>
+                    <td className="p-4 font-bold text-slate-800">{member.name}</td>
+                    <td className="p-4 font-semibold text-brand-maroon">{member.role}</td>
+                    <td className="p-4">{member.affiliation}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Roles notice */}
+        <div className="border border-slate-200 p-6 rounded-xl text-center space-y-2 bg-slate-50">
+          <h4 className="font-bold text-slate-800 uppercase text-xs md:text-sm tracking-wider">
+            Steering Committee Mandates
+          </h4>
+          <p className="text-slate-500 text-xs md:text-sm max-w-lg mx-auto">
+            1. Formulating standard templates for departmental data collection. &bull; 2. Verifying and compiling criteria-wise support documentation. &bull; 3. Coordinating peer-team visit schedules and mock assessment drills.
           </p>
         </div>
       </div>

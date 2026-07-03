@@ -16,67 +16,78 @@ const breadcrumbs = [
 ];
 
 const staffList = [
-  // UG Teaching
-  { sl: 1, name: "Shri. N. B. Patil", dept: "Commerce", role: "Principal", cat: "UG Teaching Staff" },
-  { sl: 2, name: "Dr. A. M. Narode", dept: "Kannada", role: "Associate Professor", cat: "UG Teaching Staff" },
-  { sl: 3, name: "Dr. S. D. Soraganvi", dept: "Economics/Agri. Marketing", role: "Associate Professor", cat: "UG Teaching Staff" },
-  { sl: 4, name: "Shri. A. M. Ugare", dept: "Political Science", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 5, name: "Shri. R. S. Pujari", dept: "Political Science", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 6, name: "Shri V. A. Adahalli", dept: "English", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 7, name: "Smt. J. R. Patil", dept: "Chemistry", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 8, name: "Shri C. M. Aigali", dept: "English", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 9, name: "Dr. S. S. Koli", dept: "Kannada", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 10, name: "Miss S. T. Diwanji", dept: "Mathematics", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 11, name: "Miss. S. S. Kodaganur", dept: "Botany", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 12, name: "Miss. C. M. Gennur", dept: "Zoology", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 13, name: "Shri T. D. Dangi", dept: "History", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 14, name: "Smt D. A. Naik", dept: "Chemistry", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 15, name: "Shri. P. M. Gouli", dept: "Hindi", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 16, name: "Shri. S. S. Mugalyal", dept: "Botany", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 17, name: "Shri. I. C. Shirol", dept: "Kannada", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 18, name: "Smt. R. M. Kakade", dept: "Commerce", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 19, name: "Dr. S. C. Bijjaragi", dept: "Zoology", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 20, name: "Shri. R. V. Chougala", dept: "Journalism & Mass Comm.", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 21, name: "Smt. S. I. Hosurmath", dept: "Economics", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 22, name: "Shri. S. I. Patil", dept: "BCA", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 23, name: "Miss. P. S. Managanvi", dept: "Commerce", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 24, name: "Shri. M. B. Dharigoudra", dept: "Commerce", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 25, name: "Shri. A. R. Urabi", dept: "BCA", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 26, name: "Shri. P. T. Athani", dept: "English", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 27, name: "Shri P. S. Hipparagi", dept: "Physical Education", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 28, name: "Smt P. M. Mutnali", dept: "Sociology", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 29, name: "Shri. V. T. Badiger", dept: "BCA", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 30, name: "Ms. S. S. Kamagond", dept: "BCA", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 31, name: "Ms. S. S. Harugoppa", dept: "Mathematics", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 32, name: "Shri B. I. Pagad", dept: "Journalism & Mass Comm.", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 33, name: "Shri S. A. Patil", dept: "Physics", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 34, name: "Ms. A. I. Latti", dept: "Commerce", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 35, name: "Ms. S. A. Savadi", dept: "Physics", role: "Lecturer", cat: "UG Teaching Staff" },
-  { sl: 36, name: "Ms. D. A. Ammanagi", dept: "English", role: "Part Time Lecturer", cat: "UG Teaching Staff" },
-  { sl: 37, name: "Ms. S. K. Atagali", dept: "Kannada", role: "Part Time Lecturer", cat: "UG Teaching Staff" },
-  
-  // PG Teaching
-  { sl: 38, name: "Miss. D. M. Hosapeti", dept: "PG Dept. of Commerce", role: "Lecturer", cat: "PG Teaching Staff" },
-  { sl: 39, name: "Miss P. B. Hosur", dept: "PG Dept. of Commerce", role: "Lecturer", cat: "PG Teaching Staff" },
-  { sl: 40, name: "Miss P. M. Balagar", dept: "PG Dept. of Commerce", role: "Lecturer", cat: "PG Teaching Staff" },
-  
-  // Library
-  { sl: 41, name: "Shri. P. B. Jabashetti", dept: "Library", role: "Library Assistant", cat: "Library Staff" },
-  { sl: 42, name: "Shri. B. M. Bandi", dept: "Digital Library", role: "Lab Assistant", cat: "Library Staff" },
-  
-  // Non Teaching
-  { sl: 43, name: "Shri. R. D. Biradar", dept: "Academic Office", role: "Office Superintendent", cat: "Non-Teaching Staff" },
-  { sl: 44, name: "Shri. D. S. Kumbar", dept: "Academic Office", role: "SDA/Typist", cat: "Non-Teaching Staff" },
-  { sl: 45, name: "Shri. M. B. Patil", dept: "Academic Office", role: "SDA", cat: "Non-Teaching Staff" },
-  { sl: 46, name: "Smt. R. D. Bhosale", dept: "Academic Office", role: "FDA", cat: "Non-Teaching Staff" },
-  { sl: 47, name: "Shri R. S. Jatti", dept: "Academic Office", role: "Accountant", cat: "Non-Teaching Staff" },
-  { sl: 48, name: "Shri K. S. Jadar", dept: "BCA", role: "Lab Instructor", cat: "Non-Teaching Staff" },
-  { sl: 49, name: "Shri C. B. Kittur", dept: "Library", role: "Attender", cat: "Non-Teaching Staff" },
-  { sl: 50, name: "Shri. D. S. Aneppagol", dept: "Academic Office", role: "Attender", cat: "Non-Teaching Staff" },
+  // UG Teaching Staff
+  { sl: 1, name: "Dr. K. M. Awaradi", dept: "Economics", role: "Principal", cat: "UG Teaching Staff" },
+  { sl: 2, name: "Dr. S. D. Soraganvi", dept: "Economics & Agricultural Marketing", role: "Associate Professor", cat: "UG Teaching Staff" },
+  { sl: 3, name: "Shri. A. M. Ugare", dept: "Political Science", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 4, name: "Smt. J. R. Patil", dept: "Chemistry", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 5, name: "Shri C. M. Aigali", dept: "English", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 6, name: "Dr. S. S. Koli", dept: "Kannada", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 7, name: "Miss S. T. Diwanji", dept: "Mathematics", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 8, name: "Miss. C. M. Gennur", dept: "Zoology", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 9, name: "Shri T. D. Dangi", dept: "History", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 10, name: "Smt D. A. Naik", dept: "Chemistry", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 11, name: "Shri. P. M. Gouli", dept: "Hindi", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 12, name: "Shri. S. S. Mugalyal", dept: "Botany", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 13, name: "Shri. I. C. Shirol", dept: "Kannada", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 14, name: "Smt. R. M. Kakade", dept: "Commerce", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 15, name: "Dr. S. C. Bijjaragi", dept: "Zoology", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 16, name: "Shri. K. S. Patil", dept: "English", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 17, name: "Shri R. V. Chougala", dept: "Journalism & Mass Communication", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 18, name: "Smt. S. I. Hosurmath", dept: "Economics", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 19, name: "Shri. S. I. Patil", dept: "Bachelor of Computer Application", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 20, name: "Miss. P. S. Managanvi", dept: "Commerce", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 21, name: "Shri. M. B. Dharigoudra", dept: "Commerce", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 22, name: "Shri. A. R. Urabi", dept: "Bachelor of Computer Application", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 23, name: "Shri. P. T. Athani", dept: "English", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 24, name: "Shri P. S. Hipparagi", dept: "Physical Education", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 25, name: "Smt P. M. Mutnali", dept: "Sociology", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 26, name: "Shri V. T. Badiger", dept: "Bachelor of Computer Application", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 27, name: "Ms. S. S. Kamagond", dept: "Bachelor of Computer Application", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 28, name: "Shri S. A. Patil", dept: "Physics", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 29, name: "Ms. A. I. Latti", dept: "Commerce", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 30, name: "Ms. S. A. Savadi", dept: "Physics", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 31, name: "Ms. D. A. Ammanagi", dept: "Bachelor of Computer Application", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 32, name: "Smt. Akshataka Hanamangond", dept: "Bachelor of Computer Application", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 33, name: "Ms. J. S. Horatti", dept: "Kannada", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 34, name: "Smt. S. M. Kalamalgi", dept: "Bachelor of Computer Application", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 35, name: "Shri Y. M. Dyamannavar", dept: "Political Science", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 36, name: "Shri N. L. Hipparagi", dept: "History", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 37, name: "Ms. A. V. Kulakarni", dept: "Chemistry", role: "Lecturer (Part time)", cat: "UG Teaching Staff" },
+  { sl: 38, name: "Shri Shirish Halemani", dept: "BBA", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 39, name: "Shri R. M. Uppara", dept: "Bachelor of Computer Application", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 40, name: "Ms. R. M. Bandigani", dept: "Bachelor of Computer Application", role: "Lecturer", cat: "UG Teaching Staff" },
+  { sl: 41, name: "Ms. A. B. Kadahatti", dept: "BBA", role: "Lecturer", cat: "UG Teaching Staff" },
+
+  // PG Teaching Staff
+  { sl: 1, name: "Smt. G. G. Madarakhandi", dept: "PG Dept. of Commerce", role: "Lecturer", cat: "PG Teaching Staff" },
+  { sl: 2, name: "Ms. L. S. Hadapad", dept: "PG Dept. of Commerce", role: "Lecturer", cat: "PG Teaching Staff" },
+
+  // Library Staff
+  { sl: 1, name: "Shri. P. B. Jabashetti", dept: "Library", role: "Library Assistant", cat: "Library Staff" },
+
+  // Non-Teaching Staff
+  { sl: 1, name: "Shri. M. B. Patil", dept: "Academic Office", role: "Office Superintendent", cat: "Non-Teaching Staff" },
+  { sl: 2, name: "Shri. D. S. Kumbar", dept: "Academic Office", role: "SDA/Typist", cat: "Non-Teaching Staff" },
+  { sl: 3, name: "Smt. R. D. Bhosale", dept: "Academic Office", role: "FDA", cat: "Non-Teaching Staff" },
+  { sl: 4, name: "Shri R. S. Jatti", dept: "Academic Office", role: "Accountant", cat: "Non-Teaching Staff" },
+  { sl: 5, name: "Shri. B. M. Bandi", dept: "Academic Office", role: "SDA", cat: "Non-Teaching Staff" },
+  { sl: 6, name: "Shri K. S. Jadar", dept: "Bachelor of Computer Application", role: "Lab Instructor", cat: "Non-Teaching Staff" },
+  { sl: 7, name: "Smt. S. N. Galagali", dept: "Bachelor of Computer Application", role: "Office Assistant", cat: "Non-Teaching Staff" },
+  { sl: 8, name: "Shri. B. D. Konnur", dept: "Bachelor of Computer Application", role: "Asst. Accountant", cat: "Non-Teaching Staff" },
+  { sl: 9, name: "Shri. D. S. Aneppagol", dept: "Academic Office", role: "Attender", cat: "Non-Teaching Staff" },
+
+  // Menial Staff
+  { sl: 1, name: "Shri. P. M. Kanti", dept: "Support Services", role: "Menial Staff", cat: "Menial Staff" },
+  { sl: 2, name: "Smt. C. K. Kamat", dept: "Support Services", role: "Menial Staff", cat: "Menial Staff" },
+  { sl: 3, name: "Smt. R. S. Dombar", dept: "Support Services", role: "Menial Staff", cat: "Menial Staff" },
+  { sl: 4, name: "Shri. Bhimappa", dept: "Support Services", role: "Menial Staff", cat: "Menial Staff" },
+  { sl: 5, name: "Shri. S. R. Sagari", dept: "Support Services", role: "Menial Staff", cat: "Menial Staff" },
+  { sl: 6, name: "Shri. H. S. Davaskar", dept: "Support Services", role: "Menial Staff", cat: "Menial Staff" },
 ];
 
 export default function StaffPage() {
-  const categories = ["UG Teaching Staff", "PG Teaching Staff", "Library Staff", "Non-Teaching Staff"];
+  const categories = ["UG Teaching Staff", "PG Teaching Staff", "Library Staff", "Non-Teaching Staff", "Menial Staff"];
 
   return (
     <SubpageLayout
@@ -90,7 +101,7 @@ export default function StaffPage() {
             KLE Society&apos;s SCP College, Mahalingpur
           </span>
           <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
-            Faculty & Non-Teaching Staff Directory
+            Faculty & Staff Directory
           </h2>
         </div>
 

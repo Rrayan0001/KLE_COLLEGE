@@ -8,6 +8,11 @@
   --color-brand-gray: #f4f4f4;
   --color-brand-text: #333333;
   
+  --color-college-navy: #0f2c59;
+  --color-college-dark: #0a1c3a;
+  --color-college-blue: #1e4b8a;
+  --color-college-gold: #cca43b;
+  
   --font-sans: var(--font-sans), system-ui, sans-serif;
   --font-display: var(--font-display), system-ui, sans-serif;
   
@@ -33,6 +38,14 @@
 html,
 body {
   overflow-x: hidden;
+  /* Hide page-level scrollbar while keeping scroll functional */
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE / Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;              /* Chrome / Safari / Opera */
 }
 
 .dark {
@@ -47,9 +60,9 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar — used inside scrollable sub-elements only */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -209,3 +222,25 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* ── Page transition: arc/ring spinner ──────────────────────────────────── */
+@keyframes kle-spin {
+  to { transform: rotate(360deg); }
+}
+
+.kle-spinner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.20);
+  border-top-color: rgba(255, 255, 255, 0.75);
+  animation: kle-spin 0.75s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kle-spinner {
+    animation-duration: 2s;
+  }
+}
+

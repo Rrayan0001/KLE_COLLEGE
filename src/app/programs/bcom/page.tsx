@@ -20,6 +20,33 @@ const breadcrumbs = [
 ];
 
 export default function BachelorOfCommercePage() {
+  const semestersData = [
+    {
+      title: "Semester I",
+      languages: "English (Lang 1), Kannada / Hindi (Lang 2)",
+      majors: ["Financial Accounting", "Corporate Administration", "Marketing Management", "Financial Marketing"],
+      compulsory: "Institutional Values - I"
+    },
+    {
+      title: "Semester II",
+      languages: "English (Lang 1), Kannada / Hindi (Lang 2)",
+      majors: ["Advance Financial Accounting", "Business Management & Startups", "Investments Management", "Business Communication"],
+      compulsory: "Institutional Values - II"
+    },
+    {
+      title: "Semester III",
+      languages: "English (Lang 1), Kannada / Hindi (Lang 2)",
+      majors: ["Corporate Accounting", "Cost Accounting", "Business Analytics", "Business Environment"],
+      electives: "Retail Marketing / Human Resource Management"
+    },
+    {
+      title: "Semester IV",
+      languages: "English (Lang 1), Kannada / Hindi (Lang 2)",
+      majors: ["Advance Corporate Accounting", "Costing Methods and Techniques", "Business Law and Legal Practices", "Financial Management"],
+      electives: "Quantitative Techniques for Business Decisions"
+    }
+  ];
+
   return (
     <SubpageLayout
       title="Bachelor of Commerce (B.COM)"
@@ -29,94 +56,57 @@ export default function BachelorOfCommercePage() {
       <div className="space-y-8">
         <div>
           <span className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em] block mb-2">
-            Undergraduate Program
+            Undergraduate Program (SEP Scheme)
           </span>
           <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
-            B.COM. Course Details & Curriculum
+            B.Com. Course Curriculum (I to VI Semester)
           </h2>
         </div>
 
-        <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
+        <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-655 leading-relaxed text-sm md:text-base">
           <p>
-            The Bachelor of Commerce (B.Com) program provides comprehensive education in accounting, banking, marketing, and business administration. The course is aligned with the National Education Policy (NEP) to promote practical entrepreneurship and finance literacy.
+            The Bachelor of Commerce (B.Com) program under the State Education Policy (SEP) scheme at SCP College provides comprehensive education in accounting, banking, marketing, and business administration. The course is aligned to promote practical entrepreneurship, financial management capabilities, and corporate law expertise.
           </p>
         </div>
 
-        <div className="space-y-4">
-          <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wide">
-            NEP Course Structure
-          </h3>
-          <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm bg-white">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-brand-maroon text-white text-xs md:text-sm font-bold tracking-wide uppercase">
-                  <th className="py-4 px-6 w-32">Course Code</th>
-                  <th className="py-4 px-6">Course Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">Lang 1.1</td>
-                  <td className="py-4 px-6 text-slate-900">Basic Kannada</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">Lang 1.2</td>
-                  <td className="py-4 px-6 text-slate-900">Basic English / Hindi</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">DSC - 1</td>
-                  <td className="py-4 px-6 text-slate-900">Financial Accounting</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">DSC - 2</td>
-                  <td className="py-4 px-6 text-slate-900">Management Principles and Applications</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">DSC - 3</td>
-                  <td className="py-4 px-6 text-slate-900">Principles of Marketing</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">OEC - 1</td>
-                  <td className="py-4 px-6 text-slate-900">Entrepreneurship Development</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">OEC - 2</td>
-                  <td className="py-4 px-6 text-slate-900">Accounting for Everyone</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">SEC-SB - 1</td>
-                  <td className="py-4 px-6 text-slate-900">Digital Fluency</td>
-                </tr>
-                <tr className="border-b border-slate-100 text-sm font-medium text-slate-700">
-                  <td className="py-4 px-6 text-brand-maroon font-bold">SEC-VB - 2</td>
-                  <td className="py-4 px-6 text-slate-900">NSS / Cultural Activities</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wide">
-            Advanced Core Courses
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              "Corporate Accounting – I",
-              "Entrepreneurship Development",
-              "Innovative Banking",
-            ].map((course, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-slate-100 p-4 rounded-xl shadow-sm flex items-center gap-3 hover:border-brand-maroon/20 hover:shadow-md transition duration-200"
-              >
-                <div className="w-8 h-8 rounded-full bg-brand-maroon/5 flex items-center justify-center text-brand-maroon text-xs font-extrabold">
-                  {idx + 1}
-                </div>
-                <span className="text-slate-800 font-bold text-sm">{course}</span>
+        <div className="space-y-8">
+          {semestersData.map((sem, idx) => (
+            <div key={idx} className="bg-white border border-slate-150 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-brand-maroon text-white px-6 py-4 flex items-center justify-between">
+                <h3 className="font-extrabold tracking-wide uppercase text-sm md:text-base">{sem.title}</h3>
+                <span className="text-xs font-semibold uppercase tracking-wider text-brand-yellow">SEP Scheme</span>
               </div>
-            ))}
-          </div>
+              <div className="p-6 space-y-4 text-sm">
+                <div>
+                  <h4 className="font-extrabold text-slate-850 uppercase text-xs tracking-wider mb-1">Languages Offered</h4>
+                  <p className="text-slate-600 font-medium">{sem.languages}</p>
+                </div>
+                <div>
+                  <h4 className="font-extrabold text-slate-850 uppercase text-xs tracking-wider mb-2">Major Subjects</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {sem.majors.map((major, mIdx) => (
+                      <div key={mIdx} className="bg-slate-50 border border-slate-100 px-4 py-2.5 rounded-lg flex items-center gap-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-maroon" />
+                        <span className="text-slate-850 font-bold">{major}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {sem.compulsory && (
+                  <div>
+                    <h4 className="font-extrabold text-slate-850 uppercase text-xs tracking-wider mb-1">Compulsory Subject</h4>
+                    <p className="text-brand-maroon font-bold">{sem.compulsory}</p>
+                  </div>
+                )}
+                {sem.electives && (
+                  <div>
+                    <h4 className="font-extrabold text-slate-850 uppercase text-xs tracking-wider mb-1">Core Elective Option</h4>
+                    <p className="text-brand-maroon font-bold">{sem.electives}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </SubpageLayout>

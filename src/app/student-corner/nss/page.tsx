@@ -16,6 +16,29 @@ const breadcrumbs = [
   { label: "NSS & Youth Red Cross Wing" },
 ];
 
+const nssActivities = [
+  {
+    title: "Community Outreach & Social Service",
+    desc: "Adoption of local villages to conduct cleanliness drives, basic literacy camps, and awareness campaigns on hygiene, health, and water conservation.",
+    icon: "🌍"
+  },
+  {
+    title: "Health & Wellness Initiatives",
+    desc: "Regular organization of blood donation camps in association with Red Cross Society and local hospitals, free health check-up camps, and AIDS awareness programs.",
+    icon: "❤️"
+  },
+  {
+    title: "Environmental Protection & Swachh Bharat",
+    desc: "Tree plantation drives (Vanamahotsava) inside the campus and surrounding areas, plastic eradication campaigns, and regular cleaning activities under Swachh Bharat.",
+    icon: "🌱"
+  },
+  {
+    title: "National Integration & Values Education",
+    desc: "Celebrating national days, organizing youth leadership training, and promoting values of democracy, national integration, and social harmony.",
+    icon: "🤝"
+  }
+];
+
 export default function NSSPage() {
   return (
     <SubpageLayout
@@ -23,19 +46,107 @@ export default function NSSPage() {
       breadcrumbs={breadcrumbs}
       sidebarLinks={sidebarLinks}
     >
-      <div className="flex flex-col items-center justify-center py-16 space-y-6 text-center">
-        <div className="w-24 h-24 bg-brand-maroon/5 rounded-full flex items-center justify-center text-brand-maroon border border-brand-maroon/10">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 animate-pulse text-brand-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-        </div>
-        <div className="space-y-2">
-          <h2 className="text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
-            Page Under Construction
+      <div className="space-y-8">
+        <div>
+          <span className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em] block mb-2">
+            Co-curricular Extension Activities
+          </span>
+          <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
+            National Service Scheme & Youth Red Cross
           </h2>
-          <p className="text-slate-500 text-sm max-w-md leading-relaxed">
-            The activities, guidelines, and registration details for the NSS and Youth Red Cross Wing are currently being updated.
+        </div>
+
+        <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
+          <p>
+            The National Service Scheme (NSS) and the Youth Red Cross (YRC) unit at our institution play a pivotal role in shaping students into socially responsible, empathetic, and active citizens. The motto of NSS is <strong>&quot;Not Me But You&quot;</strong>, which reflects the essence of democratic living and upholds the need for selfless service.
+          </p>
+          <p>
+            Our college units conduct numerous extension activities annually, including community wellness programs, health awareness rallies, environmental protection initiatives, and emergency relief services.
+          </p>
+        </div>
+
+        {/* Programme Officers Panel */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm space-y-4">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-brand-maroon/10 rounded-full flex items-center justify-center text-brand-maroon text-lg font-bold">
+                NSS
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 text-base">Shri V. S. Angadi</h4>
+                <p className="text-xs text-brand-maroon font-semibold">NSS Programme Officer</p>
+              </div>
+            </div>
+            <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
+              Leading student volunteers in local community services, village adoption programs, and annual special camps that foster leadership and cooperation.
+            </p>
+          </div>
+
+          <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm space-y-4">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-brand-maroon/10 rounded-full flex items-center justify-center text-brand-maroon text-lg font-bold">
+                YRC
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 text-base">Shri R. S. Pujari</h4>
+                <p className="text-xs text-brand-maroon font-semibold">Youth Red Cross Coordinator</p>
+              </div>
+            </div>
+            <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
+              Overseeing health, care, and emergency volunteer work. Recognized with the **&quot;Best Youth Red Cross Unit Award&quot;** for exemplary services.
+            </p>
+          </div>
+        </div>
+
+        {/* Special Honors */}
+        <div className="bg-gradient-to-r from-college-navy to-college-blue text-white p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-center gap-6 shadow-md">
+          <div className="w-16 h-16 bg-college-gold rounded-full flex items-center justify-center text-3xl shadow-lg shrink-0">
+            🏆
+          </div>
+          <div className="space-y-2 text-center md:text-left">
+            <h4 className="font-bold text-college-gold text-lg">Best Youth Red Cross Unit Award</h4>
+            <p className="text-white/80 text-sm leading-relaxed">
+              For outstanding contribution to societal welfare, blood donation camps, and community health services during the academic year 2021-22, our college unit was officially honored with the prestigious Best Youth Red Cross Award.
+            </p>
+          </div>
+        </div>
+
+        {/* Core Extension Activities */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-bold text-slate-800 uppercase tracking-wide">
+            Core Extension Activities & Campaigns
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {nssActivities.map((act, index) => (
+              <div 
+                key={index}
+                className="p-5 border border-slate-100 bg-white rounded-xl shadow-sm flex gap-4 hover:border-brand-maroon/10 hover:shadow-md transition duration-200"
+              >
+                <div className="text-3xl shrink-0 pt-1">{act.icon}</div>
+                <div className="space-y-1">
+                  <h4 className="font-bold text-slate-900 text-sm md:text-base">
+                    {act.title}
+                  </h4>
+                  <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
+                    {act.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Voluntary Enrollment Notice */}
+        <div className="border border-slate-200 p-6 rounded-xl text-center space-y-3 bg-slate-50">
+          <h4 className="font-bold text-slate-800 uppercase text-xs md:text-sm tracking-wider">
+            Interested in Voluntary Service?
+          </h4>
+          <p className="text-slate-500 text-xs md:text-sm max-w-lg mx-auto">
+            Registrations for new volunteers open at the start of each academic year. Student volunteers are awarded certificates of merit upon completing 240 hours of service over two years and attending annual special camps.
+          </p>
+          <p className="text-xs text-slate-400 font-semibold">
+            Contact: NSS Office, Administrative Block or Email: scpdgcol@gmail.com
           </p>
         </div>
       </div>

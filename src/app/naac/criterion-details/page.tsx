@@ -6,7 +6,7 @@ import SubpageLayout from "@/components/SubpageLayout";
 const sidebarLinks = [
   { name: "Certificates", href: "/naac/certificates" },
   { name: "SSR", href: "/naac/ssr" },
-  { name: "AQAR", href: "/aqar" },
+  { name: "AQAR", href: "/naac/aqar" },
   { name: "AISHE", href: "/naac/aishe" },
   { name: "Criterion Wise Details", href: "/naac/criterion-details", active: true },
   { name: "RTI Act", href: "/naac/rti-act" },
@@ -255,60 +255,50 @@ export default function NAACCriterionPage() {
             </h2>
           </div>
 
-          <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm bg-white">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-brand-maroon text-white text-xs md:text-sm font-bold tracking-wide uppercase">
-                  <th className="py-4 px-6 w-32">Metric No</th>
-                  <th className="py-4 px-6">Document Description</th>
-                  <th className="py-4 px-6 w-48">Link</th>
-                </tr>
-              </thead>
-              <tbody>
-                {current.docs.map((doc, idx) => (
-                  <tr
-                    key={idx}
-                    className="border-b border-slate-100 hover:bg-slate-50 transition-colors text-sm font-medium text-slate-700"
-                  >
-                    <td className="py-4 px-6 text-brand-maroon font-extrabold">{doc.metric}</td>
-                    <td className="py-4 px-6 text-slate-900 font-semibold leading-relaxed">
-                      {doc.desc}
-                    </td>
-                    <td className="py-4 px-6">
-                      {doc.path ? (
+          {/* Mobile-first card list */}
+          <div className="space-y-3">
+            {current.docs.map((doc, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 bg-white border border-slate-100 rounded-xl p-4 shadow-sm hover:shadow-md transition"
+              >
+                <div className="flex gap-3">
+                  <span className="text-brand-maroon font-extrabold text-xs shrink-0 pt-0.5 w-12">{doc.metric}</span>
+                  <span className="text-slate-800 font-semibold text-sm leading-relaxed">{doc.desc}</span>
+                </div>
+                <div className="shrink-0 ml-15">
+                  {doc.path ? (
+                    <a
+                      href={doc.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 bg-brand-maroon hover:bg-[#5e1c2b] text-white font-bold text-xs uppercase px-4 py-2 rounded-lg transition"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Download PDF
+                    </a>
+                  ) : doc.subLinks ? (
+                    <div className="flex flex-wrap gap-2">
+                      {doc.subLinks.map((sub, sIdx) => (
                         <a
-                          href={doc.path}
+                          key={sIdx}
+                          href={sub.path}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-brand-maroon font-bold text-xs uppercase hover:underline"
+                          className="px-2.5 py-1 rounded bg-slate-100 hover:bg-brand-maroon hover:text-white text-slate-600 transition text-xs font-bold"
                         >
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                          <span>Download PDF</span>
+                          {sub.label}
                         </a>
-                      ) : doc.subLinks ? (
-                        <div className="flex flex-wrap gap-2">
-                          {doc.subLinks.map((sub, sIdx) => (
-                            <a
-                              key={sIdx}
-                              href={sub.path}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="px-2.5 py-1 rounded bg-slate-100 hover:bg-brand-maroon hover:text-white text-slate-600 transition text-xs font-bold"
-                            >
-                              {sub.label}
-                            </a>
-                          ))}
-                        </div>
-                      ) : (
-                        <span className="text-xs text-slate-400 font-semibold italic">N/A</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                      ))}
+                    </div>
+                  ) : (
+                    <span className="text-xs text-slate-400 font-semibold italic">N/A</span>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

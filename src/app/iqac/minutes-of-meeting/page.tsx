@@ -27,6 +27,12 @@ const meetings = [
   { sl: 6, year: "2023-2024", title: "Minutes of Meeting", pdf: "/SCPDDSFiles/5. Minutes of Meeting.pdf" },
 ];
 
+const DownloadIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+  </svg>
+);
+
 export default function MinutesOfMeetingPage() {
   return (
     <SubpageLayout
@@ -44,42 +50,31 @@ export default function MinutesOfMeetingPage() {
           </h2>
         </div>
 
-        <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm bg-white">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-brand-maroon text-white text-xs md:text-sm font-bold tracking-wide uppercase">
-                <th className="py-4 px-6 w-20">Sl.No</th>
-                <th className="py-4 px-6">Year</th>
-                <th className="py-4 px-6">Minutes of Meeting</th>
-                <th className="py-4 px-6">Report Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {meetings.map((meet, idx) => (
-                <tr
-                  key={idx}
-                  className="border-b border-slate-100 hover:bg-slate-50 transition-colors text-sm font-medium text-slate-700"
-                >
-                  <td className="py-4 px-6 text-slate-400 font-bold">{meet.sl}</td>
-                  <td className="py-4 px-6 text-slate-900 font-semibold">{meet.year}</td>
-                  <td className="py-4 px-6 text-slate-600">{meet.title}</td>
-                  <td className="py-4 px-6">
-                    <a
-                      href={meet.pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-brand-maroon font-bold text-xs uppercase hover:underline transition"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      <span>Download PDF</span>
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Mobile-first card list */}
+        <div className="space-y-3">
+          {meetings.map((meet) => (
+            <div
+              key={meet.sl}
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-white border border-slate-100 rounded-xl p-4 shadow-sm hover:shadow-md transition"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-slate-400 font-bold text-xs w-6 shrink-0">{meet.sl}</span>
+                <div>
+                  <span className="text-slate-400 text-[10px] uppercase tracking-wider font-semibold block">{meet.title}</span>
+                  <span className="text-slate-900 font-semibold text-sm">{meet.year}</span>
+                </div>
+              </div>
+              <a
+                href={meet.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 bg-brand-maroon hover:bg-[#5e1c2b] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg transition shrink-0"
+              >
+                <DownloadIcon />
+                Download PDF
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </SubpageLayout>
