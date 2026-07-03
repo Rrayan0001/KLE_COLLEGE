@@ -30,6 +30,18 @@ export default function WelcomeAnimation() {
     return () => timers.forEach(clearTimeout);
   }, []);
 
+  // Prevent background page scrolling while welcome animation is active
+  useEffect(() => {
+    if (!visible || phase === 4) {
+      document.body.style.overflow = "";
+      return;
+    }
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [visible, phase]);
+
   const handleSkip = useCallback(() => {
     setPhase(3);
     setTimeout(() => {
