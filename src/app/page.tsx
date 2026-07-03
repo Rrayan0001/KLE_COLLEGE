@@ -3,6 +3,8 @@ import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 import TabsSection from "@/components/TabsSection";
 import ScrollReveal from "@/components/ScrollReveal";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import MilestonesSection from "@/components/MilestonesSection";
 
 export default function Home() {
   const highlights = [
@@ -86,10 +88,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           {/* Left Column: Welcome Text */}
           <ScrollReveal className="lg:col-span-7 space-y-6 pr-0 lg:pr-12" animation="fade-in-up">
-            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">
+            <span className="text-brand-maroon font-extrabold text-base sm:text-lg md:text-xl uppercase tracking-[0.2em]">
               About Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-maroon leading-tight font-display uppercase tracking-wide">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-maroon leading-tight font-display uppercase tracking-tight">
               Welcome To Our College
             </h2>
             <p className="text-brand-text leading-relaxed text-sm md:text-base text-justify font-medium">
@@ -111,7 +113,7 @@ export default function Home() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/about_us/image.png"
-              alt="KLE SCP College Mahalingpur main building campus architecture"
+              alt="KLE SCPDDS College Mahalingpur main building campus architecture"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-102"
               style={{ clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
               loading="lazy"
@@ -119,6 +121,9 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Milestones Section */}
+      <MilestonesSection />
 
       {/* ── Tabs Section ── */}
       <ScrollReveal animation="fade-in-up" delay={50}>
@@ -137,8 +142,7 @@ export default function Home() {
             />
           </ScrollReveal>
           <ScrollReveal className="space-y-4" animation="fade-in-right" delay={150}>
-            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">Dr. D. D. Shirol</span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-brand-maroon font-display">Our Donor</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-maroon font-display uppercase tracking-tight">Our Donor</h2>
             <p className="text-brand-text leading-relaxed text-sm md:text-base text-justify font-medium">
               Earlier the college was named as SCVV Trust Fund&apos;s SCP ARTS AND COMMERCE COLLEGE run by a local governing body. It was due to a donation by Dr. D. D. Shirol, the COMMERCE wing was renamed after his father Shri. Dundappa Danappa Shirol. So the college was renamed as SCVV Trust Fund&apos;s SCP ARTS AND DUNDAPPA DANAPPA SHIROL COMMERCE COLLEGE.
             </p>
@@ -178,59 +182,61 @@ export default function Home() {
       </div>
 
       {/* ── Team Section ── */}
-      <section className="py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden" aria-labelledby="team-heading">
+      <section className="py-16 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden" aria-labelledby="team-heading">
         {/* Background decorative elements */}
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-brand-maroon/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-80 h-80 bg-college-gold/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <ScrollReveal animation="fade-in-up" className="text-center mb-16 space-y-3">
-            <span className="text-brand-maroon font-extrabold text-xs uppercase tracking-[0.3em] bg-brand-maroon/5 px-4 py-1.5 rounded-full">
+          <ScrollReveal animation="fade-in-up" className="text-center mb-10 space-y-2">
+            <span className="text-brand-maroon font-extrabold text-xs sm:text-sm uppercase tracking-[0.3em] bg-brand-maroon/5 px-4.5 py-2 rounded-full">
               Governing Leadership
             </span>
-            <h2 id="team-heading" className="text-3xl md:text-5xl font-black text-slate-900 font-display uppercase tracking-tight">
+            <h2 id="team-heading" className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 font-display uppercase tracking-tight">
               Our Leadership Team
             </h2>
-            <p className="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-slate-500 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
               Steered by visionary institution builders and academic directors committed to elevating educational paradigms.
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
             {/* Chairman */}
-            <ScrollReveal className="w-full" animation="fade-in-up" delay={0}>
-              <div className="group bg-white rounded-3xl border border-slate-100 p-8 md:p-10 text-center flex flex-col items-center space-y-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(122,37,56,0.08)] hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+            <ScrollReveal className="w-full flex" animation="fade-in-up" delay={0}>
+              <div className="group bg-white rounded-3xl border border-slate-100 p-6 md:p-8 text-center flex flex-col items-center justify-between w-full shadow-[0_8px_25px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_40px_rgba(122,37,56,0.06)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden">
                 {/* Visual gold/maroon subtle accent bar */}
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-maroon via-college-gold to-brand-maroon" />
                 
-                {/* Profile Image container — rounded rectangle to prevent clipping */}
-                <div className="relative w-64 h-48 rounded-2xl p-1 bg-gradient-to-tr from-brand-maroon to-college-gold group-hover:scale-105 transition-transform duration-300">
-                  <div className="w-full h-full rounded-xl overflow-hidden border-4 border-white bg-slate-100">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src="/images/logo/Prabhakar Kore.jpg" 
-                      alt="Dr. Prabhakar Kore" 
-                      className="w-full h-full object-cover object-top" 
-                      loading="lazy" 
-                    />
+                <div className="flex flex-col items-center space-y-4 w-full">
+                  {/* Profile Image container — rounded rectangle to prevent clipping */}
+                  <div className="relative w-52 h-40 rounded-2xl p-1 bg-gradient-to-tr from-brand-maroon to-college-gold group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-full h-full rounded-xl overflow-hidden border-4 border-white bg-slate-100">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img 
+                        src="/images/profiles/Chairman.jpeg" 
+                        alt="Shri. Amit Prabhakar Kore" 
+                        className="w-full h-full object-cover object-top" 
+                        loading="lazy" 
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className="space-y-3">
-                  <span className="inline-block text-[10px] font-black uppercase tracking-wider text-brand-maroon bg-brand-maroon/5 px-3 py-1 rounded-md">
-                    Honorary Chairman
-                  </span>
-                  <h3 className="font-black text-2xl text-slate-900 font-display tracking-tight">
-                    Dr. Prabhakar Kore
-                  </h3>
-                  <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed max-w-sm">
-                    Honorary Chairman, KLE Society, Belagavi. Centenary builder guiding over 300 institutions across India.
-                  </p>
+                  <div className="space-y-2">
+                    <span className="inline-block text-[10px] font-black uppercase tracking-wider text-brand-maroon bg-brand-maroon/5 px-3 py-1 rounded-md">
+                      Chairman
+                    </span>
+                    <h3 className="font-black text-xl text-slate-900 font-display tracking-tight">
+                      Shri. Amit Prabhakar Kore
+                    </h3>
+                    <p className="text-slate-500 text-xs leading-relaxed max-w-sm">
+                      Chairman, KLE Society, Belagavi. Amit Prabhakar Kore has built his career at the intersection of institutional governance and industrial enterprise. Educated in engineering and finance in the United States and shaped by over two decades of hands-on leadership across healthcare, education & industry..
+                    </p>
+                  </div>
                 </div>
                 
                 <Link 
                   href="/management/chairman" 
-                  className="text-xs font-black uppercase tracking-wider text-brand-maroon hover:text-college-gold transition flex items-center gap-1 group/btn"
+                  className="text-xs font-black uppercase tracking-wider text-brand-maroon hover:text-college-gold transition flex items-center gap-1 group/btn mt-4"
                 >
                   Read Message <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
                 </Link>
@@ -238,39 +244,41 @@ export default function Home() {
             </ScrollReveal>
             
             {/* Principal */}
-            <ScrollReveal className="w-full" animation="fade-in-up" delay={150}>
-              <div className="group bg-white rounded-3xl border border-slate-100 p-8 md:p-10 text-center flex flex-col items-center space-y-6 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(122,37,56,0.08)] hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+            <ScrollReveal className="w-full flex" animation="fade-in-up" delay={150}>
+              <div className="group bg-white rounded-3xl border border-slate-100 p-6 md:p-8 text-center flex flex-col items-center justify-between w-full shadow-[0_8px_25px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_40px_rgba(122,37,56,0.06)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden">
                 {/* Visual gold/maroon subtle accent bar */}
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-maroon via-college-gold to-brand-maroon" />
                 
-                {/* Profile Image container — rounded rectangle to prevent clipping */}
-                <div className="relative w-64 h-48 rounded-2xl p-1 bg-gradient-to-tr from-brand-maroon to-college-gold group-hover:scale-105 transition-transform duration-300">
-                  <div className="w-full h-full rounded-xl overflow-hidden border-4 border-white bg-slate-100">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src="/images/profiles/principal.jpg" 
-                      alt="Dr. K. M. Awaradi" 
-                      className="w-full h-full object-cover object-center" 
-                      loading="lazy" 
-                    />
+                <div className="flex flex-col items-center space-y-4 w-full">
+                  {/* Profile Image container — rounded rectangle to prevent clipping */}
+                  <div className="relative w-52 h-40 rounded-2xl p-1 bg-gradient-to-tr from-brand-maroon to-college-gold group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-full h-full rounded-xl overflow-hidden border-4 border-white bg-slate-100">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img 
+                        src="/images/profiles/principal.jpg" 
+                        alt="Dr. K. M. Awaradi" 
+                        className="w-full h-full object-cover object-center" 
+                        loading="lazy" 
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className="space-y-3">
-                  <span className="inline-block text-[10px] font-black uppercase tracking-wider text-brand-maroon bg-brand-maroon/5 px-3 py-1 rounded-md">
-                    College Principal
-                  </span>
-                  <h3 className="font-black text-2xl text-slate-900 font-display tracking-tight">
-                    Dr. K. M. Awaradi
-                  </h3>
-                  <p className="text-slate-500 text-xs md:text-sm font-medium leading-relaxed max-w-sm">
-                    Principal, Arts, Science & Commerce College, Mahalingpur. Leading academic enhancement and audit quality checks.
-                  </p>
+                  <div className="space-y-2">
+                    <span className="inline-block text-[10px] font-black uppercase tracking-wider text-brand-maroon bg-brand-maroon/5 px-3 py-1 rounded-md">
+                      College Principal
+                    </span>
+                    <h3 className="font-black text-xl text-slate-900 font-display tracking-tight">
+                      Dr. K. M. Awaradi
+                    </h3>
+                    <p className="text-slate-500 text-xs leading-relaxed max-w-sm">
+                      Principal, SCPDDS Arts, Science & Commerce College, Mahalingpur. Leading academic enhancements, student-centric systems, and rigorous quality check audits.
+                    </p>
+                  </div>
                 </div>
                 
                 <Link 
                   href="/about/principal" 
-                  className="text-xs font-black uppercase tracking-wider text-brand-maroon hover:text-college-gold transition flex items-center gap-1 group/btn"
+                  className="text-xs font-black uppercase tracking-wider text-brand-maroon hover:text-college-gold transition flex items-center gap-1 group/btn mt-4"
                 >
                   Read Message <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
                 </Link>
@@ -280,69 +288,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Video / Stats Section - White */}
-      <section className="py-24 bg-white relative border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <ScrollReveal animation="zoom-in" duration={900}>
-            <div className="relative aspect-video w-full overflow-hidden bg-brand-black shadow-2xl flex items-center justify-center group cursor-pointer border-t-8 border-brand-maroon">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop" 
-                alt="College Campus Video Cover" 
-                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
-              />
-              <div className="relative z-10 w-20 h-20 bg-brand-yellow rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-black translate-x-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Enrolment Section - White */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <ScrollReveal className="space-y-4" animation="fade-in-left">
-            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em] block mb-6">
-              Join Our Community
-            </span>
-            <h2 className="text-4xl md:text-5xl font-light text-brand-text leading-tight border-l-2 border-brand-maroon pl-6">
-              Enrolment <br/>
-              <span className="text-brand-maroon font-normal">Process</span>
-            </h2>
-          </ScrollReveal>
-          
-          <ScrollReveal className="space-y-8 flex flex-col justify-center items-start" animation="fade-in-right" delay={150}>
-            <p className="text-gray-600 leading-relaxed text-sm">
-              We guide our students into becoming responsible, skilled, and patriotic citizens ready to make meaningful global impacts. Join the thousands of alumni who have shaped their futures here.
-            </p>
-            <Link
-              href="/student-corner"
-              className="inline-flex items-center gap-4 text-brand-black font-bold text-xs uppercase tracking-widest hover:text-brand-maroon transition-colors"
-            >
-              <span>LEARN MORE</span>
-              <div className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
+        {/* Testimonials Section */}
+        <ScrollReveal className="w-full" animation="fade-in-up">
+          <TestimonialsSection />
+        </ScrollReveal>
 
       {/* Featured News & Events - Off White */}
       <section className="py-24 bg-brand-gray border-l-4 border-brand-yellow">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           <ScrollReveal className="lg:col-span-4 flex flex-col justify-center space-y-6" animation="fade-in-left">
-            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em]">
+            <span className="text-brand-maroon font-black text-base sm:text-lg md:text-xl uppercase tracking-[0.28em]">
               Latest Updates
             </span>
-            <h2 className="text-4xl font-light text-brand-text leading-tight">
-              Featured news <br/>and <span className="text-brand-maroon font-normal">events</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text leading-tight uppercase tracking-tight">
+              Featured news <br/>and <span className="text-brand-maroon">events</span>
             </h2>
             <p className="text-gray-600 text-sm leading-relaxed max-w-sm">
               Stay connected with the latest happenings, academic achievements, and upcoming cultural events on campus.
@@ -409,74 +369,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pre-Footer Banner - White */}
-      <section className="py-24 bg-white border-t border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-          <ScrollReveal className="lg:w-1/2 w-full" animation="fade-in-left">
-            <span className="text-gray-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-4 block">
-              Join Us
-            </span>
-            <h2 className="text-3xl md:text-4xl font-light text-brand-text leading-tight mb-8">
-              Take the next step in your <br/>
-              <span className="text-brand-maroon font-normal">academic journey</span>
-            </h2>
-            <ul className="space-y-4 mb-10">
-              <li className="flex items-center gap-3 text-sm text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Explore BA, BSc, and BCom programs
-              </li>
-              <li className="flex items-center gap-3 text-sm text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Experience state-of-the-art facilities
-              </li>
-              <li className="flex items-center gap-3 text-sm text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-maroon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Be part of a 35+ year legacy
-              </li>
-            </ul>
-            <Link
-              href="/student-corner"
-              className="inline-block bg-brand-yellow text-brand-black font-bold uppercase tracking-widest text-xs px-10 py-4 hover:bg-brand-yellow-hover transition-colors shadow-lg"
-            >
-              APPLY NOW
-            </Link>
-          </ScrollReveal>
-          
-          <ScrollReveal className="lg:w-1/2 w-full relative" animation="fade-in-right" delay={150}>
-            <div className="absolute inset-0 bg-brand-gray -z-10 translate-x-4 translate-y-4 shadow-sm" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" 
-              alt="Students collaborating" 
-              className="w-full object-cover shadow-2xl border-b-8 border-brand-maroon"
-            />
-          </ScrollReveal>
-        </div>
-      </section>
 
-      {/* Subscribe Banner just above footer */}
-      <section className="bg-white py-12 px-6 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 border-t border-gray-100">
-        <div className="flex items-center gap-6">
-          <img src="/images/logo/kle transpe.png" alt="Logo" className="w-16 h-16 object-contain hidden md:block opacity-20 grayscale" />
-          <div>
-            <span className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em] block mb-1">
-              Subscribe
-            </span>
-            <h3 className="text-brand-maroon text-xl md:text-2xl font-light">
-              Stay up to date with what's happening around the College
-            </h3>
-          </div>
-        </div>
-        <button className="bg-brand-maroon text-white font-bold uppercase tracking-widest text-[10px] px-8 py-3 hover:bg-[#5e1c2b] transition-colors whitespace-nowrap">
-          SUBSCRIBE TO E-NEWS
-        </button>
-      </section>
+
+
     </div>
   );
 }

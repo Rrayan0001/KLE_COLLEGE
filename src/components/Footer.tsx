@@ -15,13 +15,13 @@ export default function Footer() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/logo/kle transpe.png"
-              alt="KLE SCP College Logo"
+              alt="KLE SCPDDS College Logo"
               className="w-8 h-8 object-contain bg-white rounded-full p-0.5"
             />
-            <h4 className="font-bold text-base uppercase tracking-wider text-college-gold">SCP College</h4>
+            <h4 className="font-bold text-base uppercase tracking-wider text-college-gold">SCPDDS College</h4>
           </div>
           <p className="text-white/70 leading-relaxed text-justify">
-            Established in 1987, KLE Society's SCP College is dedicated to providing high-quality education in Arts, Science, and Commerce, preparing students for dynamic careers.
+            Established in 1987, KLE Society's SCPDDS College is dedicated to providing high-quality education in Arts, Science, and Commerce, preparing students for dynamic careers.
           </p>
           <div className="flex gap-4 pt-2">
             <a href="#" aria-label="Facebook" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-college-gold hover:text-college-dark transition duration-300">

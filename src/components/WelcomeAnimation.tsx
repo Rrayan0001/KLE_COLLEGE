@@ -115,7 +115,7 @@ export default function WelcomeAnimation() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/logo/kle transpe.png"
-            alt="KLE SCP College"
+            alt="KLE SCPDDS College"
             className="h-24 w-auto object-contain"
           />
 
@@ -130,7 +130,7 @@ export default function WelcomeAnimation() {
               className="text-white font-black uppercase tracking-wider"
               style={{ fontSize: "clamp(1.1rem, 4vw, 1.6rem)", lineHeight: 1.1 }}
             >
-              SCP College
+              SCPDDS College
             </p>
             <p
               className="text-white/50 text-[9px] uppercase tracking-[0.25em] font-medium"

@@ -40,7 +40,7 @@ export default function ChairmanMessagePage() {
             <div className="w-full md:w-1/3 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/logo/Amit_Kore.jpg"
+                src="/images/profiles/Chairman.jpeg"
                 alt="Shri Amit Prabhakar Kore"
                 className="w-full h-auto object-cover"
               />
@@ -56,7 +56,7 @@ export default function ChairmanMessagePage() {
                 &quot;Setting institutional direction while staying engaged with the operational, community, and social dimensions of each venture.&quot;
               </blockquote>
               <p className="text-slate-650 leading-relaxed text-justify text-sm">
-                Amit Prabhakar Kore has built his career at the intersection of institutional governance and industrial enterprise. Educated in engineering and finance in the United States and shaped by over two decades of hands-on leadership across healthcare, education, and industry, he brings a clear-eyed global perspective to the organisations he leads — whether in the boardroom of one of India&apos;s largest educational and healthcare societies or at the helm of his corporate ventures.
+                Amit Prabhakar Kore has built his career at the intersection of institutional governance and industrial enterprise. Educated in engineering and finance in the United States and shaped by over two decades of hands-on leadership across healthcare, education & industry..
               </p>
             </div>
           </div>

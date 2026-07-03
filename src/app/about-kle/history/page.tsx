@@ -28,7 +28,7 @@ export default function HistoryPage() {
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo/klescpbanner.jpg"
+              src="/images/hero_section/slide.png"
               alt="KLE History Centenary banner"
               className="w-full h-auto object-cover"
             />

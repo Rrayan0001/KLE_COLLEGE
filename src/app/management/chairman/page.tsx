@@ -26,35 +26,35 @@ export default function ChairmanMessagePage() {
           <div className="w-full md:w-1/3 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo/Prabhakar Kore.jpg"
-              alt="Dr. Prabhakar Kore"
+              src="/images/profiles/Chairman.jpeg"
+              alt="Shri. Amit Prabhakar Kore"
               className="w-full h-auto object-cover"
             />
           </div>
           <div className="space-y-6">
             <h2 className="text-xl md:text-2xl font-extrabold text-slate-800">
-              Dr. Prabhakar Kore
+              Shri. Amit Prabhakar Kore
             </h2>
             <p className="text-brand-maroon font-bold text-sm tracking-wide">
               Chairman, KLE Society, Belagavi
             </p>
             
             <blockquote className="border-l-4 border-brand-yellow pl-4 italic text-brand-maroon font-medium text-lg md:text-xl py-2">
-              &quot;Education must not only inform but inspire.&quot;
+              &quot;Setting institutional direction while staying engaged with the operational, community, and social dimensions of each venture.&quot;
             </blockquote>
             
             <p className="text-slate-600 leading-relaxed text-justify">
-              Agriculture, Education, and Healthcare are the key areas which will define the future of our country. Education is essential to the economic, social, environmental, and political well-being of an individual, the community, and the Nation. Education is the foundation upon which we build tomorrow, and our focus must be to build diversity and excellence into the educational system such that every challenge ahead is met with confidence. We believe that education empowers the individual and benefits the entire community.
+              Amit Prabhakar Kore has built his career at the intersection of institutional governance and industrial enterprise. Educated in engineering and finance in the United States and shaped by over two decades of hands-on leadership across healthcare, education & industry..
             </p>
           </div>
         </div>
 
         <div className="border-t border-slate-100 pt-6 space-y-4 text-slate-600 leading-relaxed text-justify">
           <p>
-            We have a vision of high-quality lifelong learning, accessible to all. We are committed to offer high-quality education at an affordable cost in a broad range of disciplines at the Pre-University, Undergraduate, and Postgraduate levels.
+            What sets him apart is the ability to work at both ends simultaneously: setting institutional direction while staying engaged with the operational, community, and social dimensions of each venture. His record is measured not in titles, but in institutions built, industries scaled, and the improved quality of life in the communities his work has touched.
           </p>
           <p>
-            We harbor the tenacity of being first among equals. Therefore, we lay special emphasis on the implementation of global parameters of education and to inculcate the professional competency in our students with full vigor and zeal. We will put the learner at the heart of everything we do, raise expectations, and work together with mutual respect, for education is our future.
+            As Chairman of KLE Society, he continues the institution&apos;s century-long legacy of transforming lives through education, healthcare, and research — building on the foundation laid by Dr. Prabhakar Kore&apos;s leadership over more than four decades.
           </p>
         </div>
       </div>

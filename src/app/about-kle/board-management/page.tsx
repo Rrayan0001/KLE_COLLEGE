@@ -18,7 +18,7 @@ const breadcrumbs = [
 
 const members = [
   { isCategory: true, label: "Office Bearers" },
-  { sl: "-", name: "Shri M. S. Koujalgi", designation: "President" },
+  { sl: "-", name: "Shri Mahadev S. Koujalgi", designation: "President" },
   { sl: "-", name: "Shri Basavaraj S. Tatawati", designation: "Vice-President" },
   
   { isCategory: true, label: "Members of the Board of Management" },
@@ -39,8 +39,7 @@ const members = [
   { sl: 13, name: "Dr. Deepa C. Metgud", designation: "Member" },
   { sl: 14, name: "Shri Bharamappa S. Ambi", designation: "Member" },
   { sl: 15, name: "Shri Sheetal G. Nanjappanavar", designation: "Member" },
-  { sl: 16, name: "Dr. Sunil S. Jalalpure", designation: "Secretary" },
-  { sl: 17, name: "Dr. Prakash R. Kadakol", designation: "Joint-Secretary" },
+  { sl: 16, name: "Dr. B. G. Desai", designation: "Secretary" },
 ];
 
 export default function BoardManagementPage() {

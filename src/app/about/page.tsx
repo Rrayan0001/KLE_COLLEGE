@@ -33,7 +33,7 @@ export default function AboutCollegePage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/about_us/image.png"
-              alt="KLE SCP College Mahalingpur Building"
+              alt="KLE SCPDDS College Mahalingpur Building"
               className="w-full h-auto object-cover"
             />
           </div>

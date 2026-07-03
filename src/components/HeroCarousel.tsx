@@ -340,8 +340,8 @@ export default function HeroCarousel() {
                       <h2
                         className="text-white font-black uppercase tracking-normal"
                         style={{
-                          fontSize: "clamp(2rem, 8.2vw, 6.75rem)",
-                          lineHeight: 1.02,
+                          fontSize: "clamp(1.5rem, 5vw, 3.75rem)",
+                          lineHeight: 1.05,
                         }}
                       >
                         {slide.headline}
@@ -380,8 +380,8 @@ export default function HeroCarousel() {
                       <h2
                         className="text-white font-black leading-none uppercase"
                         style={{
-                          fontSize: "clamp(2rem, 8vw, 6.75rem)",
-                          lineHeight: 1,
+                          fontSize: "clamp(1.5rem, 5vw, 3.75rem)",
+                          lineHeight: 1.05,
                         }}
                       >
                         {slide.headline}

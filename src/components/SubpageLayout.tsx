@@ -33,7 +33,12 @@ export default function SubpageLayout({
     <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* Mini-Banner Section */}
       <div className="bg-brand-maroon py-12 md:py-16 text-white border-b-4 border-brand-yellow shadow-inner relative overflow-hidden">
-        {/* Subtle decorative background pattern */}
+        {/* Banner image and texture overlays to keep the maroon header visually rich */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/images/general/col2.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-maroon/95 via-brand-maroon/90 to-brand-maroon/95" />
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-3">
@@ -67,8 +72,8 @@ export default function SubpageLayout({
           <>
             {/* Desktop Sidebar (hidden on mobile/tablet) */}
             <aside className="hidden lg:block lg:w-1/4 shrink-0 space-y-6 print:hidden">
-              <div className="bg-white border border-slate-200/80 rounded-xl p-6 shadow-sm sticky top-28">
-                <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 pb-2 border-b border-slate-100">
+              <div className="bg-slate-900 border border-slate-700/80 rounded-xl p-6 shadow-sm sticky top-28">
+                <h2 className="text-sm font-extrabold text-slate-300 uppercase tracking-widest mb-4 pb-2 border-b border-slate-700/70">
                   Related Pages
                 </h2>
                 <nav className="flex flex-col gap-1.5" aria-label="Section navigation">
@@ -76,11 +81,11 @@ export default function SubpageLayout({
                     <Link
                       key={idx}
                       href={link.href}
-                      className={`px-4 py-2.5 rounded-lg text-sm font-bold tracking-wide transition-all duration-150 flex items-center justify-between group
+                      className={`px-4 py-3 rounded-lg text-[15px] font-extrabold tracking-wide transition-all duration-150 flex items-center justify-between group
                         ${
                           link.active
-                            ? "bg-brand-maroon text-white shadow-md shadow-brand-maroon/10"
-                            : "text-slate-600 hover:bg-slate-50 hover:text-brand-maroon"
+                            ? "bg-brand-maroon text-white shadow-md shadow-brand-maroon/25"
+                            : "text-slate-200 hover:bg-slate-800 hover:text-white"
                         }`}
                     >
                       <span>{link.name}</span>
@@ -89,7 +94,7 @@ export default function SubpageLayout({
                         className={`h-4 w-4 transition-transform duration-150 ${
                           link.active
                             ? "text-brand-yellow translate-x-0.5"
-                            : "text-slate-400 group-hover:text-brand-maroon group-hover:translate-x-0.5"
+                            : "text-slate-400 group-hover:text-brand-yellow group-hover:translate-x-0.5"
                         }`}
                         fill="none"
                         viewBox="0 0 24 24"
@@ -105,15 +110,15 @@ export default function SubpageLayout({
 
             {/* Mobile / Tablet Collapsible Menu Dropdown (hidden on desktop) */}
             <div className="lg:hidden w-full print:hidden">
-              <div className="bg-white border border-slate-200/80 rounded-xl shadow-sm overflow-hidden">
+              <div className="bg-slate-900 border border-slate-700/80 rounded-xl shadow-sm overflow-hidden">
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="w-full flex items-center justify-between px-6 py-4 font-extrabold uppercase text-sm tracking-widest text-brand-maroon focus:outline-none"
+                  className="w-full flex items-center justify-between px-6 py-4 font-extrabold uppercase text-sm tracking-widest text-white focus:outline-none"
                 >
                   <span>Related Pages ({sidebarLinks.length})</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className={`h-5 w-5 text-brand-maroon transition-transform duration-200 ${
+                    className={`h-5 w-5 text-brand-yellow transition-transform duration-200 ${
                       isMobileMenuOpen ? "rotate-180" : ""
                     }`}
                     fill="none"
@@ -126,7 +131,7 @@ export default function SubpageLayout({
                 
                 <div
                   className={`transition-all duration-200 overflow-hidden ${
-                    isMobileMenuOpen ? "max-h-[600px] border-t border-slate-100 bg-slate-50/50 p-4" : "max-h-0 pointer-events-none"
+                    isMobileMenuOpen ? "max-h-[600px] border-t border-slate-700/70 bg-slate-900 p-4" : "max-h-0 pointer-events-none"
                   }`}
                 >
                   <nav className="grid grid-cols-1 sm:grid-cols-2 gap-2" aria-label="Section navigation mobile">
@@ -135,11 +140,11 @@ export default function SubpageLayout({
                         key={idx}
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`px-4 py-3 rounded-lg text-sm font-bold tracking-wide transition-all duration-150 flex items-center justify-between min-h-[44px]
+                        className={`px-4 py-3 rounded-lg text-[15px] font-extrabold tracking-wide transition-all duration-150 flex items-center justify-between min-h-[44px]
                           ${
                             link.active
                               ? "bg-brand-maroon text-white shadow-sm"
-                              : "bg-white border border-slate-200/50 text-slate-600 hover:text-brand-maroon"
+                              : "bg-slate-800 border border-slate-700 text-slate-200 hover:text-white"
                           }`}
                       >
                         <span>{link.name}</span>
@@ -162,7 +167,7 @@ export default function SubpageLayout({
         )}
 
         {/* Dynamic Page Content */}
-        <main className={`flex-grow bg-white border border-slate-200/80 rounded-2xl p-8 md:p-12 shadow-sm ${sidebarLinks ? "lg:w-3/4" : "w-full"}`}>
+        <main className={`flex-grow bg-white border border-slate-200/80 rounded-2xl p-8 md:p-12 shadow-sm text-slate-800 ${sidebarLinks ? "lg:w-3/4" : "w-full"}`}>
           {children}
         </main>
       </div>
