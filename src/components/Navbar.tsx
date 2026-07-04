@@ -205,7 +205,7 @@ export default function Navbar() {
                 />
               </div>
               <div className="flex flex-col text-left min-w-0 leading-tight">
-                <span className="text-[10px] sm:text-xs md:text-sm lg:text-[15px] font-black uppercase tracking-[0.16em] text-brand-maroon whitespace-normal">
+                <span className="text-[10px] sm:text-xs md:text-sm lg:text-[15px] font-black uppercase tracking-[0.16em] text-brand-maroon whitespace-normal block text-center">
                   KLE Society&apos;s
                 </span>
                 <span className="text-[9px] sm:text-[10px] md:text-xs lg:text-[13px] font-extrabold text-slate-700 leading-tight whitespace-normal">
@@ -280,7 +280,7 @@ export default function Navbar() {
                 />
               </div>
               <div className="flex flex-col min-w-0 leading-tight">
-                <span className="text-xs font-black uppercase tracking-wide text-brand-maroon whitespace-normal">KLE Society&apos;s</span>
+                <span className="text-xs font-black uppercase tracking-wide text-brand-maroon whitespace-normal block text-center">KLE Society&apos;s</span>
                 <span className="text-[10px] font-bold text-slate-700 whitespace-normal leading-tight">
                   Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur - 587312.
                 </span>
