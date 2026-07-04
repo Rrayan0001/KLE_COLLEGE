@@ -27,7 +27,7 @@ export default function DonorPage() {
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo/society.jpg"
+              src="/images/logo/kle transpe.png"
               alt="SCP DDS College Donor History"
               className="w-full h-auto object-cover max-h-72"
             />

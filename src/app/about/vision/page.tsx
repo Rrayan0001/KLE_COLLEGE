@@ -40,7 +40,7 @@ export default function VisionPage() {
           <div className="rounded-xl overflow-hidden shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo/society.jpg"
+              src="/images/logo/kle transpe.png"
               alt="Vision Icon block"
               className="w-full h-auto object-cover max-h-52 bg-white rounded-lg p-2"
             />
@@ -52,7 +52,7 @@ export default function VisionPage() {
           <div className="rounded-xl overflow-hidden shrink-0 md:order-last">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo/society.jpg"
+              src="/images/logo/kle transpe.png"
               alt="Mission Icon block"
               className="w-full h-auto object-cover max-h-52 bg-white rounded-lg p-2"
             />

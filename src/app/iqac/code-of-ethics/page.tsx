@@ -47,7 +47,7 @@ export default function CodeOfEthicsPage() {
           <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/logo/society.jpg"
+              src="/images/logo/kle transpe.png"
               alt="Code of ethics display"
               className="w-full h-auto object-cover max-h-[360px]"
             />

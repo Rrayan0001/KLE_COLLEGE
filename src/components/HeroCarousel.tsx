@@ -445,7 +445,7 @@ export default function HeroCarousel() {
             <Link
               key={card.href}
               href={card.href}
-              className="quick-link-card hero-quick-link-card block p-8 pr-16 shadow-xl border border-brand-maroon/30 focus-visible:outline-brand-yellow group md:p-10"
+              className="quick-link-card hero-quick-link-card block p-8 shadow-xl border border-brand-maroon/30 focus-visible:outline-brand-yellow group md:p-10"
             >
               {/* Desktop layout: category label at top */}
               <p className="hidden md:block text-[10px] font-bold uppercase tracking-[0.2em] mb-4 opacity-70">
@@ -453,18 +453,18 @@ export default function HeroCarousel() {
               </p>
 
               {/* Flex container for text & arrow */}
-              <div className="flex items-center justify-between w-full">
-                <div className="flex flex-col pr-4">
-                  <span className="text-lg md:text-base font-normal normal-case text-white/90 leading-snug">
+              <div className="flex items-center justify-between gap-4 w-full min-w-0">
+                <div className="flex flex-col flex-1 min-w-0">
+                  <span className="text-base sm:text-lg md:text-base font-normal normal-case text-white/90 leading-snug">
                     {card.lineOne}
                   </span>
-                  <span className="mt-1 text-3xl md:text-xl font-extrabold uppercase tracking-[0.16em] md:tracking-wide leading-tight">
+                  <span className="mt-1 text-2xl sm:text-3xl md:text-xl font-extrabold uppercase tracking-[0.16em] md:tracking-wide leading-tight break-words">
                     {card.lineTwo}
                   </span>
                 </div>
                 
                 {/* Arrow indicator */}
-                <div className="absolute right-8 top-1/2 shrink-0 -translate-y-1/2 md:static md:translate-y-0">
+                <div className="shrink-0 self-center md:self-auto">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-8 w-8 transition-transform duration-300 group-hover:translate-x-1 text-white md:h-5 md:w-5"

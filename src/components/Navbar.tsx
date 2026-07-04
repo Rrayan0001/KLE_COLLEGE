@@ -191,17 +191,29 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={handleLogoClick}
-              className="flex items-center group focus-visible:outline-none min-w-0"
+              className="flex items-center gap-2 sm:gap-3 group focus-visible:outline-none min-w-0 max-w-[calc(100vw-7rem)] sm:max-w-[72vw]"
             >
-              <div className="relative w-[240px] sm:w-[330px] md:w-[520px] lg:w-[640px] max-w-[68vw] aspect-[7.5/1] transition-transform duration-200 group-hover:scale-[1.01]">
+              <div className="relative w-24 sm:w-28 md:w-32 lg:w-36 aspect-[1.45/1] shrink-0 overflow-hidden transition-transform duration-200 group-hover:scale-[1.01]">
                 <Image
                   src="/images/banners/klescpbanner.jpg"
-                  alt="KLE Society's Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur"
+                  alt="KLE centenary logo"
                   fill
                   priority
-                  sizes="(max-width: 640px) 240px, (max-width: 1024px) 520px, 640px"
-                  className="object-contain object-left bg-white"
+                  sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
+                  className="object-cover bg-white"
+                  style={{ objectPosition: "left center" }}
                 />
+              </div>
+              <div className="flex flex-col text-left min-w-0 leading-tight">
+                <span className="text-[10px] sm:text-xs md:text-sm lg:text-[15px] font-black uppercase tracking-[0.16em] text-brand-maroon whitespace-normal">
+                  KLE Society&apos;s
+                </span>
+                <span className="text-[9px] sm:text-[10px] md:text-xs lg:text-[13px] font-extrabold text-slate-700 leading-tight whitespace-normal">
+                  Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur - 587312.
+                </span>
+                <span className="hidden md:block text-[9px] md:text-[11px] font-bold text-brand-maroon whitespace-normal">
+                  NAAC Accredited at &apos;A&apos; Grade with 3.10 CGPA
+                </span>
               </div>
             </Link>
           </div>
@@ -256,15 +268,22 @@ export default function Navbar() {
         >
           {/* Drawer Header */}
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 shrink-0">
-            <Link href="/" onClick={handleLogoClick} className="flex items-center min-w-0">
-              <div className="relative w-[210px] sm:w-[270px] aspect-[7.5/1] max-w-[68vw]">
+            <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5 min-w-0 max-w-[70vw]">
+              <div className="relative w-24 sm:w-28 aspect-[1.45/1] shrink-0 overflow-hidden">
                 <Image
                   src="/images/banners/klescpbanner.jpg"
-                  alt="KLE Society's Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur"
+                  alt="KLE centenary logo"
                   fill
-                  sizes="(max-width: 640px) 210px, 270px"
-                  className="object-contain object-left bg-white"
+                  sizes="96px"
+                  className="object-cover bg-white"
+                  style={{ objectPosition: "left center" }}
                 />
+              </div>
+              <div className="flex flex-col min-w-0 leading-tight">
+                <span className="text-xs font-black uppercase tracking-wide text-brand-maroon whitespace-normal">KLE Society&apos;s</span>
+                <span className="text-[10px] font-bold text-slate-700 whitespace-normal leading-tight">
+                  Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur - 587312.
+                </span>
               </div>
             </Link>
             <button
@@ -353,15 +372,8 @@ export default function Navbar() {
 
           {/* Drawer Footer */}
           <div className="shrink-0 border-t border-gray-100 px-5 py-4 bg-gray-50">
-            <div className="relative w-full max-w-[240px] aspect-[7.5/1]">
-              <Image
-                src="/images/banners/klescpbanner.jpg"
-                alt="KLE Society's Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur"
-                fill
-                sizes="240px"
-                className="object-contain object-left bg-white"
-              />
-            </div>
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">KLE Society&apos;s</p>
+            <p className="text-[11px] text-gray-500 font-medium leading-relaxed">Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur - 587312.</p>
           </div>
         </div>
       </div>
