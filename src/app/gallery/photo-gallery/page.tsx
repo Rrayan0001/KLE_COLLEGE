@@ -17,7 +17,7 @@ const breadcrumbs = [
 
 const galleryImages = [
   { id: 101, category: "infrastructure", title: "Spacious and well-ventilated classrooms designed to foster engaging learning environments.", src: "/images/infrastructure/class.jpg" },
-  { id: 102, category: "infrastructure", title: "Secure and comfortable ladies' hostel facilities on campus.", src: "/images/infrastructure/hostel.jpg" },
+  { id: 102, category: "infrastructure", title: "Library and Information Center building on campus.", src: "/images/infrastructure/hostel.jpg" },
   { id: 103, category: "infrastructure", title: "Modern, well-equipped science laboratories with advanced experimental setups.", src: "/images/infrastructure/lab.jpg" },
   { id: 104, category: "infrastructure", title: "Digital reference section and computer workstations in the college library.", src: "/images/infrastructure/lib2.jpg" },
   { id: 105, category: "infrastructure", title: "Stack rooms and reading hall housing over 23,000 volumes of books and periodicals.", src: "/images/infrastructure/lib3.jpg" },
