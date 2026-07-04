@@ -45,7 +45,7 @@ const slides: HeroSlide[] = [
     headline: "EXPLORE LEARNING",
     ctaLabel: "DISCOVER MORE",
     ctaHref: "/programs",
-    imageSrc: "/images/hero_section/slide1.png",
+    imageSrc: "/images/general/col1.jpg",
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ const slides: HeroSlide[] = [
     headline: "MEET OUR STUDENTS",
     ctaLabel: "VIEW GALLERY",
     ctaHref: "/gallery",
-    imageSrc: "/images/hero_section/slide2.png",
+    imageSrc: "/images/general/col2.jpg",
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ const slides: HeroSlide[] = [
     headline: "COMMITTED TO QUALITY",
     ctaLabel: "LEARN MORE",
     ctaHref: "/iqac",
-    imageSrc: "/images/hero_section/slide3.png",
+    imageSrc: "/images/general/scpdds3.jpg",
   },
 ];
 

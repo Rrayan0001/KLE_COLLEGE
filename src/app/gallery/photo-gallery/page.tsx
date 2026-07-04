@@ -16,6 +16,11 @@ const breadcrumbs = [
 ];
 
 const galleryImages = [
+  { id: 101, title: "Spacious and well-ventilated classrooms designed to foster engaging learning environments.", src: "/images/infrastructure/class.jpg" },
+  { id: 102, title: "Secure and comfortable ladies' hostel facilities on campus.", src: "/images/infrastructure/hostel.jpg" },
+  { id: 103, title: "Modern, well-equipped science laboratories with advanced experimental setups.", src: "/images/infrastructure/lab.jpg" },
+  { id: 104, title: "Digital reference section and computer workstations in the college library.", src: "/images/infrastructure/lib2.jpg" },
+  { id: 105, title: "Stack rooms and reading hall housing over 23,000 volumes of books and periodicals.", src: "/images/infrastructure/lib3.jpg" },
   { id: 1, title: "Alumni Association Programme: Felicitation to a notable alumnus.", src: "/images/gallery_new/image1.jpg" },
   { id: 2, title: "Students donating blood at the Voluntary Blood Donation Camp.", src: "/images/gallery_new/image2.jpg" },
   { id: 3, title: "Dignitaries, faculty and student participants at the National Level Student Seminar, Department of Botany and Zoology.", src: "/images/gallery_new/image3.jpg" },
