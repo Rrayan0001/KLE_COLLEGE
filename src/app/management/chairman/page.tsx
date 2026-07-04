@@ -26,7 +26,7 @@ export default function ChairmanMessagePage() {
           <div className="w-full md:w-1/3 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/profiles/Chairman.jpeg"
+              src="/images/logo/Amit_Kore.png"
               alt="Shri. Amit Prabhakar Kore"
               className="w-full h-auto object-cover"
             />

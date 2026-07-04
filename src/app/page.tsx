@@ -213,7 +213,7 @@ export default function Home() {
                     <div className="w-full h-full rounded-xl overflow-hidden border-4 border-white bg-slate-100">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img 
-                        src="/images/profiles/Chairman.jpeg" 
+                        src="/images/logo/Amit_Kore.png" 
                         alt="Shri. Amit Prabhakar Kore" 
                         className="w-full h-full object-cover object-top" 
                         loading="lazy" 
