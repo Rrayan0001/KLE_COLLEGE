@@ -12,6 +12,8 @@ export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   // Handle Cmd+K / Ctrl+K keyboard shortcut to open search modal
   useEffect(() => {
@@ -43,6 +45,27 @@ export default function Navbar() {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
+
+  // Smart scroll: hide navbar on scroll down, show on scroll up
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen || isSearchOpen) return;
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 120) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY, isOpen, isSearchOpen]);
 
   const navLinks = [
     { name: "HOME", href: "/" },
@@ -183,7 +206,9 @@ export default function Navbar() {
   return (
     <>
       {/* Main Header Bar */}
-      <header className="bg-white sticky top-0 z-40 text-brand-black shadow-md py-2 md:py-3">
+      <header className={`bg-white sticky top-0 z-40 text-brand-black shadow-md py-2 md:py-3 transition-transform duration-300 ease-in-out ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}>
         <div className="w-full px-4 sm:px-6 flex items-center justify-between gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center">
           
           {/* Left: Brand/Logo & Name Area (Visible on all sizes) */}
