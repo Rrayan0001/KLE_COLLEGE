@@ -22,7 +22,7 @@ const members = [
   { sl: 3, name: "Shri. Mallikarjun Banakar", place: "Banahatti", designation: "Member" },
   { sl: 4, name: "Shri. Ashoka B. Angadi", place: "Mahalingpur", designation: "Member" },
   { sl: 5, name: "Secretary, KLE Society", place: "Belagavi", designation: "Member" },
-  { sl: 6, name: "Principal, SCP Arts, Science & D.D. Shirol Commerce College", place: "Mahalingpur", designation: "Member Secretary" },
+  { sl: 6, name: "Principal, KLE SCPDDS College", place: "Mahalingpur", designation: "Member Secretary" },
 ];
 
 export default function LocalGoverningBodyPage() {

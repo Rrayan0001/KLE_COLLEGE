@@ -33,7 +33,7 @@ type QuickLinkCard = {
 const slides: HeroSlide[] = [
   {
     id: 1,
-    eyebrow: "KLE Society's SCP College",
+    eyebrow: "KLE SCPDDS College",
     headline: "EXPLORE OUR GROUNDS",
     ctaLabel: "DISCOVER MORE",
     ctaHref: "/about",

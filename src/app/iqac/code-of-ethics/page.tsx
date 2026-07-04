@@ -36,7 +36,7 @@ export default function CodeOfEthicsPage() {
       <div className="space-y-8">
         <div>
           <span className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em] block mb-2">
-            KLE Society&apos;s SCP College, Mahalingpur
+            KLE SCPDDS College, Mahalingpur
           </span>
           <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
             Institutional Code of Ethics

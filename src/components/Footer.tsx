@@ -18,10 +18,10 @@ export default function Footer() {
               alt="KLE SCPDDS College Logo"
               className="w-8 h-8 object-contain bg-white rounded-full p-0.5"
             />
-            <h4 className="font-bold text-base uppercase tracking-wider text-college-gold">SCPDDS College</h4>
+            <h4 className="font-bold text-base uppercase tracking-wider text-college-gold">KLE SCPDDS College</h4>
           </div>
           <p className="text-white/70 leading-relaxed text-justify">
-            Established in 1987, KLE Society's SCPDDS College is dedicated to providing high-quality education in Arts, Science, and Commerce, preparing students for dynamic careers.
+            Established in 1987, KLE SCPDDS College is dedicated to providing high-quality education in Arts, Science, and Commerce, preparing students for dynamic careers.
           </p>
           <div className="flex gap-4 pt-2">
             <a href="#" aria-label="Facebook" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-college-gold hover:text-college-dark transition duration-300">
@@ -136,7 +136,7 @@ export default function Footer() {
       {/* Bottom Copyright */}
       <div className="bg-college-dark/80 border-t border-white/5 py-6 text-center text-xs text-white/50">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p>© {currentYear} KLE Society's SCP Arts & DDS Commerce College. All rights reserved.</p>
+          <p>© {currentYear} KLE SCPDDS College. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white transition">Privacy Policy</a>
             <span>•</span>

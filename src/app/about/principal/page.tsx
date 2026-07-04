@@ -27,24 +27,24 @@ export default function PrincipalPage() {
           <div className="w-full md:w-1/3 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/profiles/principal.jpg"
-              alt="Dr. K. M. Awaradi"
+              src="/images/logo/Shri_N_B_Patil.png"
+              alt="Shri N. B. Patil"
               className="w-full h-auto object-cover object-top"
             />
           </div>
           <div className="space-y-6">
             <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 font-display">
-              Dr. K. M. Awaradi
+              Shri N. B. Patil
             </h2>
             <p className="text-brand-maroon font-bold text-sm tracking-wide">
-              Principal, Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur
+              Principal, KLE SCPDDS College, Mahalingpur
             </p>
             
             <p className="text-slate-600 leading-relaxed text-justify font-semibold">
               Dear Students, Parents, and Well-Wishers,
             </p>
             <p className="text-slate-600 leading-relaxed text-justify">
-              It gives me immense pleasure to welcome you to KLE Society&apos;s SCP Arts, Science and D. D. Shirol Commerce College, Mahalingpur, a premier institution committed to providing quality higher education since its establishment in 1987. Guided by the noble vision of the KLE Society, our college has consistently strived to nurture knowledge, character, and excellence while preparing students to meet the challenges of an ever-evolving global society.
+              It gives me immense pleasure to welcome you to KLE SCPDDS College, Mahalingpur, a premier institution committed to providing quality higher education since its establishment in 1987. Guided by the noble vision of the KLE Society, our college continues to nurture knowledge, character, and excellence while preparing students to meet the challenges of an ever-evolving global society.
             </p>
             <p className="text-slate-600 leading-relaxed text-justify">
               In today&apos;s rapidly changing world, education extends far beyond the boundaries of classrooms. Technological advancements, globalization, and the knowledge-driven economy demand graduates who are academically competent, professionally skilled, socially responsible, and ethically grounded. At our institution, we are dedicated to creating an environment that fosters critical thinking, innovation, creativity, and lifelong learning.
@@ -60,7 +60,7 @@ export default function PrincipalPage() {
             Affiliated with Bagalkot University, our institution is committed to maintaining high academic standards through an experienced and dedicated faculty, modern learning resources, well-equipped laboratories, digital facilities, and a vibrant campus environment. Alongside academic excellence, we emphasize co-curricular and extracurricular activities, leadership development, community engagement, cultural enrichment, and sports to ensure the holistic development of every student.
           </p>
           <p>
-            At KLE Society&apos;s SCP Arts, Science and D. D. Shirol Commerce College, we believe that education is a transformative journey that empowers individuals to become responsible citizens, compassionate human beings, and capable professionals. Our mission is to nurture confidence, integrity, discipline, and a spirit of service, enabling our students to contribute meaningfully to society and the nation.
+            At KLE SCPDDS College, we believe that education is a transformative journey that empowers individuals to become responsible citizens, compassionate human beings, and capable professionals. Our mission is to nurture confidence, integrity, discipline, and a spirit of service, enabling our students to contribute meaningfully to society and the nation.
           </p>
           <p>
             I warmly invite aspiring students to become a part of our academic community and experience an atmosphere of learning, innovation, and personal growth. Together, let us continue our pursuit of knowledge, excellence, and values, shaping a brighter future for ourselves and for society.
@@ -70,8 +70,8 @@ export default function PrincipalPage() {
           </p>
           <p className="pt-4 font-bold text-slate-800">
             With best wishes,<br />
-            Dr. K. M. Awaradi<br />
-            <span className="text-xs text-slate-500 font-semibold">Principal, KLE Society&apos;s SCP Arts, Science and D. D. Shirol Commerce College, Mahalingpur</span>
+            Shri N. B. Patil<br />
+            <span className="text-xs text-slate-500 font-semibold">Principal, KLE SCPDDS College, Mahalingpur</span>
           </p>
         </div>
       </div>

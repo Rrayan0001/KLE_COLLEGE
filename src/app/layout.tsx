@@ -18,9 +18,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "KLE Society's SCP Arts, Science & D. D. Shirol Commerce College, Mahalingpur",
-  description: "KLE Society's SCP Arts, Science & D. D. Shirol Commerce College, Mahalingpur — shaping futures since 1987. Programs: B.A., B.Sc., B.Com., BCA, M.Com. Admissions, faculty, and campus life.",
-  keywords: ["KLE Society", "SCP College", "Mahalingpur College", "Degree College Karnataka", "B.A", "B.Sc", "B.Com", "BCA", "M.Com", "ITEP"],
+  title: "KLE SCPDDS College, Mahalingpur",
+  description: "KLE SCPDDS College, Mahalingpur — shaping futures since 1987. Programs: B.A., B.Sc., B.Com., BCA, M.Com., BBA, ITEP. Admissions, faculty, and campus life.",
+  keywords: ["KLE Society", "KLE SCPDDS College", "Mahalingpur College", "Degree College Karnataka", "B.A", "B.Sc", "B.Com", "BCA", "M.Com", "ITEP"],
   authors: [{ name: "KLE Society" }],
 };
 

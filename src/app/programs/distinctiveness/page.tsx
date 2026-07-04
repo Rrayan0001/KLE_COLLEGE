@@ -38,7 +38,7 @@ export default function DistinctivenessPage() {
 
         <div className="bg-slate-50 border border-slate-100 p-8 rounded-2xl space-y-6 text-slate-600 leading-relaxed text-justify text-sm md:text-base">
           <p>
-            The distinctiveness of KLE Society&apos;s SCP College lies in its unwavering commitment to the academic and socio-economic empowerment of rural youth, particularly rural women. Situated in Mahalingpur, our college acts as a beacon of learning, ensuring that the local community gets access to modern technology and science streams alongside arts and commerce.
+            The distinctiveness of KLE SCPDDS College lies in its unwavering commitment to the academic and socio-economic empowerment of rural youth, particularly rural women. Situated in Mahalingpur, our college acts as a beacon of learning, ensuring that the local community gets access to modern technology and science streams alongside arts and commerce.
           </p>
           <p>
             You can read and download our comprehensive NAAC Institutional Distinctiveness documentation below:

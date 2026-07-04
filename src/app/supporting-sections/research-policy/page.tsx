@@ -31,7 +31,7 @@ export default function ResearchPolicyPage() {
 
         <div className="bg-slate-50 border border-slate-100 p-8 rounded-2xl space-y-6 text-slate-600 leading-relaxed text-justify text-sm md:text-base">
           <p>
-            KLE Society&apos;s SCP College encourages a strong research culture among its faculty and students. The research cell functions to promote, coordinate, and review academic research projects, journals publication, and workshops.
+            KLE SCPDDS College encourages a strong research culture among its faculty and students. The research cell functions to promote, coordinate, and review academic research projects, journals publication, and workshops.
           </p>
           <h3 className="font-bold text-slate-800 text-base uppercase tracking-wider">Objectives:</h3>
           <ul className="list-disc list-inside space-y-2 pl-4">

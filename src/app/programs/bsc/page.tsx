@@ -38,7 +38,7 @@ export default function BachelorOfSciencePage() {
 
         <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-655 leading-relaxed text-sm md:text-base">
           <p>
-            The Bachelor of Science (B.Sc.) program under the State Education Policy (SEP) scheme at SCP College focuses on building strong foundations in scientific theory and experimental practice. Students can choose from multiple group combinations consisting of Physics, Chemistry, Mathematics, Botany, and Zoology.
+            The Bachelor of Science (B.Sc.) program under the State Education Policy (SEP) scheme at KLE SCPDDS College focuses on building strong foundations in scientific theory and experimental practice. Students can choose from multiple group combinations consisting of Physics, Chemistry, Mathematics, Botany, and Zoology.
           </p>
         </div>
 

@@ -38,7 +38,7 @@ export default function BachelorOfArtsPage() {
 
         <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-655 leading-relaxed text-sm md:text-base">
           <p>
-            The Bachelor of Arts program under the State Education Policy (SEP) scheme at SCP College is designed to foster critical thinking, linguistic competence, and a deep appreciation of human history, society, and economics. Our faculty provides rigorous training to equip students with analytical skills necessary for civil services, journalism, teaching, and other professional careers.
+            The Bachelor of Arts program under the State Education Policy (SEP) scheme at KLE SCPDDS College is designed to foster critical thinking, linguistic competence, and a deep appreciation of human history, society, and economics. Our faculty provides rigorous training to equip students with analytical skills necessary for civil services, journalism, teaching, and other professional careers.
           </p>
         </div>
 

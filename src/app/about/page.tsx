@@ -2,8 +2,8 @@ import React from "react";
 import SubpageLayout from "@/components/SubpageLayout";
 
 export const metadata = {
-  title: "About College — SCP Arts, Science & D. D. Shirol Commerce College",
-  description: "Learn about the history, vision, mission, infrastructure, and core values of SCP College, Mahalingpur.",
+  title: "About College — KLE SCPDDS College",
+  description: "Learn about the history, vision, mission, infrastructure, and core values of KLE SCPDDS College, Mahalingpur.",
 };
 
 const sidebarLinks = [

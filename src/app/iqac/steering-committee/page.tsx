@@ -19,7 +19,7 @@ const breadcrumbs = [
 ];
 
 const steeringCommitteeMembers = [
-  { name: "Dr. B. M. Patil", role: "Principal & Chairperson", affiliation: "SCP College Administration" },
+  { name: "Dr. B. M. Patil", role: "Principal & Chairperson", affiliation: "KLE SCPDDS College Administration" },
   { name: "Dr. K. M. Awaradi", role: "IQAC Coordinator", affiliation: "Department of Economics" },
   { name: "Shri S. B. Patil", role: "Senior Administrative Member", affiliation: "Administrative Office" },
   { name: "Dr. M. S. Patil", role: "Member", affiliation: "Department of Botany" },

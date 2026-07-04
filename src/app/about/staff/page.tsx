@@ -17,7 +17,7 @@ const breadcrumbs = [
 
 const staffList = [
   // UG Teaching Staff
-  { sl: 1, name: "Dr. K. M. Awaradi", dept: "Economics", role: "Principal", cat: "UG Teaching Staff" },
+  { sl: 1, name: "Shri N. B. Patil", dept: "Economics", role: "Principal", cat: "UG Teaching Staff" },
   { sl: 2, name: "Dr. S. D. Soraganvi", dept: "Economics & Agricultural Marketing", role: "Associate Professor", cat: "UG Teaching Staff" },
   { sl: 3, name: "Shri. A. M. Ugare", dept: "Political Science", role: "Lecturer", cat: "UG Teaching Staff" },
   { sl: 4, name: "Smt. J. R. Patil", dept: "Chemistry", role: "Lecturer", cat: "UG Teaching Staff" },
@@ -98,7 +98,7 @@ export default function StaffPage() {
       <div className="space-y-12">
         <div>
           <span className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em] block mb-2">
-            KLE Society&apos;s SCP College, Mahalingpur
+            KLE SCPDDS College, Mahalingpur
           </span>
           <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
             Faculty & Staff Directory

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "ITEP — Integrated Teacher Education Program",
-  description: "Details regarding the NCTE recognized 4-year Integrated Teacher Education Program at SCP College.",
+  description: "Details regarding the NCTE recognized 4-year Integrated Teacher Education Program at KLE SCPDDS College.",
 };
 
 export default function ITEPPage() {

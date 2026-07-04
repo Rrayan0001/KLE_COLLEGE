@@ -12,7 +12,7 @@ export const searchIndex: SearchItem[] = [
     title: "Home / Welcome Page",
     href: "/",
     category: "Navigation",
-    description: "SCP College Mahalingpur home page featuring highlights, updates, and virtual campus tour.",
+    description: "KLE SCPDDS College Mahalingpur home page featuring highlights, updates, and virtual campus tour.",
     keywords: ["home", "main", "welcome", "scp", "mahalingpur", "college"]
   },
   {
@@ -70,7 +70,7 @@ export const searchIndex: SearchItem[] = [
     title: "Local Governing Body (LGB)",
     href: "/about-kle/lgb",
     category: "About KLE",
-    description: "List of Local Governing Body members governing SCP College Mahalingpur.",
+    description: "List of Local Governing Body members governing KLE SCPDDS College Mahalingpur.",
     keywords: ["lgb", "governing body", "local", "munavalli", "ambi", "members", "secretary"]
   },
 
@@ -79,21 +79,21 @@ export const searchIndex: SearchItem[] = [
     title: "About College (History & Details)",
     href: "/about",
     category: "About College",
-    description: "Overview of SCP Arts, Science & D.D. Shirol Commerce College, founded in 1987 in Mahalingpur.",
+    description: "Overview of KLE SCPDDS College, founded in 1987 in Mahalingpur.",
     keywords: ["college", "about", "scp", "mahalingpur", "establishment", "1987", "bagalkot"]
   },
   {
     title: "Our Donor - Dr. D. D. Shirol",
     href: "/about/donors",
     category: "About College",
-    description: "Learn about the donors and philanthropists who contributed to the construction of SCP College.",
+    description: "Learn about the donors and philanthropists who contributed to the construction of KLE SCPDDS College.",
     keywords: ["donor", "shirol", "donation", "philanthropy", "d d shirol"]
   },
   {
     title: "College Vision & Mission",
     href: "/about/vision",
     category: "About College",
-    description: "Explore the academic vision, mission statements, and quality policies of SCP College.",
+    description: "Explore the academic vision, mission statements, and quality policies of KLE SCPDDS College.",
     keywords: ["vision", "mission", "college vision", "motto", "objectives"]
   },
   {

@@ -65,7 +65,7 @@ export default function BachelorOfCommercePage() {
 
         <div className="bg-slate-50 border border-slate-100 p-6 md:p-8 rounded-2xl space-y-4 text-slate-655 leading-relaxed text-sm md:text-base">
           <p>
-            The Bachelor of Commerce (B.Com) program under the State Education Policy (SEP) scheme at SCP College provides comprehensive education in accounting, banking, marketing, and business administration. The course is aligned to promote practical entrepreneurship, financial management capabilities, and corporate law expertise.
+            The Bachelor of Commerce (B.Com) program under the State Education Policy (SEP) scheme at KLE SCPDDS College provides comprehensive education in accounting, banking, marketing, and business administration. The course is aligned to promote practical entrepreneurship, financial management capabilities, and corporate law expertise.
           </p>
         </div>
 

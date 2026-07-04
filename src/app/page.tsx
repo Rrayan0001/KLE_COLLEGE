@@ -95,7 +95,7 @@ export default function Home() {
               Welcome To Our College
             </h2>
             <p className="text-brand-text leading-relaxed text-sm md:text-base text-justify font-medium">
-              KLE Society’s Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur was established in June 1987. The college grew from strength to strength and various subjects are introduced to cater to the educational requirements of the people in and around Mahalingpur. The campus is an amalgamation of modern infrastructure with stylish and classic architecture which makes the setting perfect for a free mind to absorb knowledge. The campus can be considered as the world of technology and its infrastructure matches the requirement of education programmes and creates a conducive atmosphere for the all-round development of students’ personality. The college has been rendering its yeoman service in the field of Arts and Commerce education in the north Karnatak for the last 31 years. College has introduced Science Degree Program and Post Graduation in Commerce to cater the needs of community.
+              KLE SCPDDS College, Mahalingpur was established in June 1987. The college grew from strength to strength and various subjects are introduced to cater to the educational requirements of the people in and around Mahalingpur. The campus is an amalgamation of modern infrastructure with stylish and classic architecture which makes the setting perfect for a free mind to absorb knowledge. The campus can be considered as the world of technology and its infrastructure matches the requirement of education programmes and creates a conducive atmosphere for the all-round development of students’ personality. The college has been rendering its yeoman service in the field of Arts and Commerce education in the north Karnatak for the last 31 years. College has introduced Science Degree Program and Post Graduation in Commerce to cater the needs of community.
             </p>
             <div className="pt-4">
               <Link
@@ -255,8 +255,8 @@ export default function Home() {
                     <div className="w-full h-full rounded-xl overflow-hidden border-4 border-white bg-slate-100">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img 
-                        src="/images/profiles/principal.jpg" 
-                        alt="Dr. K. M. Awaradi" 
+                        src="/images/logo/Shri_N_B_Patil.png" 
+                        alt="Shri N. B. Patil" 
                         className="w-full h-full object-cover object-center" 
                         loading="lazy" 
                       />
@@ -268,10 +268,10 @@ export default function Home() {
                       College Principal
                     </span>
                     <h3 className="font-black text-xl text-slate-900 font-display tracking-tight">
-                      Dr. K. M. Awaradi
+                      Shri N. B. Patil
                     </h3>
                     <p className="text-slate-500 text-xs leading-relaxed max-w-sm">
-                      Principal, SCPDDS Arts, Science & Commerce College, Mahalingpur. Leading academic enhancements, student-centric systems, and rigorous quality check audits.
+                      Principal, KLE SCPDDS College, Mahalingpur. Leading academic excellence, student support, and a strong quality-driven campus culture.
                     </p>
                   </div>
                 </div>
