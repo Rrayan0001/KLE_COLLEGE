@@ -73,8 +73,8 @@ export default function NSSPage() {
                 NSS
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-base">Shri V. S. Angadi</h4>
-                <p className="text-xs text-brand-maroon font-semibold">NSS Programme Officer</p>
+                <h4 className="font-bold text-slate-900 text-base">Mr. P. M Gouli</h4>
+                <p className="text-xs text-brand-maroon font-semibold">NSS Officer</p>
               </div>
             </div>
             <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
@@ -88,8 +88,8 @@ export default function NSSPage() {
                 YRC
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-base">Shri R. S. Pujari</h4>
-                <p className="text-xs text-brand-maroon font-semibold">Youth Red Cross Coordinator</p>
+                <h4 className="font-bold text-slate-900 text-base">Mr. R. V. Chougala</h4>
+                <p className="text-xs text-brand-maroon font-semibold">Youth Red Cross Wing</p>
               </div>
             </div>
             <p className="text-slate-500 text-xs md:text-sm leading-relaxed">

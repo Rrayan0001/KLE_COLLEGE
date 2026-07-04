@@ -40,14 +40,8 @@ export default function PrincipalPage() {
               Principal, KLE SCPDDS College, Mahalingpur
             </p>
             
-            <p className="text-slate-600 leading-relaxed text-justify font-semibold">
-              Dear Students, Parents, and Well-Wishers,
-            </p>
             <p className="text-slate-600 leading-relaxed text-justify">
-              It gives me immense pleasure to welcome you to KLE SCPDDS College, Mahalingpur, a premier institution committed to providing quality higher education since its establishment in 1987. Guided by the noble vision of the KLE Society, our college continues to nurture knowledge, character, and excellence while preparing students to meet the challenges of an ever-evolving global society.
-            </p>
-            <p className="text-slate-600 leading-relaxed text-justify">
-              In today&apos;s rapidly changing world, education extends far beyond the boundaries of classrooms. Technological advancements, globalization, and the knowledge-driven economy demand graduates who are academically competent, professionally skilled, socially responsible, and ethically grounded. At our institution, we are dedicated to creating an environment that fosters critical thinking, innovation, creativity, and lifelong learning.
+              It gives me immense pleasure to welcome you to KLE SCPDDS College, Mahalingpur, and to the official website of our esteemed institution. It is a privilege to connect with students, parents, alumni, and visitors through this platform, which reflects our commitment to academic excellence, holistic development, and the values that define our college.
             </p>
           </div>
         </div>

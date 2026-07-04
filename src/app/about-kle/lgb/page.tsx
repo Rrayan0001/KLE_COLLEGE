@@ -18,7 +18,7 @@ const breadcrumbs = [
 
 const members = [
   { sl: 1, name: "Shri J. M. Munavalli", place: "Gokak", designation: "Chairman" },
-  { sl: 2, name: "Dr. B. S. Ambi", place: "Mahalingpur", designation: "Member" },
+  { sl: 2, name: "", place: "Mahalingpur", designation: "Member" },
   { sl: 3, name: "Shri. Mallikarjun Banakar", place: "Banahatti", designation: "Member" },
   { sl: 4, name: "Shri. Ashoka B. Angadi", place: "Mahalingpur", designation: "Member" },
   { sl: 5, name: "Secretary, KLE Society", place: "Belagavi", designation: "Member" },

@@ -49,9 +49,9 @@ export default function SyllabusPage() {
             </thead>
             <tbody>
               {[
-                { name: "B.A. (Bachelor of Arts)", desc: "NEP syllabus covering languages, humanities, history, economics, and sociology." },
-                { name: "B.Sc. (Bachelor of Science)", desc: "NEP syllabus covering physical and natural science combinations with practical labs." },
-                { name: "B.Com. (Bachelor of Commerce)", desc: "NEP syllabus covering accounting, banking, finance, and marketing." },
+                { name: "B.A. (Bachelor of Arts)", desc: "SEP syllabus covering languages, humanities, history, economics, and sociology." },
+                { name: "B.Sc. (Bachelor of Science)", desc: "SEP syllabus covering physical and natural science combinations with practical labs." },
+                { name: "B.Com. (Bachelor of Commerce)", desc: "SEP syllabus covering accounting, banking, finance, and marketing." },
                 { name: "M.Com. (Master of Commerce)", desc: "CBCS syllabus covering corporate strategic management, finance, and stock markets." },
               ].map((item, idx) => (
                 <tr

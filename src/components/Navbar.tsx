@@ -184,10 +184,10 @@ export default function Navbar() {
     <>
       {/* Main Header Bar */}
       <header className="bg-white sticky top-0 z-40 text-brand-black shadow-md py-2 md:py-3">
-        <div className="w-full px-4 sm:px-6 flex items-center justify-between gap-4">
+        <div className="w-full px-4 sm:px-6 flex items-center justify-between gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center">
           
           {/* Left: Brand/Logo & Name Area (Visible on all sizes) */}
-          <div className="flex items-center flex-grow min-w-0">
+          <div className="flex items-center flex-grow min-w-0 lg:col-start-2 lg:justify-self-center lg:flex-grow-0">
             <Link
               href="/"
               onClick={handleLogoClick}
@@ -195,8 +195,8 @@ export default function Navbar() {
             >
               <div className="relative w-24 sm:w-28 md:w-32 lg:w-36 aspect-[1.45/1] shrink-0 overflow-hidden transition-transform duration-200 group-hover:scale-[1.01]">
                 <Image
-                  src="/images/logo/kle transpe.png"
-                  alt="KLE Society centenary logo"
+                  src="/images/logo/society_new.png"
+                  alt="KLE Society logo"
                   fill
                   priority
                   sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
@@ -219,7 +219,7 @@ export default function Navbar() {
           </div>
 
           {/* Right: Actions (Search + Hamburger Menu) */}
-          <div className="flex items-center gap-2 md:gap-4 shrink-0">
+          <div className="flex items-center gap-2 md:gap-4 shrink-0 lg:col-start-3 lg:justify-self-end">
             {/* Search trigger button */}
             <button
               onClick={() => setIsSearchOpen(true)}

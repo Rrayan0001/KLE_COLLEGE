@@ -39,7 +39,7 @@ const members = [
   { sl: 13, name: "Dr. Deepa C. Metgud", designation: "Member" },
   { sl: 14, name: "Shri Bharamappa S. Ambi", designation: "Member" },
   { sl: 15, name: "Shri Sheetal G. Nanjappanavar", designation: "Member" },
-  { sl: 16, name: "Dr. B. G. Desai", designation: "Secretary" },
+  { sl: "", name: "Dr. Sunil Jalalpure", designation: "Secretary" },
 ];
 
 export default function BoardManagementPage() {

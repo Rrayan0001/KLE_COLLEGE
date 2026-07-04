@@ -19,6 +19,7 @@ interface SubpageLayoutProps {
   breadcrumbs: BreadcrumbItem[];
   sidebarLinks?: SidebarLink[];
   children: React.ReactNode;
+  navigationStyle?: "sidebar" | "overhead-pill";
 }
 
 export default function SubpageLayout({
@@ -26,8 +27,11 @@ export default function SubpageLayout({
   breadcrumbs,
   sidebarLinks,
   children,
+  navigationStyle = "sidebar",
 }: SubpageLayoutProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const showSidebar = sidebarLinks && sidebarLinks.length > 0 && navigationStyle === "sidebar";
+  const showOverhead = sidebarLinks && sidebarLinks.length > 0 && navigationStyle === "overhead-pill";
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -66,9 +70,33 @@ export default function SubpageLayout({
       </div>
 
       {/* Main Content Layout */}
-      <div className="max-w-7xl w-full mx-auto px-6 py-12 md:py-16 flex-grow flex flex-col lg:flex-row gap-12">
+      <div className={`max-w-7xl w-full mx-auto px-6 py-12 md:py-16 flex-grow flex flex-col gap-8 ${
+        showSidebar ? "lg:flex-row lg:gap-12" : ""
+      }`}>
+        {/* Overhead Pill Navigation */}
+        {showOverhead && (
+          <div className="w-full flex justify-start -mb-2">
+            <nav className="inline-flex bg-slate-900 border border-slate-700/50 rounded-full p-1.5 shadow-sm overflow-x-auto max-w-full no-scrollbar" aria-label="Section navigation">
+              {sidebarLinks.map((link, idx) => (
+                <Link
+                  key={idx}
+                  href={link.href}
+                  className={`px-5 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all duration-150 flex items-center shrink-0
+                    ${
+                      link.active
+                        ? "bg-brand-maroon text-white shadow-md shadow-brand-maroon/25"
+                        : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+
         {/* Sidebar Navigation */}
-        {sidebarLinks && sidebarLinks.length > 0 && (
+        {showSidebar && (
           <>
             {/* Desktop Sidebar (hidden on mobile/tablet) */}
             <aside className="hidden lg:block lg:w-1/4 shrink-0 space-y-6 print:hidden">
@@ -167,7 +195,7 @@ export default function SubpageLayout({
         )}
 
         {/* Dynamic Page Content */}
-        <main className={`flex-grow bg-white border border-slate-200/80 rounded-2xl p-8 md:p-12 shadow-sm text-slate-800 ${sidebarLinks ? "lg:w-3/4" : "w-full"}`}>
+        <main className={`flex-grow bg-white border border-slate-200/80 rounded-2xl p-8 md:p-12 shadow-sm text-slate-800 ${showSidebar ? "lg:w-3/4" : "w-full"}`}>
           {children}
         </main>
       </div>
