@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import SearchModal from "./SearchModal";
 
@@ -182,29 +183,25 @@ export default function Navbar() {
   return (
     <>
       {/* Main Header Bar */}
-      <header className="bg-white sticky top-0 z-40 text-brand-black shadow-md h-20 md:h-24">
-        <div className="w-full h-full px-6 flex items-center justify-between gap-4">
+      <header className="bg-white sticky top-0 z-40 text-brand-black shadow-md py-2 md:py-3">
+        <div className="w-full px-4 sm:px-6 flex items-center justify-between gap-4">
           
           {/* Left: Brand/Logo & Name Area (Visible on all sizes) */}
           <div className="flex items-center flex-grow min-w-0">
             <Link
               href="/"
               onClick={handleLogoClick}
-              className="flex items-center gap-2 md:gap-3 group focus-visible:outline-none min-w-0"
+              className="flex items-center group focus-visible:outline-none min-w-0"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/logo/society.jpg"
-                alt="KLE Society Logo"
-                className="h-10 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-250 shrink-0"
-              />
-              <div className="flex flex-col text-left min-w-0">
-                <h1 className="text-sm sm:text-base md:text-xl font-black leading-none uppercase tracking-wide text-brand-black truncate">
-                  KLE SCPDDS College
-                </h1>
-                <p className="text-[9px] sm:text-[10px] md:text-xs text-brand-maroon font-bold leading-none mt-1 truncate">
-                  Arts, Science & Commerce
-                </p>
+              <div className="relative w-[240px] sm:w-[330px] md:w-[520px] lg:w-[640px] max-w-[68vw] aspect-[7.5/1] transition-transform duration-200 group-hover:scale-[1.01]">
+                <Image
+                  src="/images/banners/klescpbanner.jpg"
+                  alt="KLE Society's Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 240px, (max-width: 1024px) 520px, 640px"
+                  className="object-contain object-left bg-white"
+                />
               </div>
             </Link>
           </div>
@@ -259,16 +256,15 @@ export default function Navbar() {
         >
           {/* Drawer Header */}
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 shrink-0">
-            <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/logo/society.jpg"
-                alt="KLE Society Logo"
-                className="h-9 w-auto object-contain"
-              />
-              <div className="flex flex-col">
-                <span className="text-sm font-black uppercase tracking-wide text-brand-black leading-none">KLE SCPDDS College</span>
-                <span className="text-[9px] font-bold text-brand-maroon leading-none mt-0.5">Arts, Science & Commerce</span>
+            <Link href="/" onClick={handleLogoClick} className="flex items-center min-w-0">
+              <div className="relative w-[210px] sm:w-[270px] aspect-[7.5/1] max-w-[68vw]">
+                <Image
+                  src="/images/banners/klescpbanner.jpg"
+                  alt="KLE Society's Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur"
+                  fill
+                  sizes="(max-width: 640px) 210px, 270px"
+                  className="object-contain object-left bg-white"
+                />
               </div>
             </Link>
             <button
@@ -357,8 +353,15 @@ export default function Navbar() {
 
           {/* Drawer Footer */}
           <div className="shrink-0 border-t border-gray-100 px-5 py-4 bg-gray-50">
-            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">KLE SCPDDS College, Mahalingpur</p>
-            <p className="text-[11px] text-gray-500 font-medium">Arts, Science & D. D. Shirol Commerce College</p>
+            <div className="relative w-full max-w-[240px] aspect-[7.5/1]">
+              <Image
+                src="/images/banners/klescpbanner.jpg"
+                alt="KLE Society's Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur"
+                fill
+                sizes="240px"
+                className="object-contain object-left bg-white"
+              />
+            </div>
           </div>
         </div>
       </div>

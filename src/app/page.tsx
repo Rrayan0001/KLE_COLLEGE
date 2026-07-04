@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
 import TabsSection from "@/components/TabsSection";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -57,24 +56,6 @@ export default function Home() {
   return (
     <div>
       {/* Announcements Marquee */}
-
-      {/* Header Banner */}
-      <section className="bg-white border-b border-slate-100" aria-label="College banner">
-        <div className="max-w-7xl mx-auto px-0 sm:px-4 lg:px-6">
-          <div className="relative w-full overflow-hidden bg-white sm:rounded-2xl sm:shadow-sm">
-            <div className="relative w-full aspect-[6.8/1] sm:aspect-[8.5/1] md:aspect-[10/1]">
-              <Image
-                src="/images/banners/klescpbanner.jpg"
-                alt="KLE Society's Shri Channagirishwar Prasadik Arts, Science and D. D. Shirol Commerce College, Mahalingpur"
-                fill
-                priority
-                sizes="100vw"
-                className="object-contain bg-white"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Hero Slide Area — includes the 4 quick-link card strip */}
       <HeroCarousel />
