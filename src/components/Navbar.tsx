@@ -195,12 +195,12 @@ export default function Navbar() {
             >
               <div className="relative w-24 sm:w-28 md:w-32 lg:w-36 aspect-[1.45/1] shrink-0 overflow-hidden transition-transform duration-200 group-hover:scale-[1.01]">
                 <Image
-                  src="/images/banners/klescpbanner.jpg"
-                  alt="KLE centenary logo"
+                  src="/images/logo/kle transpe.png"
+                  alt="KLE Society centenary logo"
                   fill
                   priority
                   sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
-                  className="object-cover bg-white"
+                  className="object-contain bg-white"
                   style={{ objectPosition: "left center" }}
                 />
               </div>
@@ -271,11 +271,11 @@ export default function Navbar() {
             <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5 min-w-0 max-w-[70vw]">
               <div className="relative w-24 sm:w-28 aspect-[1.45/1] shrink-0 overflow-hidden">
                 <Image
-                  src="/images/banners/klescpbanner.jpg"
-                  alt="KLE centenary logo"
+                  src="/images/logo/kle transpe.png"
+                  alt="KLE Society centenary logo"
                   fill
                   sizes="96px"
-                  className="object-cover bg-white"
+                  className="object-contain bg-white"
                   style={{ objectPosition: "left center" }}
                 />
               </div>
