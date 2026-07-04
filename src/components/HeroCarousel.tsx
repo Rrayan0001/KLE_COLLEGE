@@ -52,7 +52,7 @@ const slides: HeroSlide[] = [
     eyebrow: "Campus Life & Events",
     headline: "MEET OUR STUDENTS",
     ctaLabel: "VIEW GALLERY",
-    ctaHref: "/gallery",
+    ctaHref: "/gallery/photo-gallery",
     imageSrc: "/images/general/col2.jpg",
   },
   {
@@ -91,7 +91,7 @@ const quickLinks: QuickLinkCard[] = [
     label: "MEDIA",
     lineOne: "News, Events &",
     lineTwo: "GALLERY",
-    href: "/gallery",
+    href: "/gallery/photo-gallery",
   },
 ];
 

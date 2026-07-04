@@ -163,7 +163,6 @@ export default function ContactPage() {
               <div className="space-y-1">
                 <h3 className="font-bold text-slate-800 text-sm">Email Addresses</h3>
                 <p className="text-slate-500 text-xs">General Support: <a href="mailto:scpdgcol@gmail.com" className="hover:text-college-navy underline transition">scpdgcol@gmail.com</a></p>
-                <p className="text-slate-500 text-xs">Admissions: <a href="mailto:admissions@scpdgcollege.edu.in" className="hover:text-college-navy underline transition">admissions@scpdgcollege.edu.in</a></p>
               </div>
             </div>
 

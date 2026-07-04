@@ -309,7 +309,7 @@ export default function Home() {
             </p>
             <div className="pt-4">
               <Link
-                href="/gallery"
+                href="/gallery/photo-gallery"
                 className="inline-block bg-white text-brand-black font-bold uppercase tracking-widest text-xs px-10 py-4 hover:bg-gray-50 transition-colors border border-gray-200 shadow-sm"
               >
                 VIEW ALL
@@ -336,7 +336,7 @@ export default function Home() {
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">
                   The college was proudly accredited with an 'A' grade (3.10 CGPA) during the recent cycle.
                 </p>
-                <Link href="/gallery" className="text-[10px] font-bold text-brand-maroon uppercase tracking-widest hover:text-brand-black transition-colors">
+                <Link href="/gallery/photo-gallery" className="text-[10px] font-bold text-brand-maroon uppercase tracking-widest hover:text-brand-black transition-colors">
                   READ MORE
                 </Link>
               </div>
@@ -360,7 +360,7 @@ export default function Home() {
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">
                   Join us for a celebration of arts, science exhibitions, and vibrant student performances.
                 </p>
-                <Link href="/gallery" className="text-[10px] font-bold text-brand-maroon uppercase tracking-widest hover:text-brand-black transition-colors">
+                <Link href="/gallery/photo-gallery" className="text-[10px] font-bold text-brand-maroon uppercase tracking-widest hover:text-brand-black transition-colors">
                   READ MORE
                 </Link>
               </div>
