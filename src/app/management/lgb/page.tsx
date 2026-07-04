@@ -39,7 +39,37 @@ export default function LocalGoverningBodyPage() {
           </h2>
         </div>
 
-        <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm">
+        {/* Mobile Card View (hidden on desktop) */}
+        <div className="block sm:hidden space-y-4">
+          {members.map((member, idx) => (
+            <div key={idx} className="bg-white border border-slate-200/60 rounded-xl p-5 shadow-sm space-y-3 relative overflow-hidden hover:border-brand-maroon/20 hover:shadow-md transition duration-200">
+              <span className="absolute top-0 right-0 bg-slate-100 text-slate-500 text-[10px] font-bold px-3 py-1 rounded-bl-lg">
+                #{member.sl}
+              </span>
+              
+              <div>
+                <h4 className="font-bold text-slate-900 text-base">
+                  {member.name}
+                </h4>
+                {member.place && (
+                  <span className="text-xs text-slate-400 font-semibold block mt-0.5">
+                    📍 {member.place}
+                  </span>
+                )}
+              </div>
+              
+              <div className="pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span className="text-slate-400 font-bold uppercase tracking-wider">Designation</span>
+                <span className="font-extrabold text-brand-maroon uppercase tracking-wider bg-brand-maroon/5 px-2.5 py-1 rounded-md">
+                  {member.designation}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Table View (hidden on mobile) */}
+        <div className="hidden sm:block overflow-x-auto rounded-xl border border-slate-100 shadow-sm">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-brand-maroon text-white text-xs md:text-sm font-bold tracking-wide uppercase">
