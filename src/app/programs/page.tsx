@@ -268,7 +268,7 @@ export default function ProgramsPage() {
               </div>
               <a
                 href="/contact"
-                className="bg-college-navy hover:bg-college-blue text-white text-xs font-bold px-5 py-3 rounded-lg shadow-sm transition"
+                className="btn-center-fill btn-center-fill-navy text-white text-xs font-bold px-5 py-3 rounded-lg shadow-sm"
               >
                 Inquire Admissions
               </a>

@@ -109,7 +109,7 @@ export default function CertificatesPage() {
           </p>
           <a
             href="/naac/ssr"
-            className="inline-block px-4 py-2 bg-brand-maroon hover:bg-[#5e1c2b] text-white rounded-lg text-xs font-bold transition shadow-sm"
+            className="btn-center-fill btn-center-fill-maroon inline-block px-4 py-2 text-white rounded-lg text-xs font-bold shadow-sm"
           >
             Go to SSR Directory
           </a>

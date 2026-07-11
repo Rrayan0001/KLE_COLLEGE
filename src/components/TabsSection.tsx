@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type TabItem = {
   id: string;
@@ -170,13 +171,13 @@ export default function TabsSection() {
   }, []);
 
   return (
-    <section className="py-16 bg-[#f0f0f0] relative overflow-hidden" aria-label="Highlights">
+    <section className="py-16 bg-slate-100 relative overflow-hidden" aria-label="Highlights">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Single unified rounded card — matches reference image 1 exactly */}
         <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-slate-100 flex flex-col lg:flex-row">
 
           {/* ── LEFT SIDEBAR ── */}
-          <div className="w-full lg:w-[280px] shrink-0 flex flex-col lg:border-r border-b lg:border-b-0 border-slate-100 bg-[#f9fafb]">
+          <div className="w-full lg:w-[280px] shrink-0 flex flex-col lg:border-r border-b lg:border-b-0 border-slate-100 bg-slate-50">
             {tabs.map((tab, idx) => {
               const isActive = activeTab === tab.id;
               return (
@@ -224,12 +225,12 @@ export default function TabsSection() {
           <div className="flex-1 relative overflow-hidden bg-white flex flex-col justify-between min-h-[420px]">
 
             {/* College building sketch — faint overlay on the right */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/hero_section/slide.png"
               alt=""
               aria-hidden="true"
-              className="absolute right-0 bottom-0 h-full w-auto object-cover object-left pointer-events-none select-none"
+              fill
+              className="object-cover object-left pointer-events-none select-none !left-auto"
               style={{
                 opacity: 0.055,
                 mixBlendMode: "multiply",
@@ -299,7 +300,7 @@ export default function TabsSection() {
 
                 {current.cta && (
                   <Link href={current.cta.href}
-                    className="inline-block bg-brand-maroon text-white font-extrabold uppercase tracking-widest text-[10px] px-8 py-3 hover:bg-[#5e1c2b] transition-all duration-200 shadow-md mt-2">
+                    className="btn-center-fill btn-center-fill-maroon inline-block text-white font-extrabold uppercase tracking-widest text-[10px] px-8 py-3 shadow-md mt-2">
                     {current.cta.label}
                   </Link>
                 )}

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import HeroTagline from "@/components/HeroTagline";
 
 // ---------------------------------------------------------------------------
@@ -300,13 +301,13 @@ export default function HeroCarousel() {
               >
                 {/* Background — real image or solid brand-color fallback */}
                 {slide.imageSrc ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img
+                  <Image
                     src={slide.imageSrc}
                     alt=""
                     aria-hidden="true"
-                    className="absolute inset-0 w-full h-full object-cover object-center"
-                    loading={realIndex === 0 ? "eager" : "lazy"}
+                    fill
+                    className="object-cover object-center"
+                    priority={realIndex === 0}
                   />
                 ) : (
                   // No image asset — blank brand-color background, no stock photo
@@ -356,7 +357,7 @@ export default function HeroCarousel() {
                       <div className="pt-2 hidden md:block">
                         <Link
                           href={slide.ctaHref}
-                          className="inline-block bg-brand-yellow px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-black shadow-lg transition-all duration-200 hover:bg-brand-yellow-hover active:scale-95 sm:px-14 sm:text-sm"
+                          className="btn-center-fill btn-center-fill-yellow inline-block px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-black shadow-lg active:scale-95 sm:px-14 sm:text-sm"
                           style={{ borderRadius: "2px" }}
                         >
                           {slide.ctaLabel}
@@ -391,7 +392,7 @@ export default function HeroCarousel() {
                       <div className="pt-2 hidden md:block">
                         <Link
                           href={slide.ctaHref}
-                          className="inline-block bg-brand-yellow hover:bg-brand-yellow-hover text-brand-black font-bold uppercase tracking-[0.2em] text-xs sm:text-sm px-10 sm:px-14 py-5 active:scale-95 transition-all duration-200 shadow-lg"
+                          className="btn-center-fill btn-center-fill-yellow inline-block px-10 sm:px-14 py-5 active:scale-95 shadow-lg"
                           style={{ borderRadius: "2px" }}
                         >
                           {slide.ctaLabel}

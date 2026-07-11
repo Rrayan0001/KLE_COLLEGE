@@ -94,7 +94,7 @@ export default function AffiliationDetailsPage() {
           </div>
           <a
             href="/naac/certificates"
-            className="px-5 py-2.5 bg-brand-maroon hover:bg-[#5e1c2b] text-white rounded-lg text-xs font-bold transition shadow-sm shrink-0"
+            className="btn-center-fill btn-center-fill-maroon px-5 py-2.5 text-white rounded-lg text-xs font-bold shadow-sm shrink-0"
           >
             Go to NAAC Bank
           </a>

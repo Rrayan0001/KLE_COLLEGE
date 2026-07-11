@@ -3,15 +3,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import SearchModal from "./SearchModal";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>("MANAGEMENT");
+  const [activeSection, setActiveSection] = useState<string>("ABOUT KLE");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -31,7 +30,10 @@ export default function Navbar() {
 
   // Close mega menu on route change
   useEffect(() => {
-    setIsOpen(false);
+    const timer = setTimeout(() => {
+      setIsOpen(false);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   // Prevent background scrolling when menu is open
@@ -75,7 +77,7 @@ export default function Navbar() {
       sublinks: [
         { name: "History", href: "/about-kle/history" },
         { name: "Emblem", href: "/about-kle/emblem" },
-        { name: "Vision & Mission", href: "/about-kle/vision-mission" },
+        { name: "KLE Society Vision & Mission", href: "/about-kle/vision-mission" },
         { name: "Founders", href: "/about-kle/founders" },
         { name: "Board of Management", href: "/about-kle/board-management" },
         { name: "Chairman's Message", href: "/about-kle/chairman-message" },
@@ -88,7 +90,7 @@ export default function Navbar() {
       sublinks: [
         { name: "Donor of SPDDS", href: "/about/donors" },
         { name: "About College", href: "/about" },
-        { name: "Vision & Mission", href: "/about/vision" },
+        { name: "College Vision & Mission", href: "/about/vision" },
         { name: "Our Principal", href: "/about/principal" },
         { name: "Our Staff", href: "/about/staff" },
         { name: "Achievements", href: "/about/achievements" },
@@ -185,15 +187,21 @@ export default function Navbar() {
         { name: "Notifications", href: "/gallery/notifications" },
       ],
     },
+    {
+      name: "MANAGEMENT",
+      href: "/management/boardmembers",
+      sublinks: [
+        { name: "Board Members", href: "/management/boardmembers" },
+        { name: "Chairman", href: "/management/chairman" },
+        { name: "History", href: "/management/history" },
+        { name: "Local Governing Body", href: "/management/lgb" },
+        { name: "Society", href: "/management/society" },
+      ],
+    },
     { name: "CONTACT", href: "/contact" },
   ];
 
-  const activeSectionData = navLinks.find((link) => link.name === activeSection);
 
-  const handleLinkClick = (href: string) => {
-    setIsOpen(false);
-    router.push(href);
-  };
 
   const handleLogoClick = (e: React.MouseEvent) => {
     setIsOpen(false);

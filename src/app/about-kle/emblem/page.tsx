@@ -1,14 +1,15 @@
 import React from "react";
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 const sidebarLinks = [
   { name: "History", href: "/about-kle/history" },
   { name: "Emblem", href: "/about-kle/emblem", active: true },
-  { name: "Vision & Mission", href: "/about-kle/vision-mission" },
+  { name: "KLE Society Vision & Mission", href: "/about-kle/vision-mission" },
   { name: "Founders", href: "/about-kle/founders" },
   { name: "Board of Management", href: "/about-kle/board-management" },
   { name: "Chairman's Message", href: "/about-kle/chairman-message" },
-  { name: "Local Governing Body", href: "/about-kle/lgb" },
+  { name: "KLE Society Local Governing Body", href: "/about-kle/lgb" },
 ];
 
 const breadcrumbs = [
@@ -26,12 +27,7 @@ export default function EmblemPage() {
       <div className="space-y-8">
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="w-full md:w-1/3 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo/emblem.jpg"
-              alt="KLE Society Emblem"
-              className="w-full h-auto object-cover"
-            />
+            { }<Image src="/images/logo/emblem.jpg" alt="KLE Society Emblem" className="w-full h-auto object-cover" width={800} height={500} />
           </div>
           <div className="space-y-6">
             <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">

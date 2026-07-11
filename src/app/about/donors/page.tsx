@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 const sidebarLinks = [
   { name: "About College", href: "/about" },
   { name: "Donor of SPDDS", href: "/about/donors", active: true },
-  { name: "Vision & Mission", href: "/about/vision" },
+  { name: "College Vision & Mission", href: "/about/vision" },
   { name: "Our Principal", href: "/about/principal" },
   { name: "Our Staff", href: "/about/staff" },
   { name: "Achievements", href: "/about/achievements" },
@@ -25,12 +26,7 @@ export default function DonorPage() {
       <div className="space-y-8">
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo/kle transpe.png"
-              alt="SCP DDS College Donor History"
-              className="w-full h-auto object-cover max-h-72"
-            />
+            { }<Image src="/images/logo/kle transpe.png" alt="SCP DDS College Donor History" className="w-full h-auto object-cover max-h-72" width={800} height={500} />
           </div>
           <div className="space-y-4">
             <h2 className="text-xl md:text-2xl font-extrabold text-slate-800">

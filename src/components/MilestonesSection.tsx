@@ -68,43 +68,48 @@ function MilestoneCard({
 
   return (
     <div
-      className={`rounded-2xl border border-slate-100 bg-white shadow-[0_4px_25px_rgba(0,0,0,0.03)] p-6 md:p-8 text-center transition-all duration-700 ${
+      className={`rounded-2xl border border-slate-100 bg-white shadow-[0_4px_25px_rgba(0,0,0,0.03)] p-6 md:p-8 text-center transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 ${
         reveal ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Circular icon container with soft maroon tint */}
-      <div className="w-16 h-16 rounded-full bg-[#7a1c30]/5 flex items-center justify-center mx-auto mb-5">
+      <div className="w-16 h-16 rounded-full bg-brand-maroon-light/5 flex items-center justify-center mx-auto mb-6">
         {index === 0 && (
-          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 7h20L12 2z" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 11v9h3v-8H4zm5 0v8h3v-8H9zm5 0v8h3v-8h-3zm5 0v8h3v-8h-3z" fill="currentColor" fillOpacity={0.1} />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M2 21h20v2H2v-2z" />
+          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 22h18" />
+            <path d="M19 22V10l-7-5-7 5v12" />
+            <path d="M9 22v-8h6v8" />
+            <path d="M12 7V9" />
           </svg>
         )}
         {index === 1 && (
-          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2m16-10a4 4 0 11-8 0 4 4 0 018 0zm3 10v-2a4 4 0 00-3-3.87m0-4.87a4 4 0 010 7.75" />
+          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+            <path d="M16 3.13a4 4 0 010 7.75" />
           </svg>
         )}
         {index === 2 && (
-          <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5}>
-            <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#7a1c30" stroke="#7a1c30" />
-            <path d="M6 12v4.5C6 18.5 8.7 20 12 20s6-1.5 6-3.5V12" fill="#7a1c30" stroke="#7a1c30" />
-            <path d="M20 7v6.5" stroke="#d97706" strokeWidth={2} strokeLinecap="round" />
-            <circle cx="20" cy="13.5" r="1.5" fill="#d97706" stroke="#d97706" />
+          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
           </svg>
         )}
         {index === 3 && (
-          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v6m-3-3h6" stroke="currentColor" strokeWidth={1.75} />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 21v-4a1 1 0 011-1h4a1 1 0 011 1v4" />
+          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M12 8v8" />
+            <path d="M8 12h8" />
           </svg>
         )}
         {index === 4 && (
-          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 2h14M5 22h14M19 2l-7 10 7 10M5 2l7 10-7 10" />
+          <svg viewBox="0 0 24 24" className="w-7 h-7 text-brand-maroon" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 2h14" />
+            <path d="M5 22h14" />
+            <path d="M19 2l-7 10 7 10" />
+            <path d="M5 2l7 10-7 10" />
           </svg>
         )}
       </div>
@@ -116,7 +121,7 @@ function MilestoneCard({
       </div>
 
       {/* Label */}
-      <div className="mt-3 text-[11px] md:text-[12px] uppercase tracking-widest font-black text-slate-700">
+      <div className="mt-3 text-[11px] md:text-[12px] uppercase tracking-widest font-black text-slate-700 leading-tight">
         {milestone.label}
       </div>
 
@@ -154,7 +159,7 @@ export default function MilestonesSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden py-16 md:py-20 bg-[#fbfbfc]"
+      className="relative overflow-hidden py-16 md:py-20 bg-slate-50"
       aria-label="KLE Society milestones"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import SubpageLayout from "@/components/SubpageLayout";
 
 interface PageProps {
@@ -86,7 +87,7 @@ export default async function AqarReportPage({ params }: PageProps) {
             <a
               href={pdfPath}
               download={`AQAR_${year}.pdf`}
-              className="px-5 py-2.5 bg-brand-maroon hover:bg-[#5e1c2b] text-white rounded-lg text-sm font-bold transition flex items-center justify-center gap-2 shadow-md shrink-0"
+              className="btn-center-fill btn-center-fill-maroon px-5 py-2.5 text-white rounded-lg text-sm font-bold flex items-center justify-center gap-2 shadow-md shrink-0"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -137,12 +138,12 @@ export default async function AqarReportPage({ params }: PageProps) {
                 The Annual Quality Assurance Report (AQAR) for the academic year {year} is currently under preparation or awaiting final administrative submission.
               </p>
             </div>
-            <a 
+            <Link 
               href="/naac/aqar"
-              className="inline-flex items-center justify-center px-5 py-2.5 bg-brand-maroon hover:bg-[#5e1c2b] text-white rounded-lg text-sm font-bold transition shadow"
+              className="btn-center-fill btn-center-fill-maroon inline-flex items-center justify-center px-5 py-2.5 text-white rounded-lg text-sm font-bold shadow"
             >
               Back to AQAR Directory
-            </a>
+            </Link>
           </div>
         )}
       </div>

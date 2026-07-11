@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 /**
  * PageTransition
@@ -52,8 +53,13 @@ export default function WelcomeAnimation() {
 
   // First visit — play immediately
   useEffect(() => {
-    runTransition();
-    return clearTimers;
+    const timer = setTimeout(() => {
+      runTransition();
+    }, 0);
+    return () => {
+      clearTimers();
+      clearTimeout(timer);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -63,7 +69,12 @@ export default function WelcomeAnimation() {
       isFirstLoad.current = false;
       return;
     }
-    runTransition();
+    const timer = setTimeout(() => {
+      runTransition();
+    }, 0);
+    return () => {
+      clearTimeout(timer);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
@@ -112,11 +123,13 @@ export default function WelcomeAnimation() {
           className="flex flex-col items-center gap-5"
         >
           {/* Logo image — natural proportions, no circle crop */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/images/logo/kle transpe.png"
             alt="KLE SCPDDS College"
+            width={240}
+            height={96}
             className="h-24 w-auto object-contain"
+            priority
           />
 
           {/* College name */}

@@ -76,7 +76,7 @@ export default function ITEPPage() {
           <div className="pt-2">
             <Link
               href="/contact"
-              className="inline-block bg-college-gold hover:bg-college-gold-hover text-college-dark font-bold px-6 py-3 rounded-lg shadow transition"
+              className="btn-center-fill btn-center-fill-yellow inline-block px-6 py-3 rounded-lg shadow"
             >
               Inquire Admission Seat Availability
             </Link>

@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 const sidebarLinks = [
   { name: "About College", href: "/about" },
   { name: "Donor of SPDDS", href: "/about/donors" },
-  { name: "Vision & Mission", href: "/about/vision", active: true },
+  { name: "College Vision & Mission", href: "/about/vision", active: true },
   { name: "Our Principal", href: "/about/principal" },
   { name: "Our Staff", href: "/about/staff" },
   { name: "Achievements", href: "/about/achievements" },
@@ -12,13 +13,13 @@ const sidebarLinks = [
 
 const breadcrumbs = [
   { label: "About Us", href: "/about" },
-  { label: "Vision & Mission" },
+  { label: "College Vision & Mission" },
 ];
 
 export default function VisionPage() {
   return (
     <SubpageLayout
-      title="Vision & Mission"
+      title="College Vision & Mission"
       breadcrumbs={breadcrumbs}
       sidebarLinks={sidebarLinks}
     >
@@ -38,24 +39,14 @@ export default function VisionPage() {
             </p>
           </div>
           <div className="rounded-xl overflow-hidden shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo/kle transpe.png"
-              alt="Vision Icon block"
-              className="w-full h-auto object-cover max-h-52 bg-white rounded-lg p-2"
-            />
+            { }<Image src="/images/logo/kle transpe.png" alt="Vision Icon block" className="w-full h-auto object-cover max-h-52 bg-white rounded-lg p-2" width={800} height={500} />
           </div>
         </div>
 
         {/* Mission */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-md transition duration-300">
           <div className="rounded-xl overflow-hidden shrink-0 md:order-last">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo/kle transpe.png"
-              alt="Mission Icon block"
-              className="w-full h-auto object-cover max-h-52 bg-white rounded-lg p-2"
-            />
+            { }<Image src="/images/logo/kle transpe.png" alt="Mission Icon block" className="w-full h-auto object-cover max-h-52 bg-white rounded-lg p-2" width={800} height={500} />
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-extrabold text-brand-maroon font-display flex items-center gap-2">

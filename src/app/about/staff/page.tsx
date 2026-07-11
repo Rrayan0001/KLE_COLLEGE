@@ -4,7 +4,7 @@ import SubpageLayout from "@/components/SubpageLayout";
 const sidebarLinks = [
   { name: "About College", href: "/about" },
   { name: "Donor of SPDDS", href: "/about/donors" },
-  { name: "Vision & Mission", href: "/about/vision" },
+  { name: "College Vision & Mission", href: "/about/vision" },
   { name: "Our Principal", href: "/about/principal" },
   { name: "Our Staff", href: "/about/staff", active: true },
   { name: "Achievements", href: "/about/achievements" },

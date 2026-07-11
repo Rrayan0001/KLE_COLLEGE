@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 const sidebarLinks = [
   { name: "About College", href: "/about" },
   { name: "Donor of SPDDS", href: "/about/donors" },
-  { name: "Vision & Mission", href: "/about/vision" },
+  { name: "College Vision & Mission", href: "/about/vision" },
   { name: "Our Principal", href: "/about/principal", active: true },
   { name: "Our Staff", href: "/about/staff" },
   { name: "Achievements", href: "/about/achievements" },
@@ -27,12 +28,7 @@ export default function PrincipalPage() {
           {/* Principal Image Container */}
           <div className="w-full md:w-1/3 rounded-2xl overflow-hidden shadow-lg border-2 border-brand-maroon/10 p-1 bg-white shrink-0">
             <div className="rounded-xl overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/logo/Shri_N_B_Patil.png"
-                alt="Shri N. B. Patil"
-                className="w-full h-auto object-cover object-top hover:scale-[1.02] transition-transform duration-300 animate-[pulse_4s_infinite]"
-              />
+              { }<Image src="/images/logo/Shri_N_B_Patil.png" alt="Shri N. B. Patil" className="w-full h-auto object-cover object-top hover:scale-[1.02] transition-transform duration-300 animate-[pulse_4s_infinite]" width={600} height={800} />
             </div>
           </div>
 
@@ -67,7 +63,7 @@ export default function PrincipalPage() {
             Affiliated with Bagalkot University, our institution is committed to maintaining high academic standards through an experienced and dedicated faculty, modern learning resources, well-equipped laboratories, digital facilities, and a vibrant campus environment. Alongside academic excellence, we emphasize co-curricular and extracurricular activities, leadership development, community engagement, cultural enrichment, and sports to ensure the holistic development of every student.
           </p>
           <p>
-            At KLE Society's SCP Arts, Science and D. D. Shirol Commerce College, we believe that education is a transformative journey that empowers individuals to become responsible citizens, compassionate human beings, and capable professionals. Our mission is to nurture confidence, integrity, discipline, and a spirit of service, enabling our students to contribute meaningfully to society and the nation.
+            At KLE Society&apos;s SCP Arts, Science and D. D. Shirol Commerce College, we believe that education is a transformative journey that empowers individuals to become responsible citizens, compassionate human beings, and capable professionals. Our mission is to nurture confidence, integrity, discipline, and a spirit of service, enabling our students to contribute meaningfully to society and the nation.
           </p>
           <p>
             I warmly invite aspiring students to become a part of our academic community and experience an atmosphere of learning, innovation, and personal growth. Together, let us continue our pursuit of knowledge, excellence, and values, shaping a brighter future for ourselves and for society.

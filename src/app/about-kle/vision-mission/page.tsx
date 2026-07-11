@@ -4,16 +4,16 @@ import SubpageLayout from "@/components/SubpageLayout";
 const sidebarLinks = [
   { name: "History", href: "/about-kle/history" },
   { name: "Emblem", href: "/about-kle/emblem" },
-  { name: "Vision & Mission", href: "/about-kle/vision-mission", active: true },
+  { name: "KLE Society Vision & Mission", href: "/about-kle/vision-mission", active: true },
   { name: "Founders", href: "/about-kle/founders" },
   { name: "Board of Management", href: "/about-kle/board-management" },
   { name: "Chairman's Message", href: "/about-kle/chairman-message" },
-  { name: "Local Governing Body", href: "/about-kle/lgb" },
+  { name: "KLE Society Local Governing Body", href: "/about-kle/lgb" },
 ];
 
 const breadcrumbs = [
   { label: "About KLE", href: "/about-kle/history" },
-  { label: "Vision & Mission" },
+  { label: "KLE Society Vision & Mission" },
 ];
 
 export default function VisionMissionPage() {
@@ -34,7 +34,7 @@ export default function VisionMissionPage() {
 
   return (
     <SubpageLayout
-      title="Vision & Mission"
+      title="KLE Society Vision & Mission"
       breadcrumbs={breadcrumbs}
       sidebarLinks={sidebarLinks}
     >

@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 export default function AnnouncementBar() {
-  const [isPaused, setIsPaused] = useState(false);
 
   const announcements = [
     "NAAC Accredited at 'A' Grade with 3.10 CGPA",

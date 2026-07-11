@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 const sidebarLinks = [
@@ -31,12 +32,7 @@ export default function SportsCulturePage() {
 
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo/klescpbanner.jpg"
-              alt="Cultural activity"
-              className="w-full h-auto object-cover"
-            />
+            { }<Image src="/images/logo/klescpbanner.jpg" alt="Cultural activity" className="w-full h-auto object-cover" width={800} height={500} />
           </div>
           <div className="space-y-4">
             <p className="text-slate-600 leading-relaxed text-sm text-justify">

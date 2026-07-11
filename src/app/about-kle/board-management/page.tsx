@@ -4,11 +4,11 @@ import SubpageLayout from "@/components/SubpageLayout";
 const sidebarLinks = [
   { name: "History", href: "/about-kle/history" },
   { name: "Emblem", href: "/about-kle/emblem" },
-  { name: "Vision & Mission", href: "/about-kle/vision-mission" },
+  { name: "KLE Society Vision & Mission", href: "/about-kle/vision-mission" },
   { name: "Founders", href: "/about-kle/founders" },
   { name: "Board of Management", href: "/about-kle/board-management", active: true },
   { name: "Chairman's Message", href: "/about-kle/chairman-message" },
-  { name: "Local Governing Body", href: "/about-kle/lgb" },
+  { name: "KLE Society Local Governing Body", href: "/about-kle/lgb" },
 ];
 
 const breadcrumbs = [

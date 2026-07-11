@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
 import TabsSection from "@/components/TabsSection";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -7,52 +8,6 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import MilestonesSection from "@/components/MilestonesSection";
 
 export default function Home() {
-  const highlights = [
-    {
-      title: "Academic Excellence",
-      description: "Structured curricula in Arts, Science, and Commerce designed to foster analytical and critical thinking skills.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-college-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.168.477-4.5 1.253" />
-        </svg>
-      ),
-    },
-    {
-      title: "Library & Digital Resources",
-      description: "Access to thousands of physical books, leading academic journals, and digital research databases.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-college-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Extension Activities",
-      description: "Vibrant NSS, NCC, and Red Cross units providing regular community engagement and social impact programs.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-college-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Student Life",
-      description: "A rich mix of cultural associations, sports competitions, guest lectures, and campus festivals.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-college-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-    },
-  ];
-
-  const stats = [
-    { value: "35+", label: "Years of Educational Legacy" },
-    { value: "1,200+", label: "Active Students on Campus" },
-    { value: "50+", label: "Expert Teaching Faculty" },
-    { value: "A Grade", label: "Accredited with 3.10 CGPA" },
-  ];
-
   return (
     <div>
       {/* Announcements Marquee */}
@@ -100,7 +55,7 @@ export default function Home() {
             <div className="pt-4">
               <Link
                 href="/about"
-                className="inline-block bg-brand-yellow hover:bg-brand-yellow-hover text-brand-black font-extrabold uppercase tracking-widest text-xs px-10 py-4 active:scale-95 transition-all duration-200 shadow-md"
+                className="btn-center-fill btn-center-fill-yellow inline-block px-10 py-4 active:scale-95 shadow-md"
                 style={{ borderRadius: "2px" }}
               >
                 LEARN MORE
@@ -110,13 +65,12 @@ export default function Home() {
           
           {/* Right Column: Slanted Image */}
           <ScrollReveal className="lg:col-span-5 relative h-[300px] lg:h-[400px] w-full rounded-2xl overflow-hidden bg-white shadow-xl" animation="fade-in-right" delay={150}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/about_us/image.png"
               alt="KLE SCPDDS College Mahalingpur main building campus architecture"
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-102"
+              fill
+              className="object-cover transition-transform duration-500 hover:scale-102"
               style={{ clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
-              loading="lazy"
             />
           </ScrollReveal>
         </div>
@@ -134,11 +88,12 @@ export default function Home() {
       <section className="py-16 bg-brand-gray border-t border-gray-200" aria-label="Our Donor">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <ScrollReveal className="hidden lg:block h-64 relative rounded-xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100" animation="fade-in-left">
-            <img
+            <Image
               src="/images/general/col2.jpg"
               alt="Our Donor - Dr. D. D. Shirol"
-              className="w-full h-full object-cover"
-              loading="lazy"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
             />
           </ScrollReveal>
           <ScrollReveal className="space-y-4" animation="fade-in-right" delay={150}>
@@ -263,12 +218,11 @@ export default function Home() {
                     <div className="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(204,164,59,0.08)_55%)] rounded-full" />
                     
                     <div className="relative w-36 h-36 rounded-full overflow-hidden border-[6px] border-white shadow-md bg-slate-100 z-10">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img 
+                      <Image 
                         src="/images/logo/Amit_Kore.png" 
                         alt="Shri. Amit Prabhakar Kore" 
-                        className="w-full h-full object-cover object-top scale-100 group-hover:scale-103 transition-transform duration-300" 
-                        loading="lazy" 
+                        fill
+                        className="object-cover object-top scale-100 group-hover:scale-103 transition-transform duration-300 rounded-full"
                       />
                     </div>
                     {/* Icon overlay badge */}
@@ -296,8 +250,8 @@ export default function Home() {
                 </div>
                 
                 <Link 
-                  href="/management/chairman" 
-                  className="bg-brand-maroon hover:bg-brand-maroon/90 text-white font-extrabold text-xs uppercase tracking-widest py-3 px-8 rounded-full shadow-md hover:shadow-lg transition-all duration-200 mt-6 inline-flex items-center gap-2 w-full max-w-[200px] justify-center hover:scale-[1.02] transform"
+                  href="/about-kle/chairman-message" 
+                  className="btn-center-fill btn-center-fill-maroon font-extrabold text-xs uppercase tracking-widest py-3 px-8 rounded-full shadow-md hover:shadow-lg mt-6 inline-flex items-center gap-2 w-full max-w-[200px] justify-center hover:scale-[1.02] transform"
                 >
                   <span>Read Message</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -318,12 +272,11 @@ export default function Home() {
                     <div className="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(204,164,59,0.08)_55%)] rounded-full" />
                     
                     <div className="relative w-36 h-36 rounded-full overflow-hidden border-[6px] border-white shadow-md bg-slate-100 z-10">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img 
+                      <Image 
                         src="/images/logo/Shri_N_B_Patil.png" 
                         alt="Shri N. B. Patil" 
-                        className="w-full h-full object-cover object-center scale-100 group-hover:scale-103 transition-transform duration-300" 
-                        loading="lazy" 
+                        fill
+                        className="object-cover object-center scale-100 group-hover:scale-103 transition-transform duration-300 rounded-full"
                       />
                     </div>
                     {/* Icon overlay badge */}
@@ -352,7 +305,7 @@ export default function Home() {
                 
                 <Link 
                   href="/about/principal" 
-                  className="bg-brand-maroon hover:bg-brand-maroon/90 text-white font-extrabold text-xs uppercase tracking-widest py-3 px-8 rounded-full shadow-md hover:shadow-lg transition-all duration-200 mt-6 inline-flex items-center gap-2 w-full max-w-[200px] justify-center hover:scale-[1.02] transform"
+                  className="btn-center-fill btn-center-fill-maroon font-extrabold text-xs uppercase tracking-widest py-3 px-8 rounded-full shadow-md hover:shadow-lg mt-6 inline-flex items-center gap-2 w-full max-w-[200px] justify-center hover:scale-[1.02] transform"
                 >
                   <span>Read Message</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -387,7 +340,7 @@ export default function Home() {
             <div className="pt-4">
               <Link
                 href="/gallery/photo-gallery"
-                className="inline-block bg-white text-brand-black font-bold uppercase tracking-widest text-xs px-10 py-4 hover:bg-gray-50 transition-colors border border-gray-200 shadow-sm"
+                className="btn-center-fill btn-center-fill-white inline-block text-brand-black font-bold uppercase tracking-widest text-xs px-10 py-4 border border-gray-200 shadow-sm"
               >
                 VIEW ALL
               </Link>
@@ -411,7 +364,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-sm font-bold text-brand-text mb-3 uppercase tracking-wide mt-2">NAAC Peer Team Visit</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                  The college was proudly accredited with an 'A' grade (3.10 CGPA) during the recent cycle.
+                  The college was proudly accredited with an &apos;A&apos; grade (3.10 CGPA) during the recent cycle.
                 </p>
                 <Link href="/gallery/photo-gallery" className="text-[10px] font-bold text-brand-maroon uppercase tracking-widest hover:text-brand-black transition-colors">
                   READ MORE

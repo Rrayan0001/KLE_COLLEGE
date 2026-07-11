@@ -6,7 +6,7 @@ const sidebarLinks = [
   { name: "KLE Society", href: "/management/society" },
   { name: "Chairman's Message", href: "/management/chairman" },
   { name: "Board Members", href: "/management/boardmembers", active: true },
-  { name: "Local Governing Body", href: "/management/lgb" },
+  { name: "College Local Governing Body", href: "/management/lgb" },
 ];
 
 const breadcrumbs = [

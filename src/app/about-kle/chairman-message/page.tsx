@@ -1,14 +1,15 @@
 import React from "react";
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 const sidebarLinks = [
   { name: "History", href: "/about-kle/history" },
   { name: "Emblem", href: "/about-kle/emblem" },
-  { name: "Vision & Mission", href: "/about-kle/vision-mission" },
+  { name: "KLE Society Vision & Mission", href: "/about-kle/vision-mission" },
   { name: "Founders", href: "/about-kle/founders" },
   { name: "Board of Management", href: "/about-kle/board-management" },
   { name: "Chairman's Message", href: "/about-kle/chairman-message", active: true },
-  { name: "Local Governing Body", href: "/about-kle/lgb" },
+  { name: "KLE Society Local Governing Body", href: "/about-kle/lgb" },
 ];
 
 const breadcrumbs = [
@@ -38,12 +39,7 @@ export default function ChairmanMessagePage() {
           
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="w-full md:w-1/3 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/logo/Amit_Kore.png"
-                alt="Shri Amit Prabhakar Kore"
-                className="w-full h-auto object-cover"
-              />
+              { }<Image src="/images/logo/Amit_Kore.png" alt="Shri Amit Prabhakar Kore" className="w-full h-auto object-cover" width={600} height={800} />
             </div>
             <div className="space-y-4 flex-grow">
               <p className="text-brand-maroon font-bold text-sm tracking-wide">
@@ -84,12 +80,7 @@ export default function ChairmanMessagePage() {
           
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="w-full md:w-1/3 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/logo/Prabhakar_Kore_New.jpg"
-                alt="Dr. Prabhakar Basavaprabhu Kore"
-                className="w-full h-auto object-cover"
-              />
+              { }<Image src="/images/logo/Prabhakar_Kore_New.jpg" alt="Dr. Prabhakar Basavaprabhu Kore" className="w-full h-auto object-cover" width={600} height={800} />
             </div>
             <div className="space-y-4 flex-grow">
               <p className="text-brand-maroon font-bold text-sm tracking-wide">

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 const sidebarLinks = [
@@ -49,12 +50,7 @@ export default function CodeOfConductPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
           <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo/kle transpe.png"
-              alt="Code of conduct display"
-              className="w-full h-auto object-cover max-h-[360px]"
-            />
+            { }<Image src="/images/logo/kle transpe.png" alt="Code of conduct display" className="w-full h-auto object-cover max-h-[360px]" width={800} height={500} />
           </div>
           <div className="space-y-4">
             <ul className="space-y-3">

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 const sidebarLinks = [
@@ -6,7 +7,7 @@ const sidebarLinks = [
   { name: "KLE Society", href: "/management/society" },
   { name: "Chairman's Message", href: "/management/chairman" },
   { name: "Board Members", href: "/management/boardmembers" },
-  { name: "Local Governing Body", href: "/management/lgb" },
+  { name: "College Local Governing Body", href: "/management/lgb" },
 ];
 
 const breadcrumbs = [
@@ -24,12 +25,7 @@ export default function KLEHistoryPage() {
       <div className="space-y-8">
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/hero_section/slide.png"
-              alt="KLE Society Building"
-              className="w-full h-auto object-cover"
-            />
+            { }<Image src="/images/hero_section/slide.png" alt="KLE Society Building" className="w-full h-auto object-cover" width={800} height={500} />
           </div>
           <div className="space-y-4">
             <p className="text-slate-600 leading-relaxed text-justify">

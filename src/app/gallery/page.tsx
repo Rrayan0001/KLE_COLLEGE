@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 interface GalleryItem {
   id: number;
@@ -77,17 +78,17 @@ export default function GalleryPage() {
     ? galleryItems 
     : galleryItems.filter(item => item.category === filter);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     if (lightboxIndex === null) return;
     const prevIdx = (lightboxIndex - 1 + filteredItems.length) % filteredItems.length;
     setLightboxIndex(prevIdx);
-  };
+  }, [lightboxIndex, filteredItems.length]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (lightboxIndex === null) return;
     const nextIdx = (lightboxIndex + 1) % filteredItems.length;
     setLightboxIndex(nextIdx);
-  };
+  }, [lightboxIndex, filteredItems.length]);
 
   // Close lightbox on Escape key
   useEffect(() => {
@@ -100,7 +101,7 @@ export default function GalleryPage() {
       window.addEventListener("keydown", handleKeyDown);
     }
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxIndex, filteredItems]);
+  }, [lightboxIndex, handlePrev, handleNext]);
 
   const categories = [
     { value: "all", label: "All Photos" },
@@ -153,13 +154,7 @@ export default function GalleryPage() {
               className="group relative bg-white border border-slate-150 rounded-xl overflow-hidden shadow-sm cursor-pointer hover:shadow-lg transition-all duration-300"
             >
               <div className="aspect-[4/3] w-full overflow-hidden relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
+                { }<Image src={item.image} alt={item.alt} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" fill />
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-college-navy/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 z-10">
                   <span className="w-10 h-10 rounded-full bg-college-gold text-college-dark flex items-center justify-center font-bold shadow-md transform scale-90 group-hover:scale-100 transition-transform duration-300">
@@ -219,12 +214,7 @@ export default function GalleryPage() {
             className="relative max-w-5xl max-h-[80vh] flex flex-col items-center gap-4 text-center z-51"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={filteredItems[lightboxIndex].image}
-              alt={filteredItems[lightboxIndex].alt}
-              className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-white/5 animate-fade-in"
-            />
+            { }<Image src={filteredItems[lightboxIndex].image} alt={filteredItems[lightboxIndex].alt} className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-white/5 animate-fade-in" width={1200} height={800} />
             <div className="text-white space-y-1">
               <h4 className="font-bold text-lg md:text-xl font-display">
                 {filteredItems[lightboxIndex].title}

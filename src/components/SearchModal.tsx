@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { searchIndex, SearchItem } from "@/data/searchIndex";
+import { searchIndex } from "@/data/searchIndex";
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -12,7 +12,6 @@ interface SearchModalProps {
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const router = useRouter();
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchItem[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   
   const inputRef = useRef<HTMLInputElement>(null);
@@ -22,12 +21,12 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   // Focus input on open
   useEffect(() => {
     if (isOpen) {
-      setQuery("");
-      setResults([]);
-      setSelectedIndex(0);
-      setTimeout(() => {
+      const timer = setTimeout(() => {
+        setQuery("");
+        setSelectedIndex(0);
         inputRef.current?.focus();
       }, 50);
+      return () => clearTimeout(timer);
     }
   }, [isOpen]);
 
@@ -47,16 +46,12 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   }, [isOpen, onClose]);
 
   // Handle search matching and ranking
-  useEffect(() => {
+  const results = useMemo(() => {
     const cleanQuery = query.toLowerCase().trim();
-    if (!cleanQuery) {
-      setResults([]);
-      setSelectedIndex(0);
-      return;
-    }
+    if (!cleanQuery) return [];
 
     const queryWords = cleanQuery.split(/\s+/);
-    const matched = searchIndex
+    return searchIndex
       .map((item) => {
         let score = 0;
         const titleLower = item.title.toLowerCase();
@@ -104,9 +99,6 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       .filter((res) => res.allWordsMatch)
       .sort((a, b) => b.score - a.score)
       .map((res) => res.item);
-
-    setResults(matched);
-    setSelectedIndex(0);
   }, [query]);
 
   // Handle keyboard navigation inside search overlay
@@ -209,7 +201,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             className="w-full bg-transparent text-slate-800 placeholder-slate-400 font-medium text-base md:text-lg focus:outline-none"
             placeholder="Search programs, pages, certificates..."
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setSelectedIndex(0);
+            }}
           />
           <button 
             onClick={onClose}

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 const sidebarLinks = [
   { name: "About College", href: "/about", active: true },
   { name: "Donor of SPDDS", href: "/about/donors" },
-  { name: "Vision & Mission", href: "/about/vision" },
+  { name: "College Vision & Mission", href: "/about/vision" },
   { name: "Our Principal", href: "/about/principal" },
   { name: "Our Staff", href: "/about/staff" },
   { name: "Achievements", href: "/about/achievements" },
@@ -30,12 +31,7 @@ export default function AboutCollegePage() {
       <div className="space-y-8 text-slate-600 leading-relaxed text-justify">
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/about_us/image.png"
-              alt="KLE SCPDDS College Mahalingpur Building"
-              className="w-full h-auto object-cover"
-            />
+            { }<Image src="/images/about_us/image.png" alt="KLE SCPDDS College Mahalingpur Building" className="w-full h-auto object-cover" width={800} height={500} />
           </div>
           <div className="space-y-4">
             <p>

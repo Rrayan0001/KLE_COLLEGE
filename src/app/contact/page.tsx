@@ -132,7 +132,7 @@ export default function ContactPage() {
               <div className="space-y-1">
                 <h3 className="font-bold text-slate-800 text-sm">College Campus Address</h3>
                 <p className="text-slate-500 text-xs leading-relaxed">
-                  KLE Society's SCP Degree College Campus,<br />
+                  KLE Society&apos;s SCP Degree College Campus,<br />
                   Taluk: Mudhol, District: Bagalkot,<br />
                   Mahalingpur, Karnataka - 587312
                 </p>

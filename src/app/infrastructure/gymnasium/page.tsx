@@ -52,7 +52,7 @@ export default function GymnasiumPage() {
         </div>
 
         {/* Stadium details card */}
-        <div className="bg-gradient-to-r from-brand-maroon to-[#5e1c2b] text-white p-6 md:p-8 rounded-2xl shadow-md space-y-4">
+        <div className="bg-gradient-to-r from-brand-maroon to-brand-maroon-hover text-white p-6 md:p-8 rounded-2xl shadow-md space-y-4">
           <h3 className="text-lg font-bold text-brand-yellow uppercase tracking-wide">
             Indoor Stadium Features
           </h3>

@@ -69,7 +69,7 @@ export default function StudentSatisfactionSurveyPage() {
                 href={item.pdf}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 bg-brand-maroon hover:bg-[#5e1c2b] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg transition shrink-0"
+                className="btn-center-fill btn-center-fill-maroon inline-flex items-center justify-center gap-1.5 text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg shrink-0"
               >
                 <DownloadIcon />
                 Download PDF

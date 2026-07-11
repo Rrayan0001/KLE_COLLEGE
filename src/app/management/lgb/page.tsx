@@ -6,12 +6,12 @@ const sidebarLinks = [
   { name: "KLE Society", href: "/management/society" },
   { name: "Chairman's Message", href: "/management/chairman" },
   { name: "Board Members", href: "/management/boardmembers" },
-  { name: "Local Governing Body", href: "/management/lgb", active: true },
+  { name: "College Local Governing Body", href: "/management/lgb", active: true },
 ];
 
 const breadcrumbs = [
   { label: "Management", href: "/management/history" },
-  { label: "Local Governing Body" },
+  { label: "College Local Governing Body" },
 ];
 
 const members = [
@@ -25,7 +25,7 @@ const members = [
 export default function LocalGoverningBodyPage() {
   return (
     <SubpageLayout
-      title="Local Governing Body"
+      title="College Local Governing Body"
       breadcrumbs={breadcrumbs}
       sidebarLinks={sidebarLinks}
     >
@@ -35,7 +35,7 @@ export default function LocalGoverningBodyPage() {
             Karnatak Lingayat Education Society, Belagavi
           </span>
           <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 uppercase tracking-wide">
-            Local Governing Body Members (LGB)
+            College Local Governing Body (LGB)
           </h2>
         </div>
 
